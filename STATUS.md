@@ -7,9 +7,9 @@ kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i t
 
 | | |
 |---|---|
-| Not v knihovně celkem | 58 |
+| Not v knihovně celkem | 59 |
 | `neuro-design/` | 1 (master dokument, 5 modulů) |
-| `ux-design/` | 50 (31 původních + 11 v `pravidla/` + 8 v `kontext/`) |
+| `ux-design/` | 51 (31 původních + 11 v `pravidla/` + 9 v `kontext/`) |
 | `web-dev/` | 4 |
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
 | Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~131 v 11 notách |
@@ -123,6 +123,22 @@ párování hlasů do `vizualni-craft.md` a novou notu `ux-design/pravidla/portf
 zdroj je vlastní pozorování, ne publikovaná studie – viz sekce "Tři nezávislé příklady" ve
 `vizualni-craft.md`. Metodologický nález k zapamatování: čistě CSS analýza bez renderu minula
 reálný detail (zaoblení tlačítek na forms.world), render (screenshot) je nutný, zdroj nestačí.
+
+## Gastro sektor (29. 7. 2026, tentýž den)
+
+Nový `ux-design/kontext/gastro.md`, jedna nota s osou destinace ↔ sousedská utilita (ne dvě
+noty — regulace je na celé ose stejná, duplikace by časem rozjela, viz precedens gridlines).
+17 pravidel, evidenčně nejhutnější nota v `kontext/`: regulace ověřená proti primárním textům
+(nařízení 1169/2011 na alergeny, EAA mikropodnik-výjimka jde PROTI obecné formulaci v
+`e-commerce.md` — warning tam patří, zatím nedoplněno), menu-design výzkum (Yang 2012 eye-tracking
+vyvrací zlatý trojúhelník, Ip & Chark 2023 metaanalýza dává diskontní faktor na laboratorní
+nálezy). Během researche odhaleny a zdokumentovány **dvě fabrikované citace** kolující v SEO
+obsahu (Parsa & Njite 2014, Yue/Tong/Prinyawiwatkul 2019) a jedno chybné přiřazení (Di Geronimo
+CHI 2020 dark patterns, korpus neobsahoval food/delivery kategorii).
+
+Otevřeno k dohledání příště (sekce "Neověřené a k dohledání" v notě): formát ceny v menu ($ symbol
+vs. zaokrouhlení, Yang/Kimes/Sessarego 2009 nedočtený plný text), verbatim znění zákona 40/1995 Sb.,
+prevalence PDF/obrázkových menu na českých webech (navržen levný vlastní audit 30-50 podniků).
 
 Zatím není pokryté nic z tohohle, a přitom to v praxi potřebujeme:
 

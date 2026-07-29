@@ -10,7 +10,7 @@ Značka **[stub]** = nota je zatím kostra, hodí se doplnit. Stav a mezery: [ST
 | Sekce | Not | O čem |
 |---|---|---|
 | [neuro-design/](neuro-design/) | 1 | Kognitivní ergonomie, eye-tracking, algoritmy vizuální váhy. Nejhutnější dokument v knihovně. |
-| [ux-design/](ux-design/) | 50 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
+| [ux-design/](ux-design/) | 51 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
 | [web-dev/](web-dev/) | 4 | HTML/CSS základy, vkládání CSS, stylizace textu, práce s obrázky. |
 | [sheets/](sheets/) | 3 | Google Sheets reporty: rozhodovací rámec, brand tokeny, Apps Script vrstva. |
 
@@ -71,6 +71,7 @@ pro kterého stavíš.
 - [E-commerce](ux-design/kontext/e-commerce.md) – nejvyšší výchozí nedůvěra ze všech sektorů, jak citovat Baymard bez čísel o konverzi.
 - [Děti](ux-design/kontext/deti.md) – tři věková pásma, velikosti písma z testování s dětmi, Children's Code jako privacy rámec.
 - [Senioři](ux-design/kontext/seniori.md) – nejtvrdší čísla v knihovně (43 % pomalejší, 45 % problém s taby), řešením je WCAG AA, ne oddělený senior mód.
+- [Gastro](ux-design/kontext/gastro.md) – restaurace/bar/kavárna na ose destinace ↔ sousedská utilita; alergenová a EAA regulace ověřená proti primárním textům, menu-design výzkum (Yang 2012 vyvrací zlatý trojúhelník, Ip & Chark 2023 diskontuje laboratorní nálezy na třetinu), dvě fabrikované citace odhalené a zdokumentované.
 
 ## Proces
 
