@@ -101,4 +101,14 @@ u vizuálních témat, kde nota byla hlavně komentář k obrázkům.
 Úplně nepokryté a přitom potřebné: přístupnost do hloubky, komponenty a jejich stavy, landing pages,
 formuláře, prázdné a chybové stavy, responzivita, motion. Konkrétní seznam a priority: [STATUS.md](STATUS.md).
 
-Jak přidat znalost: [CONTRIBUTING.md](CONTRIBUTING.md).
+## Přidáváš do knihovny?
+
+Přečti [CLAUDE.md](CLAUDE.md). Je to závazek pro každého, kdo do repa zapisuje, člověka i Claude,
+a Claude Code si ho v repu načte sám. Drží dvě věci, na kterých knihovna stojí:
+
+- **Jen grafika a design.** Terraform, Jira, Python ani firemní procesy sem nepatří. Široká knihovna
+  neznamená lepší skill, ale horší, protože se rozmaže, kdy se má skill vůbec spustit.
+- **Second-brain zásady.** Jedna nota = jedno téma, nota je užitečná sama, každá nota musí být
+  zapsaná v [`_index.md`](_index.md), hloubka do knihovny a imperativy do skillu.
+
+Krátká verze: [CONTRIBUTING.md](CONTRIBUTING.md).
