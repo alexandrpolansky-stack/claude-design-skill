@@ -1,5 +1,5 @@
 
-# Sheets design — znalostní báze (spojený destilát)
+# Sheets design – znalostní báze (spojený destilát)
 
 > [!important] Domácí pravidlo přebíjí obecný výzkum: GRIDLINES ZŮSTÁVAJÍ VIDITELNÉ
 > Obecný dataviz výzkum níže (Tufte, data-ink ratio) doporučuje gridlines skrývat.
@@ -15,7 +15,7 @@
 ## 0. Princip
 Cíl: Sheet vypadá jako **report / aplikace, ne jako tabulka**. Kvalita = kázeň v mřížce a mazání všeho, co nenese informaci (data-ink ratio, Tufte [web]), ne dekorace. Barva, ohraničení, font navíc = šum. Sheet nefingujeme jako HTML/Figmu, ale dotáhneme dokumentový dojem. [oba]
 
-## 0b. TrustSoft identita (DEFAULT paleta + font) — zdroj pravdy: `panovec 6/references/design-system.md`
+## 0b. TrustSoft identita (DEFAULT paleta + font) – zdroj pravdy: `panovec 6/references/design-system.md`
 Sheet reporty se defaultně stylují do TrustSoft brandu (soulad s prezentačním skillem Panovec). Tohle přebíjí generickou paletu níže; obecná pravidla (60-30-10, kontrast, počet barev) platí dál jako mantinely.
 
 **Font:** Work Sans (v Sheets dostupný jako Google Font).
@@ -81,7 +81,7 @@ Pravidla:
 - **Line-height 1.4-1.7×**, minimum 1.5×. Type scale ratio 1.125 (Major Second) na baseline 14 px. [web]
 - **Tabulární (monospaced) číslice** pro čísla ve sloupcích (jinak `$1,111.11` vypadá menší než `$999.99`); v Sheets přes Roboto Mono nebo pravé zarovnání. [web]
 - **Zarovnání:** kvantitativní čísla (peníze, %, množství) vpravo / na desetinnou; text vlevo; kvalitativní čísla (datum, ID, PSČ) vlevo; hlavička kopíruje zarovnání sloupce. [oba]
-- **Čísla bez balastních desetin** — zaokrouhli na rozhodovací přesnost (`$1.46M`, ne `$1,456,234.89`). [oba]
+- **Čísla bez balastních desetin** – zaokrouhli na rozhodovací přesnost (`$1.46M`, ne `$1,456,234.89`). [oba]
 
 ## 4. Layout a hierarchie
 - **Mřížka 12-16 sloupců, base unit 8 px.** Sidebar 240-280 px, nahoře řada 4-6 KPI karet, pod tím grafy, dole detailní tabulky. [web]
@@ -107,16 +107,16 @@ Pravidla:
 | Číslice | proporcionální (sloupce skáčou) | tabulární + pravé zarovnání | zarovnané řády, čitelné porovnání [web] |
 
 ## 6. Archetypy reportů (podle čtenáře a otázky) [NLM]
-- **(a) Exec KPI dashboard (C-level)** — otázka „jsme na tom dobře/špatně?". Oddělený Dashboard tab, dominantní KPI karty vlevo nahoře, čárové grafy pro makro-trendy. Tlumená korporát paleta, masivní H1 (32 pt), bez desetin. Proč: Hick — minimum informací s nejvyšší hodnotou, bez scrollování.
-- **(b) Operativní tracker (tým)** — otázka „kde to hoří, na čem dělat dnes?". Tabulka + Dropdown/Slicer, stavové indikátory (CF Red/Amber/Green). Ostrý kontrast statusů (`#85DD7C` / `#D9534F`), hustší menší písmo (14 pt). Proč: mikro-rozhodnutí, okamžitá filtrace (Doherty), sledování anomálií.
-- **(c) Finanční model** — otázka „jak dojdeme k zisku a je výpočet nezpochybnitelný?". Striktní FAST, NULOVÉ slučování buněk (zabíjí výpočetní bloky), corkscrew. Modré písmo = vstupy, černé = výpočty, červené = exporty na jiné listy. Proč: auditabilita > krása.
-- **(d) Sdílený přehled (netechničtí)** — otázka „jak číst, aniž něco rozbiju?". Welcome sheet první, ochrana uzamčených buněk/listů. Square-squares mřížka + ilustrační pozadí přes Drawing. Proč: netechnický se děsí prázdné tabulky; vzhled aplikace + návod = pocit bezpečí.
+- **(a) Exec KPI dashboard (C-level)** – otázka „jsme na tom dobře/špatně?". Oddělený Dashboard tab, dominantní KPI karty vlevo nahoře, čárové grafy pro makro-trendy. Tlumená korporát paleta, masivní H1 (32 pt), bez desetin. Proč: Hick – minimum informací s nejvyšší hodnotou, bez scrollování.
+- **(b) Operativní tracker (tým)** – otázka „kde to hoří, na čem dělat dnes?". Tabulka + Dropdown/Slicer, stavové indikátory (CF Red/Amber/Green). Ostrý kontrast statusů (`#85DD7C` / `#D9534F`), hustší menší písmo (14 pt). Proč: mikro-rozhodnutí, okamžitá filtrace (Doherty), sledování anomálií.
+- **(c) Finanční model** – otázka „jak dojdeme k zisku a je výpočet nezpochybnitelný?". Striktní FAST, NULOVÉ slučování buněk (zabíjí výpočetní bloky), corkscrew. Modré písmo = vstupy, černé = výpočty, červené = exporty na jiné listy. Proč: auditabilita > krása.
+- **(d) Sdílený přehled (netechničtí)** – otázka „jak číst, aniž něco rozbiju?". Welcome sheet první, ochrana uzamčených buněk/listů. Square-squares mřížka + ilustrační pozadí přes Drawing. Proč: netechnický se děsí prázdné tabulky; vzhled aplikace + návod = pocit bezpečí.
 
 ## 7. Metodiky a kdy nasadit [NLM, potvrzeno Ben Collins ve web]
-- **FAST struktura listů** (Foundation / Workings / Presentation / Control) + **Calculation Blocks (corkscrew)** — robustní finanční/datové modely; ne triviální ad-hoc DB. Blok = 1 vzorec na konci s precedenty nad ním; corkscrew (otevírací = předchozí uzavírací) eliminuje kruhové odkazy.
-- **FAST pravidlo palce a 24 vteřin** — vzorec delší než palec / vysvětlení nad 24 s = rozbij do víc kroků.
-- **Ben Collins Onion method** — mocné hnízděné vzorce (INDEX/MATCH, složité QUERY): stav zevnitř ven, audit trail, IFERROR jako poslední obal; ne na běžné SUM/VLOOKUP.
-- **Ben Collins Dashboard checklist** — stavba z prázdného listu: QUERY na surových datech → skryté Staging listy → Dashboard jen vizuálně těží; červené Separator taby drží řád. Zjednodušená struktura listů (potvrzuje i gsheets-skill repo): README/Welcome, Raw_Data, Clean_Data, Assumptions/Settings, Calculations/Staging, Summary, Dashboard.
+- **FAST struktura listů** (Foundation / Workings / Presentation / Control) + **Calculation Blocks (corkscrew)** – robustní finanční/datové modely; ne triviální ad-hoc DB. Blok = 1 vzorec na konci s precedenty nad ním; corkscrew (otevírací = předchozí uzavírací) eliminuje kruhové odkazy.
+- **FAST pravidlo palce a 24 vteřin** – vzorec delší než palec / vysvětlení nad 24 s = rozbij do víc kroků.
+- **Ben Collins Onion method** – mocné hnízděné vzorce (INDEX/MATCH, složité QUERY): stav zevnitř ven, audit trail, IFERROR jako poslední obal; ne na běžné SUM/VLOOKUP.
+- **Ben Collins Dashboard checklist** – stavba z prázdného listu: QUERY na surových datech → skryté Staging listy → Dashboard jen vizuálně těží; červené Separator taby drží řád. Zjednodušená struktura listů (potvrzuje i gsheets-skill repo): README/Welcome, Raw_Data, Clean_Data, Assumptions/Settings, Calculations/Staging, Summary, Dashboard.
 
 ## 8. Google Sheets: co jde a kde je strop [oba]
 **Jde dobře:** skrýt gridlines (View → Show → Gridlines off; technicky jde, ale na TrustSoft listech to NEPOUŽÍVEJ, viz callout nahoře) + freeze; **vrstvení Insert → Drawing** (layout karty/oddělovače/pozadí) + **transparentní grafy** navrch (Chart → Customize → Chart style → no fill/border); `=SPARKLINE(data,{...})` do KPI karet; custom number format s barvou/šipkami pro delty; conditional formatting (color scale = heatmapa, vzorec = stav); named + protected ranges (zámek vzorců); Data validation dropdown + Slicer; **pixel-grid** (buňky ~100x100, gap 25 px, grafy 200x100) pro definované mezery; bullet efekt = stacked bar + reference line.

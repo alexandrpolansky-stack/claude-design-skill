@@ -21,7 +21,7 @@ tematických sekcí v rootu, `skills/` je jen tenká vrstva, která Claudeovi ř
 | [`design-advisor`](skills/design-advisor/SKILL.md) | Cokoliv user-facing: weby, komponenty, tlačítka, landing pages, propagace, formuláře, ale i layout tabulky, reportu nebo e-mailu. Model-invoked. |
 | [`sheets-design`](skills/sheets-design/SKILL.md) | Google Sheets reporty a dashboardy, včetně živé aplikace stylů přes Sheets API. Model-invoked. |
 
-Plus [`rules/`](rules/) — destiláty imperativů pro moment, kdy se reálně píše UI kód. Nejsou to noty
+Plus [`rules/`](rules/) – destiláty imperativů pro moment, kdy se reálně píše UI kód. Nejsou to noty
 z knihovny, je to zkrácená verze toho, co je v ní rozepsané.
 
 ## Jak to používat

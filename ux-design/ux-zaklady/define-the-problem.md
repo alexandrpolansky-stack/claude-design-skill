@@ -23,7 +23,7 @@
 Nápady - #DivergentníMyšlení => vytváření nápadů, volný průběh nalezení řešení
 Konec fáze - na konci fáze vyčleňte pouze užitečné nápady, lze to udělat pomocí bodového hlasování nebo matice proveditelnosti
 	1. **Objevování /Výzkum** – vhled do problému (divergující)
-	2. **Definovat/Syntéza** — oblast, na kterou se zaměřit (konvergence)
+	2. **Definovat/Syntéza** – oblast, na kterou se zaměřit (konvergence)
 	3. **Vývoj/nápad** – potenciální řešení (rozcházející)
 	4. **Dodat / Implementace** – řešení, která fungují (konvergence)
 **Jen proto, že klient říká, že něco je problém, nemusí to být nutně problém, který je třeba řešit.** Součástí procesu návrhu je zjistit, zda pracují na správných cílech. - V designu se často používá oblíbený citát připisovaný automobilce Henrymu Fordovi. Řekl: "Když se zeptáte lidí, co chtějí, řeknou, že chtějí rychlejšího koně." S ohledem na potřeby svých zákazníků místo toho vyrobil auto – a nazval ho Mustang!

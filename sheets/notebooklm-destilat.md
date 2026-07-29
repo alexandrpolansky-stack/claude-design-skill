@@ -1,5 +1,5 @@
 
-# NotebookLM destilát — zdroj pravdy pro sheets-design skill
+# NotebookLM destilát – zdroj pravdy pro sheets-design skill
 
 > [!important] Domácí pravidlo přebíjí obecný výzkum: GRIDLINES ZŮSTÁVAJÍ VIDITELNÉ
 > Obecný dataviz výzkum níže (Tufte, data-ink ratio) doporučuje gridlines skrývat.
@@ -18,7 +18,7 @@ Kola 1-2 dala **recepty a čísla** (co a jak). Chybí **rozhodovací logika a z
 
 ---
 
-## Kolo 1 — 6 sekcí (principy → anti-patterny)
+## Kolo 1 – 6 sekcí (principy → anti-patterny)
 
 ### 1. Principy (proč to vypadá dobře)
 - **Hierarchie:** škálování velikosti písma (H1/H2/tělo) vede oko a snižuje kognitivní zátěž.
@@ -40,7 +40,7 @@ Kola 1-2 dala **recepty a čísla** (co a jak). Chybí **rozhodovací logika a z
 
 ### 3. Strop Google Sheets (co neumí + čím nahradit)
 - **Neumí nativně:** skutečně zaoblené rohy, měkké stíny, pill tvary.
-- **Náhrada:** Vložit → Nákres (vektorové tvary se stínem, vložit nad buňky). Alt.: pixel-grid — zmenšit řádky/sloupce na čtverce (25x25 px) a „kreslit" barvou buněk přesné bloky.
+- **Náhrada:** Vložit → Nákres (vektorové tvary se stínem, vložit nad buňky). Alt.: pixel-grid – zmenšit řádky/sloupce na čtverce (25x25 px) a „kreslit" barvou buněk přesné bloky.
 
 ### 4. Postup stavby
 - **Čtenář:** začni cílovým uživatelem, jeho technická úroveň, konkrétní byznys otázky.
@@ -66,7 +66,7 @@ Kola 1-2 dala **recepty a čísla** (co a jak). Chybí **rozhodovací logika a z
 
 ---
 
-## Kolo 2 — konkrétní čísla, pojmenované metody, HEX palety
+## Kolo 2 – konkrétní čísla, pojmenované metody, HEX palety
 
 ### Přesné hodnoty a rozměry
 **Typografická škála (pt):** H1 32 tučně / H2 24 polotučné / H3 20 medium / podnadpis 18 regular / tělo+tlačítka 16 / popisky 14 / absolutní minimum terciár 12 pt. Light řezy nikdy pod 8 px.
@@ -91,16 +91,16 @@ Kola 1-2 dala **recepty a čísla** (co a jak). Chybí **rozhodovací logika a z
 
 ### Pojmenované metody krok za krokem
 **FAST struktura listů (4 funkční sekce oddělené prázdnými listy):**
-1. *Foundation* — vstupy (Inputs), časové příznaky (timing flags), indexační faktory.
-2. *Workings* — výpočetní „motor", bloky.
-3. *Presentation* — výkazy, grafy, primární vstupy, dashboard.
-4. *Control* — citlivost, verzování, obsah.
+1. *Foundation* – vstupy (Inputs), časové příznaky (timing flags), indexační faktory.
+2. *Workings* – výpočetní „motor", bloky.
+3. *Presentation* – výkazy, grafy, primární vstupy, dashboard.
+4. *Control* – citlivost, verzování, obsah.
 
 **FAST Calculation Blocks (Corkscrew):** výpočet = poslední 1 řádek; nad ním zdrojové ingredience s live odkazem na data; 1 prázdný řádek nad i pod. Varianty: 4-line corkscrew, 7-line corkscrew with flag, 7-line with PPF.
 
 **FAST pravidlo palce a vteřin:** žádný vzorec delší než šířka palce; žádný vzorec nad 24 vteřin na vysvětlení.
 
-**Onion method (Ben Collins):** složité vnořené vzorce stav po vrstvách — základ (MATCH) v buňce (krok 1), zkopíruj do nové buňky a obal další vrstvou (krok 2), opakuj do finále (krok 4). Viditelný logický záznam, test na každé vrstvě.
+**Onion method (Ben Collins):** složité vnořené vzorce stav po vrstvách – základ (MATCH) v buňce (krok 1), zkopíruj do nové buňky a obal další vrstvou (krok 2), opakuj do finále (krok 4). Viditelný logický záznam, test na každé vrstvě.
 
 **Dashboard Design Checklist (Ben Collins, postup prázdného listu):**
 1. Jasný plán komu/k čemu. 2. Struktura listů s červenými oddělovači „Raw data >>". 3. Import surových dat (Supermetrics). 4. Průzkum přes pivoty. 5. Exkluzivní „Settings" list se všemi cíli/proměnnými. 6. „Staging" listy (FILTER/QUERY) speciálně pro grafy. 7. Design hlavičky v Dashboard listu. 8. První návrh + zafixuj grafy. 9. Pauza + zpětná vazba, omez „data pukes". 10. Iteruj, hlavní KPI do levého horního rohu.
@@ -117,7 +117,7 @@ Kola 1-2 dala **recepty a čísla** (co a jak). Chybí **rozhodovací logika a z
 
 ---
 
-## Web research (subagent, 2026-07-16) — doložené, s URL
+## Web research (subagent, 2026-07-16) – doložené, s URL
 
 Autoritativní zdroje: IBM Carbon, ColorBrewer, Datawrapper, FT Visual Vocabulary, Cleveland-McGill, NN/G, US data-design standards, Ben Collins, Stephen Few.
 
@@ -175,22 +175,22 @@ Jde dobře: skrýt gridlines, freeze; vrstvení Insert→Drawing (layout karty/o
 Strop: není přesná pixel-grid ani 8px systém (rozestupy přes šířky sloupců/řádků + Drawing align "na oko"); fonty jen Google Fonts (ne všude tabular figures); přímé in-line datalabels omezené; color scale CF má omezenou kontrolu midpointu; žádné nativní textury/markery jako colorblind pojistka; bullet/violin/sankey/waterfall nejsou nativní.
 
 ### Top zdroje (hloubkové čtení)
-1. IBM Carbon color-palettes + accessibility článek (medium.com/carbondesign) — 14barevný systém, 3:1, ne-barevné pojistky.
-2. Datawrapper "Colors for data vis style guides" — jak Economist/FT volí palety, "fewer hues more shades", role šedé.
-3. FT Visual Vocabulary README (github Financial-Times/chart-doctor) — otázka → typ grafu.
-4. colorbrewer2.org — generátor palet s colorblind/print filtry.
-5. Okabe-Ito reference (conceptviz.app) — 8barevná colorblind-safe s hex.
-6. NN/G "Clutter-free charts" — co mazat (3D, textury, legenda→popisek).
-7. Cleveland-McGill (flowingdata.com) — proč bar > pie > heatmapa.
-8. Ben Collins "visual dashboard design" + "10 techniques" — Sheets vrstvení + Drawing trik.
-9. Pencil & Paper "Enterprise data tables" — row-height, zarovnání, monospaced čísla.
-10. US data-design standards Colors (xdgov.github.io) — hotové 508-compliant hex sekvence.
+1. IBM Carbon color-palettes + accessibility článek (medium.com/carbondesign) – 14barevný systém, 3:1, ne-barevné pojistky.
+2. Datawrapper "Colors for data vis style guides" – jak Economist/FT volí palety, "fewer hues more shades", role šedé.
+3. FT Visual Vocabulary README (github Financial-Times/chart-doctor) – otázka → typ grafu.
+4. colorbrewer2.org – generátor palet s colorblind/print filtry.
+5. Okabe-Ito reference (conceptviz.app) – 8barevná colorblind-safe s hex.
+6. NN/G "Clutter-free charts" – co mazat (3D, textury, legenda→popisek).
+7. Cleveland-McGill (flowingdata.com) – proč bar > pie > heatmapa.
+8. Ben Collins "visual dashboard design" + "10 techniques" – Sheets vrstvení + Drawing trik.
+9. Pencil & Paper "Enterprise data tables" – row-height, zarovnání, monospaced čísla.
+10. US data-design standards Colors (xdgov.github.io) – hotové 508-compliant hex sekvence.
 
 Pozn.: Carbon/ColorBrewer/Material přesné hex jsou zčásti za JS-render/generátorem; Carbon 14 ověřeno křížově, u ColorBrewer/Material odkaz na nástroj, ne hodnoty z paměti.
 
 ---
 
-## Kolo 3 — studie: rozhodovací logika (NotebookLM, 2026-07-16)
+## Kolo 3 – studie: rozhodovací logika (NotebookLM, 2026-07-16)
 
 > Caveat: NotebookLM nechal pole ZDROJ prázdné (necitoval). Obsah ale kříží s web research výše (ten URL má), takže se dá brát jako podložený. Formát VOLBA / KDY / KDY NE / PROČ.
 

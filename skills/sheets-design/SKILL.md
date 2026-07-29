@@ -14,8 +14,8 @@ description: >-
 Google Sheet má vypadat jako report v **TrustSoft identitě**, ne jako rozsypaná tabulka. Kvalita = kázeň v mřížce a mazání všeho bez informace, ne dekorace. Sheets-specifický sourozenec `design-advisor` (obecné UX). Hloubku drží znalostní báze, tady je destilát + jak to aplikovat živě.
 
 ## Zdroj pravdy (přečti relevantní sekci před stavbou)
-- **Design + brand:** [sheets/znalostni-baze.md](../../sheets/znalostni-baze.md) — rozhodovací rámec otázka→graf, TrustSoft paleta+font, A/B slop→profi, archetypy reportů, kritéria kvality.
-- **Podklad výzkumu:** [sheets/notebooklm-destilat.md](../../sheets/notebooklm-destilat.md) — surovější destilát včetně URL zdrojů.
+- **Design + brand:** [sheets/znalostni-baze.md](../../sheets/znalostni-baze.md) – rozhodovací rámec otázka→graf, TrustSoft paleta+font, A/B slop→profi, archetypy reportů, kritéria kvality.
+- **Podklad výzkumu:** [sheets/notebooklm-destilat.md](../../sheets/notebooklm-destilat.md) – surovější destilát včetně URL zdrojů.
 - **Apps Script varianta:** [sheets/apps-script-vrstva.md](../../sheets/apps-script-vrstva.md).
 - **Živý tool:** `sheets-styler` v interním repu `trustsoft-tools` (Sheets API v4, user-OAuth, creds v Keychain). Není součástí tohoto repa.
 

@@ -1,7 +1,7 @@
 
-# Apps Script vrstva — Sheets styling (kompetenční cheat-sheet)
+# Apps Script vrstva – Sheets styling (kompetenční cheat-sheet)
 
-> Vrstva 2 skillu `sheets-design` (implementace: jak Claude sám píše a aplikuje styling skript). Design/proč = [Sheets design — znalostní báze](znalostni-baze.md). Vše ověřeno proti oficiální referenci; jediné neúplně ověřené = přesný tvar objektu pro transparentní pozadí grafu (viz níže).
+> Vrstva 2 skillu `sheets-design` (implementace: jak Claude sám píše a aplikuje styling skript). Design/proč = [Sheets design – znalostní báze](znalostni-baze.md). Vše ověřeno proti oficiální referenci; jediné neúplně ověřené = přesný tvar objektu pro transparentní pozadí grafu (viz níže).
 
 ## 1. Výkon a pasti
 - **Batch `getValues()`/`setValues()` na 2D poli místo cyklu.** Per-buňkový `setBackground` přes 10 000 buněk ~70 s; jedním `setBackgrounds(2Dpole)` ~1 s (řádově 70x). Každé `getValue()`/`setValue()` překračuje service boundary; look-ahead read a write caching fungují jen když nestřídáš read a write. Vzor: čti celý rozsah jedním `getValues()` → zpracuj v paměti → zapiš jedním `setValues()`. Nikdy nestřídej read/write v cyklu.
@@ -47,7 +47,7 @@ Sheet.newChart(): EmbeddedChartBuilder   .insertChart(chart): void
 Sheet.getBandings(): Banding[]   .protect(): Protection
 Sheet.insertSlicer(range, anchorRow, anchorCol): Slicer   .getSlicers(): Slicer[]
 ```
-**Banding — barvy JDOU customizovat:** `applyRowBanding(...)` → `Banding` s `setHeaderRowColor()`, `setFirstRowColor()`, `setSecondRowColor()`, `setFooterRowColor()` (+ sloupcové varianty), `setRange(range)`, `remove()`. Varianty `*ColorObject()` berou `Color` místo CSS stringu.
+**Banding – barvy JDOU customizovat:** `applyRowBanding(...)` → `Banding` s `setHeaderRowColor()`, `setFirstRowColor()`, `setSecondRowColor()`, `setFooterRowColor()` (+ sloupcové varianty), `setRange(range)`, `remove()`. Varianty `*ColorObject()` berou `Color` místo CSS stringu.
 
 **Conditional formatting:**
 ```

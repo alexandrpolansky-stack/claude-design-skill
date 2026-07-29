@@ -33,7 +33,7 @@ Zdroj: [Pravidlo 60-30-10](../ux-design/color/pravidlo-60-30-10.md), [Color Theo
 - Line-height ~140-150 % pro tělo textu. Max ~2 fonty (nadpis + tělo).
 - Min. velikost těla ~16px.
 
-Zdroj: [Typography — základy, anatomie](../ux-design/typography/typography-zaklady-anatomie.md).
+Zdroj: [Typography – základy, anatomie](../ux-design/typography/typography-zaklady-anatomie.md).
 
 ## Afordance a feedback
 - Tlačítka vypadají jako tlačítka; interaktivní prvky jsou rozpoznatelné.
