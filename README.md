@@ -1,63 +1,83 @@
 # claude-design-skill
 
-Designová znalost jako skilly pro Claude Code. Cíl: když Claude staví cokoliv, co uvidí člověk
-(web, komponenta, tlačítko, landing page, propagační materiál, dashboard, report, tabulka, e-mail),
-rozhoduje podle znalostní báze, ne ad hoc.
+Knihovna designové znalosti, kterou umí Claude použít. Second-brain styl: znalost je rozdělená do
+tematických sekcí v rootu, `skills/` je jen tenká vrstva, která Claudeovi říká, kdy do knihovny sáhnout.
 
-Privátní repo, roste postupně. Mezery a priority: [STATUS.md](STATUS.md).
-Jak přidat znalost: [CONTRIBUTING.md](CONTRIBUTING.md).
+**39 not, ~31 000 slov.** Vstupní bod do celé knihovny: [`_index.md`](_index.md).
 
-## Co je vevnitř
+## Knihovna
 
-| Skill | K čemu | Znalost |
+| Sekce | Not | O čem |
 |---|---|---|
-| `design-advisor` | Obecné UX/UI pro cokoliv user-facing: weby, komponenty, tlačítka, formuláře, landing pages, propagace, ale i layout tabulky, reportu nebo e-mailu. Model-invoked. | 31 not: UX zákony, barvy, typografie, layout, proces, etika, content strategy, hotový příklad design systému |
-| `sheets-design` | Google Sheets reporty a dashboardy, včetně živé aplikace stylů přes Sheets API. Model-invoked. | Rozhodovací rámec otázka→graf, brand tokeny, archetypy reportů, A/B slop→profi, Apps Script vrstva |
+| [neuro-design/](neuro-design/) | 1 | Kognitivní ergonomie, eye-tracking, algoritmy vizuální váhy, fail-safe protokoly. Nejhutnější dokument. |
+| [ux-design/](ux-design/) | 31 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém. |
+| [web-dev/](web-dev/) | 4 | HTML/CSS základy, vkládání CSS, stylizace textu, práce s obrázky. |
+| [sheets/](sheets/) | 3 | Google Sheets reporty: rozhodovací rámec, brand tokeny, Apps Script vrstva. |
 
-Navíc [rules/frontend-ux.md](rules/frontend-ux.md) — path-scoped pravidlo, které se aktivuje
-podle typu souboru (`.tsx`, `.css`, ...) místo podle smyslu úkolu. Skill a pravidlo se doplňují:
-skill chytá „tohle bude někdo číst", pravidlo chytá „právě píšu UI kód".
+## Skilly
 
-## Instalace
+| Skill | Kdy se spustí |
+|---|---|
+| [`design-advisor`](skills/design-advisor/SKILL.md) | Cokoliv user-facing: weby, komponenty, tlačítka, landing pages, propagace, formuláře, ale i layout tabulky, reportu nebo e-mailu. Model-invoked. |
+| [`sheets-design`](skills/sheets-design/SKILL.md) | Google Sheets reporty a dashboardy, včetně živé aplikace stylů přes Sheets API. Model-invoked. |
+
+Plus [`rules/`](rules/) — destiláty imperativů pro moment, kdy se reálně píše UI kód. Nejsou to noty
+z knihovny, je to zkrácená verze toho, co je v ní rozepsané.
+
+## Jak to používat
+
+### Naklonovat (spolehlivá cesta)
 
 ```bash
-# v Claude Code
-/plugin marketplace add git@github.com:<owner>/claude-design-skill.git
-/plugin install design-skill
+git clone git@github.com:alexandrpolansky-stack/claude-design-skill.git
 ```
 
-Path-scoped pravidlo se pluginem nenainstaluje, zkopíruj ručně:
+Skilly čtou knihovnu relativními cestami z `skills/*/` do rootu repa, takže **repo musí být
+naklonované celé**. Nekopíruj jen složku jednoho skillu, přišel by o knihovnu.
+
+Aby Claude skilly viděl, nalinkuj celé repo jako plugin dir, nebo si `skills/` nalinkuj do
+`~/.claude/skills/` a nech repo na místě:
+
+```bash
+ln -s "$(pwd)/skills/design-advisor" ~/.claude/skills/design-advisor
+ln -s "$(pwd)/skills/sheets-design"  ~/.claude/skills/sheets-design
+```
+
+Path-scoped pravidlo zkopíruj:
 
 ```bash
 cp rules/frontend-ux.md ~/.claude/rules/
 ```
 
-Ověření: v nové session si nech vypsat skilly, `design-advisor` a `sheets-design` mají být v seznamu.
+### Jako plugin
+
+```bash
+/plugin marketplace add git@github.com:alexandrpolansky-stack/claude-design-skill.git
+/plugin install design-skill
+```
+
+Layout odpovídá konvenci pluginů (`.claude-plugin/` a `skills/` v rootu), ale tuhle instalační
+cestu jsem neodzkoušel naostro. Když nezabere, jeď přes klonování výše.
 
 ## Struktura
 
 ```
-.claude-plugin/marketplace.json     # aby šlo /plugin marketplace add
-plugin/
-  .claude-plugin/plugin.json
-  skills/
-    design-advisor/
-      SKILL.md                      # destilát + postup, tohle Claude čte první
-      references/
-        INDEX.md                    # mapa znalosti, odsud se vybírá
-        ux-zaklady/ zakony-principy/ color/ typography/ layout/
-        proces/ trendy/ logo-foto/ priklady-ds/ zdroje/
-        frontend-ux-rules.md
-        _assets/                    # obrázky k notám
-    sheets-design/
-      SKILL.md
-      references/
-rules/frontend-ux.md                # ke zkopírování do ~/.claude/rules/
-STATUS.md                           # co je hotové, co jsou mezery
+_index.md              # MOC, vstupní bod do knihovny
+neuro-design/          # kognitivní ergonomie
+ux-design/             # UX zákony, barvy, typografie, layout, proces
+  _assets/             # obrázky k notám
+web-dev/               # HTML/CSS
+sheets/                # Google Sheets reporty
+skills/
+  design-advisor/SKILL.md
+  sheets-design/SKILL.md
+rules/                 # destiláty pro psaní kódu
+.claude-plugin/        # manifest pluginu
+STATUS.md              # co je hotové, co jsou mezery
 ```
 
-Princip vrstvení: `SKILL.md` je krátký destilát a rozhodovací postup, `references/` drží hloubku.
-Claude čte SKILL.md vždy, z `references/` bere jen to, co k úkolu patří. Když do SKILL.md přiteče
+Princip vrstvení: `SKILL.md` je krátký destilát a rozhodovací postup, knihovna drží hloubku.
+Claude čte SKILL.md vždy, z knihovny bere jen to, co k úkolu patří. Když do SKILL.md přiteče
 teorie, přestane se vyplácet ho načítat.
 
 ## Odkud znalost pochází
@@ -66,18 +86,19 @@ Noty vznikly jako osobní studijní materiál (UX/design kurzy, Don Norman, Laws
 IBM Carbon, NN/G) v Obsidian vaultu. Tenhle repo je jejich kurátorovaná, sdílená verze:
 ASCII jména souborů, relativní odkazy místo Obsidian wikilinků, bez interních cest a projektových logů.
 
-**Repo je teď zdroj pravdy pro skilly.** Vault zůstává studijním materiálem. Když upravíš znalost,
+**Repo je zdroj pravdy pro skilly.** Vault zůstává studijním materiálem. Když upravíš znalost,
 uprav ji tady, ne ve vaultu, jinak se to rozejde.
 
-Poznámka ke `sheets-design`: ten jeden skill drží konkrétní firemní brand tokeny (paleta, font),
-protože bez nich by rady o Sheets reportech byly obecné až k nepoužitelnosti. Zbytek repa je
-značkově neutrální.
+Poznámka ke `sheets/`: ta sekce drží konkrétní firemní brand tokeny (paleta, font), protože bez nich
+by rady o Sheets reportech byly obecné až k nepoužitelnosti. Zbytek knihovny je značkově neutrální.
 
 ## Známé mezery
 
-Znalost je nerovná: část not jsou dvouřádkové kostry a 78 odkazů na obrázky ukazuje na soubory,
-které v původním vaultu už nejsou (`*[chybějící obrázek: ...]*` v textu). Nejvíc to bolí u
-vizuálních témat (Layout Theory, Typography, Trendy), kde nota byla hlavně komentář k obrázkům.
+Knihovna je nerovná. Šest not jsou kostry a **97 odkazů na obrázky** ukazuje na soubory, které
+v původním vaultu už nejsou (v textu označené `*[chybějící obrázek: ...]*`). Nejvíc to bolí
+u vizuálních témat, kde nota byla hlavně komentář k obrázkům.
 
-Úplně nepokryté a přitom potřebné: přístupnost do hloubky, formuláře, prázdné a chybové stavy,
-responzivita, motion, design tokens jako proces. Konkrétní seznam: [STATUS.md](STATUS.md).
+Úplně nepokryté a přitom potřebné: přístupnost do hloubky, komponenty a jejich stavy, landing pages,
+formuláře, prázdné a chybové stavy, responzivita, motion. Konkrétní seznam a priority: [STATUS.md](STATUS.md).
+
+Jak přidat znalost: [CONTRIBUTING.md](CONTRIBUTING.md).

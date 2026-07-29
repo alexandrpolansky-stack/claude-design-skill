@@ -12,7 +12,7 @@
       "name": "design-skill",
       "description": "Dva skilly: design-advisor (UX/UI pro weby, komponenty, tlačítka, propagaci, cokoliv user-facing) a sheets-design (Google Sheets reporty).",
       "version": "0.1.0",
-      "source": "./plugin",
+      "source": ".",
       "category": "design",
       "tags": [
         "design",

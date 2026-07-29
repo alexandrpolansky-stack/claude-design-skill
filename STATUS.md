@@ -7,35 +7,40 @@ hádat. Když něco doplníš, uprav i tenhle soubor.
 
 | | |
 |---|---|
-| Not v `design-advisor` | 31 + index + build-time destilát |
-| Not v `sheets-design` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
+| Not v knihovně celkem | 39 (~31 000 slov) |
+| `neuro-design/` | 1 (master dokument, 5 modulů) |
+| `ux-design/` | 31 |
+| `web-dev/` | 4 |
+| `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
 | Obrázků v repu | 32 |
-| Odkazů na obrázky, které ve zdroji nejsou | 78 |
-| Not pod 120 slov (kostra) | 5 |
+| Odkazů na obrázky, které ve zdroji nejsou | 97 (78 ux-design + 17 web-dev + 2 ostatní) |
+| Not pod 120 slov (kostra) | 6 |
 
 ## 1. Chybějící obrázky (největší mezera)
 
-78 odkazů v textu ukazuje na obrázky, které nejsou ani v původním vaultu, ani nikde jinde:
+97 odkazů v textu ukazuje na obrázky, které nejsou ani v původním vaultu, ani nikde jinde:
 zůstala po nich jen prázdná místa. V textu jsou označené jako `*[chybějící obrázek: nazev.png]*`,
 takže se dají najít grepem:
 
 ```bash
-grep -rn "chybějící obrázek" plugin/skills/design-advisor/references/
+grep -rn "chybějící obrázek" ux-design/ web-dev/
 ```
 
 Nejvíc zasažené noty (obrázek tam nesl podstatnou část informace, takže text sám nedává smysl):
 
 | Nota | Chybí | Dopad |
 |---|---|---|
-| `typography/typography-zaklady-anatomie.md` | 11 | Anatomie písma se bez obrázku nevysvětlí. |
-| `layout/layout-theory.md` | 11 | Whitespace/margin/padding jsou popsané jako komentář k obrázkům. |
-| `layout/grids-a-golden-ratio.md` | 11 | Totéž, mřížky bez ukázky. |
-| `trendy/graficke-trendy.md` | 10 | Nota je skoro jen galerie, bez obrázků prakticky prázdná. |
-| `trendy/trendy-v-typografii.md` | 10 | Totéž. |
-| `typography/serif-a-sans-serif.md` | 7 | Srovnání řezů. |
-| `color/pravidlo-60-30-10.md`, `typography/prace-s-fontem.md`, `logo-foto/logo-design.md` | 4 každá | Ukázky poměrů a variant. |
-| `logo-foto/photography.md` | 3 | |
-| `ux-zaklady/content-strategy-ux-writing.md`, `typography/font-pairing.md` | 1 každá | |
+| `ux-design/typography/typography-zaklady-anatomie.md` | 11 | Anatomie písma se bez obrázku nevysvětlí. |
+| `ux-design/layout/layout-theory.md` | 11 | Whitespace/margin/padding jsou popsané jako komentář k obrázkům. |
+| `ux-design/layout/grids-a-golden-ratio.md` | 11 | Totéž, mřížky bez ukázky. |
+| `ux-design/trendy/graficke-trendy.md` | 10 | Nota je skoro jen galerie, bez obrázků prakticky prázdná. |
+| `ux-design/trendy/trendy-v-typografii.md` | 10 | Totéž. |
+| `ux-design/typography/serif-a-sans-serif.md` | 7 | Srovnání řezů. |
+| `ux-design/color/pravidlo-60-30-10.md`, `ux-design/typography/prace-s-fontem.md`, `ux-design/logo-foto/logo-design.md` | 4 každá | Ukázky poměrů a variant. |
+| `ux-design/logo-foto/photography.md` | 3 | |
+| `ux-design/ux-zaklady/content-strategy-ux-writing.md`, `ux-design/typography/font-pairing.md` | 1 každá | |
+| `web-dev/html-a-css.md` | 14 | Box model, selektory a layout jsou vysvětlené na screenshotech. |
+| `web-dev/inserting-css.md`, `web-dev/using-best-images.md` | 3 dohromady | |
 
 Možnosti nápravy, od nejlevnější: **(a)** obrázek nahradit textovým popisem toho, co ukazoval
 (u typografie často stačí), **(b)** vyrobit vlastní ukázku, **(c)** odkaz smazat a odstavec
@@ -45,11 +50,11 @@ přepsat, aby stál sám. U trendových not zvážit, jestli je vůbec držet.
 
 | Nota | Slov | Co dopsat |
 |---|---|---|
-| `zdroje/videa.md` | 30 | Doplnit seznam, nebo sloučit do `zdroje/kurzy.md`. |
-| `trendy/trendy-v-typografii.md` | 56 | Celé; závislé i na chybějících obrázcích. |
-| `ux-zaklady/ux-experience.md` | 57 | Definice UX a složky zážitku. Překrývá se s `general-ux-knowledge.md`, možná sloučit. |
-| `trendy/graficke-trendy.md` | 67 | Celé; viz výše. |
-| `typography/font-pairing.md` | 94 | Konkrétní ověřené páry + pravidlo, proč fungují. |
+| `ux-design/zdroje/videa.md` | 30 | Doplnit seznam, nebo sloučit do `zdroje/kurzy.md`. |
+| `ux-design/trendy/trendy-v-typografii.md` | 56 | Celé; závislé i na chybějících obrázcích. |
+| `ux-design/ux-zaklady/ux-experience.md` | 57 | Definice UX a složky zážitku. Překrývá se s `general-ux-knowledge.md`, možná sloučit. |
+| `ux-design/trendy/graficke-trendy.md` | 67 | Celé; viz výše. |
+| `ux-design/typography/font-pairing.md` | 94 | Konkrétní ověřené páry + pravidlo, proč fungují. |
 
 ## 3. Témata, která v bázi úplně chybí
 
@@ -75,7 +80,7 @@ Zatím není pokryté nic z tohohle, a přitom to v praxi potřebujeme:
 
 ## 4. Dluhy ve struktuře
 
-- **Duplicita destilátu.** `frontend-ux-rules.md` v references a `rules/frontend-ux.md` v rootu mají
+- **Duplicita destilátu.** `rules/frontend-ux.md` a `rules/frontend-ux-detailed.md` mají
   stejný obsah ve dvou souborech. Rozejdou se. Chce to jeden zdroj a druhý generovat, nebo jeden zrušit.
 - **Konflikt gridlines byl v bázi, ne jen ve skillu.** Znalostní báze Sheets doporučovala gridlines
   skrývat (Tufte, data-ink), ale domácí pravidlo je nechat viditelné. Skill to měl opravené, báze ne.

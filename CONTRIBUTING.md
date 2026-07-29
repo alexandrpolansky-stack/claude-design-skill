@@ -9,7 +9,7 @@ Tři vrstvy, každá má jinou roli. Když se to smíchá, skill se přestane vy
 | Vrstva | Soubor | Co tam patří | Co tam NEpatří |
 |---|---|---|---|
 | Skill | `skills/*/SKILL.md` | Kdy skill spustit, rozhodovací postup, tvrdá pravidla, ukazatele do references | Teorie, dlouhé výčty, historie rozhodnutí |
-| Znalost | `skills/*/references/**` | Hloubka, odůvodnění, příklady, obrázky | Interní cesty, tokeny, jména klientů |
+| Znalost | `neuro-design/ ux-design/ web-dev/ sheets/` | Hloubka, odůvodnění, příklady, obrázky | Interní cesty, tokeny, jména klientů |
 | Pravidlo | `rules/frontend-ux.md` | Imperativy pro moment psaní kódu | Cokoliv, co není akční u editoru |
 
 Praktické vodítko: když to Claude potřebuje vědět, **aby se rozhodl skill použít**, jde to do
@@ -17,11 +17,11 @@ SKILL.md. Když to potřebuje vědět, **až už skill používá**, jde to do r
 
 ## Přidání nové noty
 
-1. Ulož do tematické podsložky v `plugin/skills/design-advisor/references/`.
+1. Ulož do tematické podsložky v `ux-design/`.
    Nová podsložka jen když tam budou aspoň dvě noty.
 2. **Jméno souboru:** ASCII kebab-case, bez diakritiky a mezer (`font-pairing.md`).
    Obsah česky, jméno souboru anglicky. Diakritika v cestách rozbíjí odkazy na jiných OS.
-3. **Zapiš do [INDEX.md](plugin/skills/design-advisor/references/INDEX.md)** jednou řádkou:
+3. **Zapiš do [_index.md](_index.md)** jednou řádkou:
    odkaz + popis do jedné věty, čím ta nota je užitečná při stavbě. Nota, která není v indexu,
    se nenajde.
 4. Když je nota zatím kostra, označ ji v indexu `**[stub]**` a přidej do [STATUS.md](STATUS.md).
@@ -32,7 +32,7 @@ SKILL.md. Když to potřebuje vědět, **až už skill používá**, jde to do r
   (`layout/layout-theory.md` relativně ke složce noty).
   Žádné Obsidian wikilinky `[[...]]` - mimo Obsidian se nerozkliknou.
 - **Obrázky** do `references/_assets/`, jméno taky ASCII kebab-case.
-  Mapování na původní jména z vaultu drží [`_assets/README.md`](plugin/skills/design-advisor/references/_assets/README.md).
+  Mapování na původní jména z vaultu drží [`ux-design/_assets/README.md`](ux-design/_assets/README.md).
 - Neodkazuj na obrázek, který nenahráváš. Když ukázka chybí, radši popiš slovy, co měla ukázat.
 
 ## Co do repa nesmí
