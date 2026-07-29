@@ -10,7 +10,7 @@ Značka **[stub]** = nota je zatím kostra, hodí se doplnit. Stav a mezery: [ST
 | Sekce | Not | O čem |
 |---|---|---|
 | [neuro-design/](neuro-design/) | 1 | Kognitivní ergonomie, eye-tracking, algoritmy vizuální váhy. Nejhutnější dokument v knihovně. |
-| [ux-design/](ux-design/) | 48 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
+| [ux-design/](ux-design/) | 50 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
 | [web-dev/](web-dev/) | 4 | HTML/CSS základy, vkládání CSS, stylizace textu, práce s obrázky. |
 | [sheets/](sheets/) | 3 | Google Sheets reporty: rozhodovací rámec, brand tokeny, Apps Script vrstva. |
 
@@ -55,6 +55,8 @@ proč zrovna tahle hodnota, ne jiná.
 - [Typografie](ux-design/pravidla/typografie.md) – délka řádku 45-75 znaků, WCAG text spacing a resize 200 %, škála jako nástroj konzistence, proč Miller/Cowan neplatí na hierarchii nadpisů.
 - [Formuláře a stavy](ux-design/pravidla/formulare-a-stavy.md) – label vs. placeholder, kdy validovat, text chybové hlášky, multi-step a Cowanovo 3-5, prázdné a chybové stavy, proč skeleton screen nemá doloženou oporu.
 - [Anti-slop](ux-design/pravidla/anti-slop.md) – markery generického vzhledu s třídou důkazu, včetně naměřeného nálezu, že bezokrajové flat UI stojí uživatele o 22 % víc času (NN/g, Moran 2017).
+- [Vizuální craft](ux-design/pravidla/vizualni-craft.md) – vrstva art direction, kterou zbytek `pravidla/` neřeší: kdy pojmenovat klasický vs. expresivní pól, proč zdrženlivost není nulová osobnost, jak rozvíjet craft úsudek a párovat typografické hlasy (Hobday, Kowalski, + 3 živě ověřené Awwwards příklady, třída C).
+- [Portfolio a work grid](ux-design/pravidla/portfolio-a-work-grid.md) – hierarchie dlaždic v portfolio gridu (vlajková dlaždice, smíšený obsah) a barva celé sekce jako wayfinding, ze 3 živě ověřených Awwwards nominací (třída C).
 
 ## Kontext a sektor (proč web pro úřad nevypadá jako web pro zubaře)
 

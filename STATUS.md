@@ -7,12 +7,12 @@ kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i t
 
 | | |
 |---|---|
-| Not v knihovně celkem | 56 |
+| Not v knihovně celkem | 58 |
 | `neuro-design/` | 1 (master dokument, 5 modulů) |
-| `ux-design/` | 48 (31 původních + 9 v `pravidla/` + 8 v `kontext/`) |
+| `ux-design/` | 50 (31 původních + 11 v `pravidla/` + 8 v `kontext/`) |
 | `web-dev/` | 4 |
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
-| Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~115 v 9 notách |
+| Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~131 v 11 notách |
 | Sektorových pravidel (`ux-design/kontext/`) | ~66 v 8 notách |
 | Obrázků v repu | 32 |
 | Odkazů na obrázky, které ve zdroji nejsou | 97 (78 ux-design + 17 web-dev + 2 ostatní) |
@@ -107,6 +107,22 @@ přepsat, aby stál sám. U trendových not zvážit, jestli je vůbec držet.
 
 Hotovo od fáze 2 (29. 7. 2026), zachováno jako historický záznam: Komponenty a stavy (tlačítka),
 Formuláře, Prázdné a chybové stavy/loading, Motion. Viz `ux-design/pravidla/`.
+
+Hotovo dodatečně (29. 7. 2026, po testu na dvou artefaktech): **Vizuální craft/art direction**
+(klasická vs. expresivní estetika, proč zdrženlivost není nulová osobnost, rozvoj vkusu).
+Diagnostikováno jako mezera po testu (viz `pravidla/tlacitka.md` sourozenecké noty pro provedení,
+tahle nota řeší směr). Viz `ux-design/pravidla/vizualni-craft.md`. Zdroje jen dvě přečtené eseje
+(Hobday, Kowalski) – Rauno Freiberg, Locomotive/Active Theory, Paco Coursey a Jakub Antalík
+zůstávají nepřečtené, viz sekce "Co v téhle notě chybí" přímo v notě.
+
+Rozšířeno stejný den (29. 7. 2026 večer): živá analýza 3 nezávisle nominovaných Awwwards webů
+(`warmnfuzzy.tv`, `forms.world`, `davidspaeth.com`) přes nově připojený Playwright MCP —
+skutečné screenshoty + CSS forenzní analýza, ne popis z paměti. Přidalo pravidlo o typografickém
+párování hlasů do `vizualni-craft.md` a novou notu `ux-design/pravidla/portfolio-a-work-grid.md`
+(vlajková dlaždice v portfolio gridu, barva celé sekce jako wayfinding). Obojí třída C, n=3,
+zdroj je vlastní pozorování, ne publikovaná studie – viz sekce "Tři nezávislé příklady" ve
+`vizualni-craft.md`. Metodologický nález k zapamatování: čistě CSS analýza bez renderu minula
+reálný detail (zaoblení tlačítek na forms.world), render (screenshot) je nutný, zdroj nestačí.
 
 Zatím není pokryté nic z tohohle, a přitom to v praxi potřebujeme:
 
