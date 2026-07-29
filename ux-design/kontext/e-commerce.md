@@ -49,6 +49,14 @@ ne v 2.1, což je častý zdroj nedorozumění. Verbatim text EN 301 549 clause 
 primárně (etsi.org vrací 403), substance je z W3C a sekundárních zdrojů.
 **KDY NEPLATÍ:** 2.5.8 má pět výjimek (spacing, equivalent, inline, user agent, essential), takže
 inline odkaz uvnitř odstavce menší než 24 px porušení není. AAA prahy (7:1, 44×44 px) povinné nejsou.
+**Důležitější výjimka, kterou tahle nota dřív nezmiňovala:** EAA čl. 4 odst. 5 vyjímá mikropodniky
+poskytující služby (méně než 10 osob a obrat nebo bilance do 2 mil. EUR) z požadavků úplně,
+s odůvodněním v recitálu 70. "Každý e-shop dostupný v EU" tedy neplatí bez výjimky — malý
+jednotlivý e-shop provozovaný mikropodnikem je z EAA vyjmutý, i když WCAG 2.1 AA zůstává správný
+default. Ověřeno proti EUR-Lex a proti českému provedení (zákon č. 424/2023 Sb., § 2 odst. 3
+písm. a)). Detail a přesná citace v [gastro notě](gastro.md), sekci o EAA — tam se na tuhle
+výjimku narazilo první, protože většina jednotlivých restaurací/barů/kaváren je z EAA vyjmutá.
+Řetězec, franšíza nad prahem a větší e-shop v režimu naplno zůstávají.
 
 ### Nedůvěra je výchozí stav, důkazy identity dej do zorného pole
 

@@ -159,6 +159,95 @@ chování, a **fine dining jako samostatný segment v datech není** ("full-serv
 [luxury pravidlo o prodejním tlaku](luxury.md): je to byznys rozhodnutí, ne vizuální. Kdo cenu
 skryje, ať ví, že platí kritériem, které je jinak na prvním místě.
 
+### Skrytí ceny nezvedne vnímanou hodnotu, spíš ji sníží
+
+**PRAVIDLO:** Neobhajuj skrytí ceny argumentem "budí to dojem exkluzivity". Když positioning
+potlačení ceny opravdu vyžaduje (viz pravidlo výše a [luxury.md](luxury.md)), počítej s tím, že
+to sníží vnímanou kvalitu a nákupní záměr, ne že je zvýší.
+**KDY PLATÍ:** Kdykoliv se zvažuje menu bez cen, jako protiváha k předchozímu pravidlu.
+**PROČ:** Ve čtyřech online experimentech (mock menu kavárny) byla varianta se skrytou cenou
+hodnocena jako vnímaně dražší, ale zároveň jako nižší kvalitou, nižší hodnotou a nižším nákupním
+záměrem než varianta s cenou viditelnou. Skrytí ceny tedy není monotónně pozitivní positioning
+tah, má reálnou cenu ve vnímání.
+**TŘÍDA:** A pro směr efektu ve vnímání a záměru (hypotetický online scénář), NE pro skutečnou
+útratu, kterou tahle studie neměří.
+**ZDROJ:** Kim, Jhang, Kim, Chen (2021), International Journal of Hospitality Management 92,
+102708, DOI 10.1016/j.ijhm.2020.102708, čtyři experimenty (N=166/191/360/107), plný text čten.
+Limit uvedený autory: jen kategorie káva, "experimental materials were too simple", ve třech
+ze čtyř experimentů jen symbol $ místo reálných cen.
+**KDY NEPLATÍ:** Degustační menu s jednou cenou za celý zážitek je jiná situace než úplná absence
+ceny a tahle studie ji netestovala zvlášť. Destinační konec osy pořád může skrytí zvolit vědomě,
+jen ne s očekáváním, že to zvýší vnímanou kvalitu.
+
+### Odstranění dolarového/korunového symbolu samo o sobě útratu nezvedne
+
+**PRAVIDLO:** Nepřebírej tvrzení "odstraň symbol měny z menu a lidé utratí o cca 8 % víc" jako
+měřený efekt symbolu. Když chceš cenu prezentovat bez odkazu na peníze, věz, že jde o odstranění
+JAKÉHOKOLIV peněžního odkazu (i slova "koruny"), ne konkrétně znaku, a čekej efekt jen v části
+případů.
+**KDY PLATÍ:** Diskuse o formátu ceny v menu, kdykoliv se cituje "Cornell studie" nebo podobné
+číslo.
+**PROČ:** Jediná studie, ze které tohle číslo pochází, testovala tři formáty (`$XX.XX`, `XX.`,
+slovy "twenty dollars") v jedné školní upscale-casual restauraci při obědě. Signifikantní byl jen
+formát BEZ jakéhokoli peněžního odkazu (`XX.`, +3,70 USD na stůl, p<0,05); samotný `$` ani
+vypsaná "dollars" se od sebe nelišily. Celkový efekt formátu na účet nebyl signifikantní
+(p>0,144). Populární "8 %" je procento na osobu, které autoři sami označují jako mimo jejich
+statistické testy, a "5,55 USD" je součet absolutních odchylek od průměru mezi třemi formáty,
+ne rozdíl dvou skupin.
+**TŘÍDA:** A pro úzké tvrzení výše, C/NENALEZENO pro "odstraň $ a lidé utratí o 8 % víc" — to
+je zjednodušení, které neodpovídá vlastním datům studie.
+**ZDROJ:** Yang, Kimes, Sessarego (2009), International Journal of Hospitality Management 28(1),
+157-160, DOI 10.1016/j.ijhm.2008.06.012, field experiment, N=201 stolů, plný text a Cornell
+Hospitality Report čteny. Servery nebyly zaslepené (rozlišení menu barvou gumičky), jedna
+restaurace, jen obědy. Replikace nikdy neproběhla (prohledáno 40 citujících prací).
+**KDY NEPLATÍ:** Fast casual, quick service a večerní provoz autoři sami netestovali a explicitně
+píšou, že tam efekt může být jiný. Netvrď tohle pravidlo mimo kontext oběda v upscale-casual
+segmentu.
+
+### Zaokrouhlená cena vs. .99: malý efekt na nákup, nulový na vnímanou kvalitu
+
+**PRAVIDLO:** Nepoužívej ".99 ceny zvyšují prodej" ani "zaokrouhlené ceny signalizují kvalitu"
+jako obecně platná tvrzení. Když v menu použiješ jednu nezaokrouhlenou cenu mezi jinak
+zaokrouhlenými, čekej malý posun k té položce. Neslibuj z toho zvýšení vnímané kvality ani
+plošný nárůst útraty.
+**KDY PLATÍ:** Volba cenového zakončení (.99 vs. celá čísla) v menu.
+**PROČ:** Preregistrovaná meta-analýza 69 studií (N=40 541) našla efekt just-below cen na nákupní
+rozhodnutí malý (g=0,13) a na vnímanou kvalitu produktu **nulový a nesignifikantní** (g=0,00,
+p=0,96). Jediné přímé gastro měření (pizzerie, 1271 zákazníků) ukázalo, že efekt je relativní
+kontrast: jedna položka s koncovkou 9 mezi zaokrouhlenými zvýšila svůj podíl volby, ale když byly
+všechny položky se stejnou koncovkou (samé 9, nebo samé 0), rozdíl zmizel.
+**TŘÍDA:** A pro oba nálezy (meta-analýza i gastro field study).
+**ZDROJ:** Troll, Frankenbach, Friese, Loschelder (2024), Journal of Consumer Psychology 34(2),
+299-325, DOI 10.1002/jcpy.1353, preregistrovaná meta-analýza, abstrakt ověřen z Crossref. Guéguen,
+Jacob, Legoherel, N'Gobo (2009), IJHM 28(1), 170-172, field study v restauraci, abstrakt ověřen
+(HAL deposit, plný text nezískán).
+**KDY NEPLATÍ:** Konvence "fine dining zaokrouhlené / QSR na devítku" je publikovaně zdokumentovaná
+jako zvyklost (Schindler, Parsa, Naipaul 2011, přesvědčení manažerů, ne měřené chování hostů) a jako
+volba konzistence s brandem/segmentem zůstává legitimní, jen ji neopírej o "vyšší vnímanou kvalitu",
+kterou meta-analýza vyvrací.
+
+### Ceník na webu není zákonná povinnost, ale "jen web" nestačí v provozovně
+
+**PRAVIDLO:** Nepřebírej tvrzení "restaurace musí mít ceník na webu" jako zákonnou povinnost.
+Zákon vyžaduje informovat hosta o ceně před koupí (typicky ceníkem v provozovně), ne konkrétně
+na webu. Zároveň neodkazuj z lístku v provozovně JEN na ceník na webu jako náhradu za viditelnou
+cenu na místě.
+**KDY PLATÍ:** Český gastro klient, kdykoliv se řeší, kde a jak musí být cena vidět.
+**PROČ:** Zákon č. 526/1990 Sb., o cenách, § 13 odst. 2 vyžaduje informovat o ceně před jednáním
+o koupi, s výčtem způsobů (označení cenou, ceník na viditelném místě, jiný přiměřený způsob).
+Web mezi nimi není vyloučen, ale NSS v rozsudku 7 As 15/2016-23 řekl přesný opak toho, co
+by web-only řešení potřebovalo: odkaz z jídelního lístku v provozovně na ceník JEN na webu
+nestačí jako "vhodné zpřístupnění", cena musí být viditelně přítomná přímo v provozovně.
+**TŘÍDA:** B (regulace a judikatura).
+**ZDROJ:** Zákon č. 526/1990 Sb., § 13 odst. 2 a 3, ověřeno primárně. NSS 7 As 15/2016-23
+(10. 3. 2016), právní věta ověřena. Zákon č. 634/1992 Sb. o ochraně spotřebitele, § 12, jen
+odkazuje na cenový zákon, žádný vlastní mechanismus nepředepisuje; **§ 12b neexistuje** (mylná
+domněnka, kterou vyvrací přímé čtení platného znění).
+**KDY NEPLATÍ:** Rozsudek vykládá znění § 12 odst. 1 ZOS účinné do 27. 12. 2015, dnešní znění je
+jednověté a tuhle formulaci už neobsahuje — přenos na dnešní právní stav je argumentace analogií,
+ne přímá citace. A EU směrnice o cenách (98/6/ES) na SLUŽBY vůbec nedopadá, jen na výrobky, takže
+z ní se povinnost ceníku restaurace nedá odvodit vůbec.
+
 ### Praktické údaje nejsou patička
 
 **PRAVIDLO:** Adresa, otevírací doba a telefon patří na místo, kde je host najde bez hledání, a to
@@ -523,6 +612,10 @@ konvence, ale **kolují i citace studií, které vůbec neexistují**:
 | "80 % lidí jde na lokální podnik přímo přes vyhledávač nebo mapy" | měřeno na úkolu najít pobočku **vlastní banky**, ne restauraci, a NN/g pro ten podnález neuvádí N |
 | "77 % hostů navštíví web před jídlem, 68 % web odradil" | marketingový průzkum agentury, která prodává gastro marketing, a **filtr vzorku obsahuje jen lidi, kteří web navštívit chtějí**. Sampling bias zabudovaný v definici vzorku |
 | Prevalence PDF nebo obrázkových menu na gastro webech | žádná studie ani vendor report to nekvantifikuje. NENALEZENO |
+| "Goliath Consulting 2024, 47 restaurací, odstranění $ a desetinné čárky zvedlo účet o 7,2 %" | **NEPODLOŽENO.** Koluje na marketingových blozích bez jediného odkazu, primární zdroj nenalezen |
+| "Cornell: zobrazení dražších položek jako první zvedne útratu o 8,2 %" | **NEPODLOŽENO.** Sekundární shrnutí bez dohledatelného primárního zdroje, koluje na stránkách prodávajících digital signage |
+| Zarovnání ceny vpravo s tečkovanou linkou snižuje útratu (leader dots) | zdroj je jedna trade publikace (Restaurant Resource Group, 2005) bez citace a bez dat. Nikdy nezměřeno, ani touto ani žádnou jinou studií |
+| "Restaurace musí mít ceník na webu" (zákonná povinnost) | **NEPŘESNÉ.** Žádný zákon ČR ani EU tohle nevyžaduje. NSS naopak řekl, že ceník JEN na webu nestačí jako náhrada ceny viditelné v provozovně |
 | Měření vztahu mezi cenovou hladinou podniku a přítomností fotek v menu | NENALEZENO |
 | Kontrolované srovnání ambientní proti produktové fotografii jídla | NENALEZENO |
 | Restauračně specifická usability studie od NN/g | NEEXISTUJE. Jediný restaurační článek je metafora bez dat |
@@ -530,10 +623,13 @@ konvence, ale **kolují i citace studií, které vůbec neexistují**:
 | Ověřitelný zdroj pro "gastro vyhledávání je převážně mobilní" | NENALEZENO. Všechna kolující čísla vedou na vendor blogy nebo na studii z roku 2012 zaplacenou prodejci mobilní reklamy |
 
 **Zvláštní varování k celé "food and menu psychology" literatuře.** Velká část populárního obsahu
-v téhle oblasti stojí na Cornell Food and Brand Lab a jeho vedoucím, u kterého Cornell shledal
-vědecké pochybení a který má 18 stažených článků. Žádná studie citovaná v téhle notě na něm nestojí,
-ověřeno. Ale kdo notu rozšiřuje, ať u každého "menu psychology" nálezu zkontroluje autora
-a retrakce. Konkrétní stažený článek o popisných názvech jídel se dohledat nepodařilo, takže tvrzení
+v téhle oblasti stojí na Cornell Food and Brand Lab a jeho vedoucím Brianu Wansinkovi, u kterého
+Cornell formálně potvrdil vědecké pochybení ("misreporting of research data, problematic
+statistical techniques, failure to properly document and preserve research results, and
+inappropriate authorship", Retraction Watch, 20. 9. 2018) a který měl k tomu datu 13+ stažených
+článků. Žádná studie citovaná v téhle notě na něm nestojí, ověřeno. Ale kdo notu rozšiřuje, ať
+u každého "menu psychology" nálezu zkontroluje autora a retrakce a nikdy neopírá tvrzení výhradně
+o Wansinka. Konkrétní stažený článek o popisných názvech jídel se dohledat nepodařilo, takže tvrzení
 "popisný název jídla zvedne prodej" **není** označené jako stažené, jen jako nedohledané v primárním
 textu.
 
@@ -551,19 +647,23 @@ Nepřenášej sem ani sektorová čísla o kredibilitě z [financí](finance.md)
 Tohle se v průzkumu (7/2026) otevřelo, ale **nedoověřilo do stavu, kdy z toho jde napsat pravidlo**.
 Záměrně tu není pravidlo nastojato, jen zápis, kde se má příště začít.
 
-- **Formát ceny v menu ($ symbol, zaokrouhlení, .99).** Existuje relevantní studie: Yang, Kimes,
-  Sessarego (2009), International Journal of Hospitality Management 28(1), 157-160, obědové účty
-  v St. Andrew's Café (Culinary Institute of America), tři formáty ($00.00, 00, slovy). Podle
-  abstraktu a sekundárních zdrojů byly monetární signály ($ nebo slovo "dollars") spojené s **nižšími**
-  výdaji než čistě číselný formát, mezi číselným a slovním rozdíl nebyl, a prezentace ceny celkově
-  **nebyla signifikantním prediktorem** v tomhle upscale prostředí. To jde proti populární radě
-  "odstraň dolarový symbol a lidé utratí víc". **Plný text NEOVĚŘEN**, N a velikosti efektu neznámé,
-  pravidlo se z toho zatím psát nemá. Nedohledal se ani žádný gastro-specifický výzkum k zakončení
-  ceny na .99 versus zaokrouhlení, ani k rozdílu mezi fine dining a fast casual v cenové prezentaci.
-- **Kotvení ceny v menu.** Primární měření NENALEZENO, viz tabulka výše a fabrikovaná citace.
-- **Zarovnání ceny a leader dots** (tvrzení, že cena na pravém okraji s tečkovanou linkou vede
-  k porovnávání podle ceny a nižší útratě). Nedohledáno, pravděpodobně konzultantská rada.
-- **Menu bez cen a degustační menu s jednou cenou.** Nehledáno do hloubky.
+Formát ceny ($ symbol, .99 vs. zaokrouhlení) i zarovnání/leader dots jsou od 29. 7. 2026 dořešené
+a mají vlastní pravidla výše (viz "Odstranění dolarového/korunového symbolu...", "Zaokrouhlená cena
+vs. .99..." a řádky v tabulce "Co v tomhle sektoru NENÍ"). Zbývá:
+
+- **Naipaul & Parsa (2001), CHRAQ 42(1), 26-37.** Jediná gastro studie o vnímání koncovek podle
+  segmentu (fine dining vs. quick-service). Není open access, metodika a N NEOVĚŘENY, citováno
+  jen přes sekundární popis v jiné peer-reviewed práci. Kdo notu rozšiřuje, ať zkusí sehnat plný
+  text přes knihovnu/ILL.
+- **Parsa & Njite (2004), Journal of Hospitality & Tourism Research 28(3), 263-280.** Jediná gastro
+  studie manipulující POZICÍ ceny (vlevo vs. vpravo) v menu. Jen abstrakt ověřen, plný text ne.
+- **Ip & Chark (2023) meta-analýza designu menu** (IJHM 108, 103353) a jejich p-curve analýza
+  (IJHM 108, 103378): bibliografie ověřená přes Crossref, ale **abstrakty se nepodařilo získat
+  žádnou cestou** (Elsevier 403, žádná OA kopie). Sekundárně reportováno: celkový effect size 0,39,
+  velký na fyziologické míry, marginální na skutečný nákup — pokud se potvrdí, byla by to
+  nejlepší dostupná kalibrace celé téhle noty. Prioritní k dohledání.
+- **Menu bez cen a degustační menu s jednou cenou** nad rámec pravidla "Skrytí ceny nezvedne
+  vnímanou hodnotu" výše. Nehledáno do hloubky.
 - **Prevalence PDF a obrázkových menu na českých gastro webech.** Nikdo to nemeasuruje. Levný
   vlastní krok: audit vzorku 30 až 50 pražských podniků, zapsat datum a metodu, uložit jako
   pozorování třídy C. Stejná metoda jako vizuální audit v [luxury.md](luxury.md).

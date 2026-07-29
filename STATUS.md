@@ -13,7 +13,7 @@ kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i t
 | `web-dev/` | 4 |
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
 | Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~131 v 11 notách |
-| Sektorových pravidel (`ux-design/kontext/`) | ~66 v 8 notách |
+| Sektorových pravidel (`ux-design/kontext/`) | ~87 v 9 notách |
 | Obrázků v repu | 32 |
 | Odkazů na obrázky, které ve zdroji nejsou | 97 (78 ux-design + 17 web-dev + 2 ostatní) |
 | Not pod 120 slov (kostra) | 6 |
@@ -128,17 +128,29 @@ reálný detail (zaoblení tlačítek na forms.world), render (screenshot) je nu
 
 Nový `ux-design/kontext/gastro.md`, jedna nota s osou destinace ↔ sousedská utilita (ne dvě
 noty — regulace je na celé ose stejná, duplikace by časem rozjela, viz precedens gridlines).
-17 pravidel, evidenčně nejhutnější nota v `kontext/`: regulace ověřená proti primárním textům
-(nařízení 1169/2011 na alergeny, EAA mikropodnik-výjimka jde PROTI obecné formulaci v
-`e-commerce.md` — warning tam patří, zatím nedoplněno), menu-design výzkum (Yang 2012 eye-tracking
-vyvrací zlatý trojúhelník, Ip & Chark 2023 metaanalýza dává diskontní faktor na laboratorní
-nálezy). Během researche odhaleny a zdokumentovány **dvě fabrikované citace** kolující v SEO
-obsahu (Parsa & Njite 2014, Yue/Tong/Prinyawiwatkul 2019) a jedno chybné přiřazení (Di Geronimo
-CHI 2020 dark patterns, korpus neobsahoval food/delivery kategorii).
+21 pravidel (rozšířeno z 17, viz níže), evidenčně nejhutnější nota v `kontext/`: regulace ověřená
+proti primárním textům (nařízení 1169/2011 na alergeny, EAA mikropodnik-výjimka), menu-design
+výzkum (Yang 2012 eye-tracking vyvrací zlatý trojúhelník, Ip & Chark 2023 metaanalýza dává
+diskontní faktor na laboratorní nálezy). Během researche odhaleny a zdokumentovány **dvě
+fabrikované citace** kolující v SEO obsahu (Parsa & Njite 2014, Yue/Tong/Prinyawiwatkul 2019)
+a jedno chybné přiřazení (Di Geronimo CHI 2020 dark patterns, korpus neobsahoval food/delivery
+kategorii). **EAA mikropodnik-výjimka warning doplněn i do `e-commerce.md`**, křížový odkaz oběma
+směry.
 
-Otevřeno k dohledání příště (sekce "Neověřené a k dohledání" v notě): formát ceny v menu ($ symbol
-vs. zaokrouhlení, Yang/Kimes/Sessarego 2009 nedočtený plný text), verbatim znění zákona 40/1995 Sb.,
-prevalence PDF/obrázkových menu na českých webech (navržen levný vlastní audit 30-50 podniků).
+**Rozšíření (29. 7. 2026, po usage limit restartu):** doplňkový sub-agent dokončil research na
+formát ceny v menu, který zbyl rozpracovaný. Čtyři nová pravidla: skrytí ceny snižuje vnímanou
+kvalitu/hodnotu (Kim et al. 2021, proti intuici), odstranění $ symbolu samo o sobě útratu
+nezvedne (Yang/Kimes/Sessarego 2009 přečten plný text — populární "+8 %" je zavádějící
+zjednodušení, reálný signifikantní efekt +3,70 USD nese JAKÝKOLIV peněžní odkaz, ne symbol $),
+zaokrouhlení vs. .99 má malý efekt na nákup a nulový na vnímanou kvalitu (Troll et al. 2024
+preregistrovaná metaanalýza, g=0,00 na kvalitu), ceník na webu není zákonná povinnost ale NSS
+judikát řekl, že "jen web" nestačí v provozovně. Plus tabulka "Co NENÍ" rozšířená o další dvě
+nepodložená kolující tvrzení a warning o Wansinkových retrakcích.
+
+Zbývá k dohledání (sekce "Neověřené a k dohledání" v notě): Naipaul & Parsa (2001) a Parsa & Njite
+(2004) metodika (paywall), Ip & Chark (2023) abstrakt (Elsevier 403, bibliografie ověřená),
+verbatim znění zákona 40/1995 Sb. o reklamě na alkohol, prevalence PDF/obrázkových menu na
+českých webech (navržen levný vlastní audit 30-50 podniků).
 
 Zatím není pokryté nic z tohohle, a přitom to v praxi potřebujeme:
 
