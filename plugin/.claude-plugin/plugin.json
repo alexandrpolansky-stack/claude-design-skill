@@ -1,0 +1,19 @@
+{
+  "name": "design-skill",
+  "version": "0.1.0",
+  "description": "Designová znalost jako skilly pro Claude Code: design-advisor (UX/UI pro weby, komponenty, tlačítka, propagaci) a sheets-design (Google Sheets reporty).",
+  "keywords": [
+    "claude-code",
+    "skills",
+    "design",
+    "ux",
+    "ui",
+    "web",
+    "components",
+    "typography",
+    "color",
+    "layout",
+    "google-sheets",
+    "dataviz"
+  ]
+}

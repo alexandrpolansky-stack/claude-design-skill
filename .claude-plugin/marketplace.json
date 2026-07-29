@@ -1,0 +1,29 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "design-skill",
+  "metadata": {
+    "description": "Designová znalost pro Claude Code: web, UI komponenty, tlačítka, propagační materiály, reporty a tabulky."
+  },
+  "owner": {
+    "name": "Internal IT"
+  },
+  "plugins": [
+    {
+      "name": "design-skill",
+      "description": "Dva skilly: design-advisor (UX/UI pro weby, komponenty, tlačítka, propagaci, cokoliv user-facing) a sheets-design (Google Sheets reporty).",
+      "version": "0.1.0",
+      "source": "./plugin",
+      "category": "design",
+      "tags": [
+        "design",
+        "ux",
+        "ui",
+        "web",
+        "components",
+        "sheets",
+        "dataviz",
+        "skills"
+      ]
+    }
+  ]
+}
