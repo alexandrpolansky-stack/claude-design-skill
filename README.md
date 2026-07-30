@@ -3,14 +3,15 @@
 Knihovna designové znalosti, kterou umí Claude použít. Second-brain styl: znalost je rozdělená do
 tematických sekcí v rootu, `skills/` je jen tenká vrstva, která Claudeovi říká, kdy do knihovny sáhnout.
 
-**39 not, ~31 000 slov.** Vstupní bod do celé knihovny: [`_index.md`](_index.md).
+**86 not, ~134 000 slov.** Vstupní bod do celé knihovny: [`_index.md`](_index.md).
 
 ## Knihovna
 
 | Sekce | Not | O čem |
 |---|---|---|
 | [neuro-design/](neuro-design/) | 1 | Kognitivní ergonomie, eye-tracking, algoritmy vizuální váhy, fail-safe protokoly. Nejhutnější dokument. |
-| [ux-design/](ux-design/) | 31 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém. |
+| [ux-design/](ux-design/) | 51 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla s třídou důkazu, kontext podle sektoru. |
+| [enterprise-ui/](enterprise-ui/) | 27 | Produktové aplikace: volba komponenty podle úkolu, vzory, komponenty, klávesnice a čtečky. Principy z IBM Carbonu, bez jeho vizuálu. |
 | [web-dev/](web-dev/) | 4 | HTML/CSS základy, vkládání CSS, stylizace textu, práce s obrázky. |
 | [sheets/](sheets/) | 3 | Google Sheets reporty: rozhodovací rámec, brand tokeny, Apps Script vrstva. |
 
@@ -64,8 +65,9 @@ cestu jsem neodzkoušel naostro. Když nezabere, jeď přes klonování výše.
 ```
 _index.md              # MOC, vstupní bod do knihovny
 neuro-design/          # kognitivní ergonomie
-ux-design/             # UX zákony, barvy, typografie, layout, proces
+ux-design/             # UX zákony, barvy, typografie, layout, proces, pravidla, sektory
   _assets/             # obrázky k notám
+enterprise-ui/         # produktové aplikace: základy, vzory, komponenty
 web-dev/               # HTML/CSS
 sheets/                # Google Sheets reporty
 skills/
@@ -98,8 +100,13 @@ Knihovna je nerovná. Šest not jsou kostry a **97 odkazů na obrázky** ukazuje
 v původním vaultu už nejsou (v textu označené `*[chybějící obrázek: ...]*`). Nejvíc to bolí
 u vizuálních témat, kde nota byla hlavně komentář k obrázkům.
 
-Úplně nepokryté a přitom potřebné: přístupnost do hloubky, komponenty a jejich stavy, landing pages,
-formuláře, prázdné a chybové stavy, responzivita, motion. Konkrétní seznam a priority: [STATUS.md](STATUS.md).
+Hotové od původního snímku: evidence-based pravidla s třídou důkazu a sektorový kontext
+(`ux-design/pravidla/`, `ux-design/kontext/`), pak přístupnost do hloubky, komponenty a jejich stavy,
+formuláře, prázdné a chybové stavy, breakpointy (`enterprise-ui/`).
+
+Pořád nepokryté a přitom potřebné: landing pages jako struktura stránky, dataviz mimo Sheets, design
+tokeny jako proces, mobil jako layout strategie (palec zóna, gesta), brand tokeny mimo Sheets.
+Konkrétní seznam a priority: [STATUS.md](STATUS.md).
 
 ## Přidáváš do knihovny?
 

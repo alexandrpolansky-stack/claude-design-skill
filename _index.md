@@ -11,6 +11,7 @@ Značka **[stub]** = nota je zatím kostra, hodí se doplnit. Stav a mezery: [ST
 |---|---|---|
 | [neuro-design/](neuro-design/) | 1 | Kognitivní ergonomie, eye-tracking, algoritmy vizuální váhy. Nejhutnější dokument v knihovně. |
 | [ux-design/](ux-design/) | 51 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
+| [enterprise-ui/](enterprise-ui/) | 27 | Produktové aplikace: volba komponenty podle úkolu, vzory (prázdné stavy, notifikace, filtrování), komponenty (tabulky, formulářové prvky, taby), klávesnice a čtečky. Principy z IBM Carbonu, bez jeho vizuálu. |
 | [web-dev/](web-dev/) | 4 | HTML/CSS základy, vkládání CSS, stylizace textu, práce s obrázky. |
 | [sheets/](sheets/) | 3 | Google Sheets reporty: rozhodovací rámec, brand tokeny, Apps Script vrstva. |
 
@@ -72,6 +73,50 @@ pro kterého stavíš.
 - [Děti](ux-design/kontext/deti.md) – tři věková pásma, velikosti písma z testování s dětmi, Children's Code jako privacy rámec.
 - [Senioři](ux-design/kontext/seniori.md) – nejtvrdší čísla v knihovně (43 % pomalejší, 45 % problém s taby), řešením je WCAG AA, ne oddělený senior mód.
 - [Gastro](ux-design/kontext/gastro.md) – restaurace/bar/kavárna na ose destinace ↔ sousedská utilita; alergenová a EAA regulace ověřená proti primárním textům, menu-design výzkum (Yang 2012 vyvrací zlatý trojúhelník, Ip & Chark 2023 diskontuje laboratorní nálezy na třetinu), dvě fabrikované citace odhalené a zdokumentované.
+
+## Enterprise UI (produktové aplikace: dashboardy, CRUD, administrace)
+
+Odvozeno z dokumentace IBM Carbon Design System (lokální kopie, čteno 30. 7. 2026). Přebrané jsou
+**principy, vzory a rozhodovací pravidla**, ne vizuál: žádné Carbon tokeny, hex hodnoty, IBM Plex,
+elevation škály ani ikonová knihovna. Většina pravidel je třída **B** (publikovaná konvence design
+systému), citované WCAG a peer-reviewed studie jsou **A**, vlastní syntéza je označená **C**.
+Kde se Carbon rozchází s `ux-design/pravidla/`, vyhrává knihovna a konflikt je popsaný v místě.
+
+### Základy
+
+- [Vrstvy enterprise UI](enterprise-ui/zaklady/vrstvy-a-vzory.md) - vstupní nota sekce: tři vrstvy (prvky, komponenty, vzory), v jaké vrstvě hledat jakou odpověď, a explicitní seznam toho, co z Carbonu záměrně nepřebíráme a proč.
+- [Volba komponenty](enterprise-ui/zaklady/volba-komponenty.md) - rozhodovací tabulky úkol → prvek. Otevři, když váháš mezi dvěma podobnými komponentami; každý řádek říká, čím se liší.
+- [Mřížka, breakpointy a chování panelů](enterprise-ui/zaklady/2x-grid-a-breakpointy.md) - 2x grid, pět breakpointů, fluid vs. fixed, gutter módy, poměry stran, chování plovoucích a fixních panelů.
+- [UX copy v produktu](enterprise-ui/zaklady/ux-copy-v-produktu.md) - sentence case jako pravidlo, uzavřený seznam výjimek pro velká písmena, tón, aktivní vs. pasivní, can/may/might, plus co z toho platí v češtině.
+- [Klávesnice a focus napříč komponentami](enterprise-ui/zaklady/klavesnice-a-focus.md) - referenční tabulky klávesové obsluhy pro každou komponentu a pravidla, kam dát výchozí focus v dialogu podle jeho typu. Zavírá mezeru, kterou STATUS jmenoval.
+- [Oznámení pro čtečky](enterprise-ui/zaklady/oznameni-pro-ctecky.md) - přístupné názvy, drátování labelu a helper textu, live regiony (polite vs. assertive), vystavení stavu a hodnoty, dekorativní obrázky.
+
+### Vzory
+
+- [Prázdné stavy](enterprise-ui/vzory/prazdne-stavy.md) - co ukázat tam, kde nejsou data. Podle Carbonu je prázdný stav často první věc, kterou uživatel v produktu vidí.
+- [Načítání a čekání](enterprise-ui/vzory/nacitani-a-cekani.md) - který indikátor při jakém čekání, a doložený rozpor: Carbon skeletony doporučuje, knihovna má proti nim měření a Carbonova citace jeho vlastní tvrzení nepodpírá.
+- [Dialogy, modaly a boční panely](enterprise-ui/vzory/dialogy-a-panely.md) - kdy přerušit uživatele překryvem a kdy ne, kde má být akce, co se stane při chybě uvnitř dialogu.
+- [Notifikace: stav krát typ](enterprise-ui/vzory/notifikace.md) - Carbonův model: stav (co sděluje) a typ (jak moc smí přerušit) se volí zvlášť a kombinují. Včetně toho, co smí zmizet samo a co ne.
+- [Filtrování](enterprise-ui/vzory/filtrovani.md) - zúžení množiny dat předem danými atributy: kde filtry umístit, jak ukázat aktivní filtry, kdy použít batch a kdy okamžité použití.
+- [Hledání](enterprise-ui/vzory/hledani.md) - tři typy podle velikosti datové sady a podle toho, kam uživatel po hledání jde.
+- [Skladba formuláře](enterprise-ui/vzory/formular-skladba.md) - rozvržení, sekce, mezery, poloha tlačítek, technika pro dlouhé formuláře, a rozpor s knihovnou v načasování validace.
+- [Stavové indikátory](enterprise-ui/vzory/stavove-indikatory.md) - jak sdělit stav nebo závažnost, čtyři varianty, kolik kanálů musí stav nést podle WCAG, plus zdokumentovaná nekonzistence uvnitř Carbonu.
+- [Přetečení obsahu a zkracování](enterprise-ui/vzory/preteceni-a-truncation.md) - kde smíš zkrátit výpustkou, kde nikdy, a kdy místo zkrácení nabídnout „Zobrazit více".
+- [Disabled, read-only, nebo skryté](enterprise-ui/vzory/disabled-vs-read-only.md) - tři způsoby, jak udělat prvek neovladatelný. Volba mezi nimi je přístupnostní rozhodnutí, ne vizuální.
+- [Běžné akce](enterprise-ui/vzory/bezne-akce.md) - slovník opakujících se akcí (save, cancel, delete, remove, close), které Carbon definuje úzce a velí používat jen popsaným způsobem.
+
+### Komponenty
+
+- [Datové tabulky](enterprise-ui/komponenty/datove-tabulky.md) - nejsložitější komponenta enterprise UI: kdy tabulku, jak ji vrstvit funkcemi (řazení, výběr, batch akce, rozbalování), výšky řádků, co do ní nepatří.
+- [Výběr ze seznamu](enterprise-ui/komponenty/vyber-ze-seznamu.md) - select, dropdown, combo box, multiselect: čtyři komponenty, které vypadají skoro stejně a chovají se různě.
+- [Textová pole](enterprise-ui/komponenty/textova-pole.md) - input, text area, password: kdy které, jak volit mezi helper textem, placeholderem a tooltipem, chování při přetečení.
+- [Taby](enterprise-ui/komponenty/taby.md) - kdy taby a kdy něco jiného, tři varianty, zarovnání na mřížku, rozdíl mezi automatickým a manuálním tablistem.
+- [Dlaždice a karty](enterprise-ui/komponenty/dlazdice-a-karty.md) - odpověď na otázku, kterou STATUS jmenoval jako mezeru: kdy je karta klikatelná celá a kdy jen CTA uvnitř. Nejsou to dva režimy, jsou to vzájemně vylučující varianty.
+- [Tagy](enterprise-ui/komponenty/tagy.md) - čtyři varianty, které se liší funkcí, ne vzhledem. Nejčastější chyba je použít jednu variantu na účel jiné.
+- [Stránkování](enterprise-ui/komponenty/strankovani.md) - dvě varianty, dvě umístění, párování výšky s výškou řádku tabulky, a pravidlo, kdy stránkovat nemá smysl.
+- [Tooltip a toggletip](enterprise-ui/komponenty/tooltip-a-toggletip.md) - vypadají stejně, chovají se různě. Rozdíl je v tom, jak se vyvolávají a jestli obsah potřebuje interakci.
+- [Tlačítka: varianty, skupiny, zarovnání](enterprise-ui/komponenty/tlacitka-varianty.md) - taxonomie pěti variant, doporučené kombinace ve skupinách, zarovnání podle kontextu. Tvrdá pravidla o tlačítkách zůstávají v `ux-design/pravidla/tlacitka.md`, tahle nota na ně odkazuje.
+- [Navigace v hierarchii](enterprise-ui/komponenty/navigace-v-hierarchii.md) - drobenka a indikátor postupu: dvě komponenty na dvě různé otázky („kde jsem" vs. „jak daleko jsem") a proč se nesmí zaměnit.
 
 ## Proces
 

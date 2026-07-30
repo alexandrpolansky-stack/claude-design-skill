@@ -1,31 +1,68 @@
 # Stav znalosti a co doplnit
 
-Snímek k 29. 7. 2026 (v0.2.0, po fázi 2 projektu design-rule-system). Účel: aby bylo vidět,
+Snímek k 30. 7. 2026 (po importu principů z IBM Carbonu do `enterprise-ui/`). Účel: aby bylo vidět,
 kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i tenhle soubor.
 
 ## Souhrn
 
 | | |
 |---|---|
-| Not v knihovně celkem | 59 |
+| Not v knihovně celkem | 86 |
 | `neuro-design/` | 1 (master dokument, 5 modulů) |
 | `ux-design/` | 51 (31 původních + 11 v `pravidla/` + 9 v `kontext/`) |
+| `enterprise-ui/` | 27 (6 `zaklady/` + 11 `vzory/` + 10 `komponenty/`) |
 | `web-dev/` | 4 |
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
 | Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~131 v 11 notách |
 | Sektorových pravidel (`ux-design/kontext/`) | ~87 v 9 notách |
+| Pravidel s třídou důkazu (`enterprise-ui/`) | 144 v 27 notách, 347 blocích ZDROJ |
 | Obrázků v repu | 32 |
 | Odkazů na obrázky, které ve zdroji nejsou | 97 (78 ux-design + 17 web-dev + 2 ostatní) |
 | Not pod 120 slov (kostra) | 6 |
 
-## 0. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
+## 0. Enterprise UI z IBM Carbonu (30. 7. 2026)
+
+Nová sekce `enterprise-ui/`, 27 not, 144 pravidel se třídou důkazu. Zdroj: lokální kopie
+dokumentace IBM Carbon Design System (stránky `usage` a `accessibility`, čteno 30. 7. 2026).
+Účel sekce: dosud v knihovně nebyla znalost o tom, jak stavět **produktovou aplikaci** (dashboard,
+CRUD, administrace), jen o vizuální stránce webu.
+
+**Co se přebralo a co ne.** Zadání bylo explicitní: principy a vzory, ne design. Nepřebrané
+záměrně: Carbon tokeny, hex hodnoty, IBM Plex, elevation škály, ikonová knihovna, vizuály „AI
+presence". Odůvodnění je napsané přímo v [`enterprise-ui/zaklady/vrstvy-a-vzory.md`](enterprise-ui/zaklady/vrstvy-a-vzory.md):
+kdo zkopíruje tokeny, postaví produkt, který vypadá jako IBM, a to není cíl. Každý blok ZDROJ
+nese verbatim anglický citát z Carbonu plus URL, aby se za rok dalo poznat, co je Carbonovo
+tvrzení a co moje syntéza (ta je označená třídou **C**).
+
+**Doložené rozpory s knihovnou, ponechané jako rozpory** (stejný princip jako gridlines fix,
+sekce 5). V každém případě vyhrává knihovna, protože má tvrdší zdroje, a nota to říká v místě:
+
+| Téma | Carbon | Knihovna | Kdo vyhrává |
+|---|---|---|---|
+| Placeholder | mírnější postoj | zakazuje úplně (GOV.UK, WCAG 1.4.3) | knihovna |
+| Načasování validace | on blur | on submit (GOV.UK) | knihovna jako výchozí, Carbon legitimní u enterprise s vlastním výzkumem |
+| Značení povinných polí | označ menšinu | označ nepovinná (GOV.UK) | tentýž princip „označ menšinu", jen na jiný typ formuláře |
+| Skeleton screens | doporučuje, odvolává se na NN/g | Viget 2017 (N=136) je proti | knihovna, a navíc: Carbonova citace míří na článek o indikátorech obecně, ne na srovnání skeleton vs. spinner. **Carbonovo tvrzení nepodpírá jeho vlastní zdroj** |
+| „Please" ve zprávách | povoluje při obtěžování uživatele | zakazuje v chybových hláškách (GOV.UK) | striktnější pravidlo u chyb |
+
+Navíc zdokumentovaná **nekonzistence uvnitř Carbonu**: u stavových indikátorů říká vizuální
+sekce „aspoň tři ze čtyř prvků", přístupnostní sekce „aspoň dva z barvy/tvaru/symbolu". Ani jedno
+není podané jako přesné, v notě je bezpečné čtení.
+
+**Uzavřené mezery ze sekce 4:** přístupnost do hloubky (klávesová navigace, čtečky, ARIA vzory,
+focus management), komponenty mimo tlačítka (včetně původní otázky „kdy je karta klikatelná celá
+vs. jen CTA uvnitř"), breakpointy a responzivní layout. Částečně uzavřený dluh
+„design-systémové citace bez URL" ze sekce 5: Carbon je teď citovaný konkrétními URL, Base Web,
+Fluent 2, Apple HIG a Atlassian pořád ne.
+
+## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 
 Osm paralelních agentů (mix Opus/Fable podle náročnosti rozhodování) napsalo `ux-design/pravidla/`
 a `ux-design/kontext/` z podkladu fáze 1 (research zdrojů, uložený mimo repo ve vaultu
 `Brain/projects/design-rule-system/`). Každé pravidlo nese třídu důkazu A/B/C a explicitní
 KDY NEPLATÍ, přesně podle formátu v [CLAUDE.md](CLAUDE.md).
 
-**Opraveno u toho i existující obsah** (stejný princip jako gridlines fix, viz sekce 4):
+**Opraveno u toho i existující obsah** (stejný princip jako gridlines fix, viz sekce 5):
 - `ux-design/zakony-principy/ux-laws.md` – callouty u Fitts, Hick a Miller. Populární verze
   (větší tlačítko = míň chyb, kratší menu = rychlejší rozhodnutí, max 7±2 položek) jsou
   vyvrácené konkrétní citovanou evidencí, teorie zůstala se zpřesněným rozsahem platnosti.
@@ -63,7 +100,7 @@ zdůvodňuje, ale kdo z toho staví klientský artefakt, ať si formulaci ověř
 Devět souborů (včetně `_index.md`, `README.md`, částí `sheets/`) ho obsahovalo z dřívějška,
 sjednoceno na en-dash 29. 7. 2026.
 
-## 1. Chybějící obrázky (největší mezera)
+## 2. Chybějící obrázky (největší mezera)
 
 97 odkazů v textu ukazuje na obrázky, které nejsou ani v původním vaultu, ani nikde jinde:
 zůstala po nich jen prázdná místa. V textu jsou označené jako `*[chybějící obrázek: nazev.png]*`,
@@ -93,7 +130,7 @@ Možnosti nápravy, od nejlevnější: **(a)** obrázek nahradit textovým popis
 (u typografie často stačí), **(b)** vyrobit vlastní ukázku, **(c)** odkaz smazat a odstavec
 přepsat, aby stál sám. U trendových not zvážit, jestli je vůbec držet.
 
-## 2. Noty, které jsou zatím kostra
+## 3. Noty, které jsou zatím kostra
 
 | Nota | Slov | Co dopsat |
 |---|---|---|
@@ -103,7 +140,7 @@ přepsat, aby stál sám. U trendových not zvážit, jestli je vůbec držet.
 | `ux-design/trendy/graficke-trendy.md` | 67 | Celé; viz výše. |
 | `ux-design/typography/font-pairing.md` | 94 | Konkrétní ověřené páry + pravidlo, proč fungují. |
 
-## 3. Témata, která v bázi úplně chybí
+## 4. Témata, která v bázi úplně chybí
 
 Hotovo od fáze 2 (29. 7. 2026), zachováno jako historický záznam: Komponenty a stavy (tlačítka),
 Formuláře, Prázdné a chybové stavy/loading, Motion. Viz `ux-design/pravidla/`.
@@ -152,7 +189,8 @@ Zbývá k dohledání (sekce "Neověřené a k dohledání" v notě): Naipaul & 
 verbatim znění zákona 40/1995 Sb. o reklamě na alkohol, prevalence PDF/obrázkových menu na
 českých webech (navržen levný vlastní audit 30-50 podniků).
 
-Zatím není pokryté nic z tohohle, a přitom to v praxi potřebujeme:
+Seznam, který v praxi potřebujeme. Přeškrtnuté položky jsou hotové, u každé je napsané, čím
+a co z ní zbývá:
 
 - **Gastro jako sektor v `kontext/`, s vysokou prioritou (zadal Alex 29. 7. 2026).** Uvnitř
   jednoho oboru je obrovský rozptyl podle cenové/luxusní úrovně, mnohem větší než u ostatních
@@ -161,27 +199,36 @@ Zatím není pokryté nic z tohohle, a přitom to v praxi potřebujeme:
   toho půjde, rozmyslet, jestli je to jeden sektor s vnitřním rozpětím luxury↔casual (podobně
   jako obecný luxury sektor už rozpětí řeší), nebo dva samostatné sektory. Zatím NEDĚLAT žádný
   research, jen si tenhle úkol nezapomenout otevřít, až Alex řekne.
-- **Přístupnost do hloubky nad rámec kontrastu a velikosti cíle.** WCAG kontrast (4,5:1, 3:1)
-  a velikost cíle (24×24 px) jsou teď v `pravidla/kontrast-a-barva.md` a `pravidla/tlacitka.md`
-  pořádně podložené. Pořád ale chybí klávesová navigace, screen readery, ARIA vzory, focus
-  management napříč komponentami (ne jen focus ring na tlačítku).
+- ~~**Přístupnost do hloubky nad rámec kontrastu a velikosti cíle.**~~ **Hotovo 30. 7. 2026.**
+  Klávesová navigace a focus management napříč komponentami v
+  `enterprise-ui/zaklady/klavesnice-a-focus.md`, čtečky a ARIA vzory (live regiony, role, vystavení
+  stavu a hodnoty) v `enterprise-ui/zaklady/oznameni-pro-ctecky.md`, plus přístupnostní sekce
+  v každé komponentní notě. Zbývá: nic k WCAG 2.2 jako celku (knihovna cituje jednotlivá kritéria,
+  ne úplný checklist) a nic k testování s asistivní technologií.
 - **Design tokens a design systémy jako proces.** Je hotový příklad (`priklady-ds/`) a teď i
   konkrétní škály (`pravidla/tvar-a-radius.md` má Material 3 radius škálu), ale ne obecný postup,
   jak si vlastní systém tokenů postavit, pojmenovat a udržovat.
 - **Dataviz mimo Sheets.** Volba grafu, palety pro data, přesnost vnímání. Tohle
   je teď jen v `sheets/znalostni-baze.md`, přitom platí obecně -
   kandidát na vytažení do `design-advisor`.
-- **Komponenty mimo tlačítka.** Karty, navigace, tabulky, modály. `pravidla/hloubka-a-stiny.md`
-  a `pravidla/stroke-a-hranice.md` řeší jejich vizuální oddělení, ale ne rozhodovací pravidla
-  specifická pro danou komponentu (kdy je karta klikatelná celá vs. jen CTA uvnitř, apod.).
+- ~~**Komponenty mimo tlačítka.**~~ **Hotovo 30. 7. 2026.** `enterprise-ui/komponenty/` má deset not
+  (tabulky, výběr ze seznamu, textová pole, taby, dlaždice a karty, tagy, stránkování, tooltip
+  a toggletip, varianty tlačítek, drobenka a indikátor postupu) a `enterprise-ui/vzory/` jedenáct
+  vzorů. Původní otázka „kdy je karta klikatelná celá vs. jen CTA uvnitř" je odpovězená
+  v `enterprise-ui/komponenty/dlazdice-a-karty.md`: nejsou to dva režimy, jsou to vzájemně se
+  vylučující varianty. Zbývá: menu buttons, toolbar, primární a globální navigace, tearsheet,
+  file uploader, date picker, slider.
 - **Landing pages a propagace jako struktura stránky.** Struktura, hero, sociální důkaz, CTA
   hierarchie napříč sekcemi. Teď je k tomu jen AIDA v `proces/step-by-step-ux-ui.md`.
-- **Responzivita a mobil jako layout strategie.** Touch target 24×24 px je pokrytý (WCAG 2.5.8),
-  ale breakpointy, layout shifty mezi velikostmi a palec zóna na mobilu ne.
+- **Responzivita a mobil jako layout strategie.** Breakpointy a chování layoutu mezi velikostmi
+  jsou od 30. 7. 2026 v `enterprise-ui/zaklady/2x-grid-a-breakpointy.md` (pět breakpointů, fluid
+  vs. fixed, gutter módy, chování panelů) a responzivní chování jednotlivých komponent je v každé
+  komponentní notě. **Zbývá mobil jako samostatná strategie:** palec zóna, dotykové gesta,
+  mobilní navigační vzory. Carbon je enterprise desktop-first, tohle v něm není.
 - **Brand tokeny mimo Sheets.** Paleta a font jsou zapsané jen v `sheets/`. Pro weby,
   komponenty, propagaci a e-maily neexistuje sdílený zdroj tokenů.
 
-## 4. Dluhy ve struktuře
+## 5. Dluhy ve struktuře
 
 - **Duplicita destilátu.** `rules/frontend-ux.md` a `rules/frontend-ux-detailed.md` mají
   stejný obsah ve dvou souborech. Rozejdou se. Chce to jeden zdroj a druhý generovat, nebo jeden zrušit.
@@ -194,6 +241,13 @@ Zatím není pokryté nic z tohohle, a přitom to v praxi potřebujeme:
   loading), proti zásadě „jedna nota = jedno téma" z `CLAUDE.md`. Zatím drží pohromadě díky sekci
   Rychlý průchod nahoře. Přirozený štěp při dalším růstu: `formulare-a-validace.md` +
   `stavy-rozhrani.md`.
-- **Design-systémové citace bez URL.** Fáze 1 cituje Carbon, Base Web, Fluent 2, Apple HIG
-  a Atlassian formulacemi bez odkazu na zdrojovou stránku. `pravidla/tlacitka.md` to přiznává,
-  ale kdo z těch pravidel staví klientský artefakt, ať si formulaci dohledá a ověří přímo.
+- **Design-systémové citace bez URL, částečně vyřešeno 30. 7. 2026.** Fáze 1 cituje Carbon, Base
+  Web, Fluent 2, Apple HIG a Atlassian formulacemi bez odkazu na zdrojovou stránku.
+  `pravidla/tlacitka.md` to přiznává. **Carbon je od 30. 7. 2026 citovaný konkrétními URL
+  a verbatim citáty v `enterprise-ui/`**, takže u něj se dá tvrzení dohledat. Base Web, Fluent 2,
+  Apple HIG a Atlassian pořád ne: kdo z těch pravidel staví klientský artefakt, ať si formulaci
+  dohledá a ověří přímo.
+- **Dvě noty o tlačítkách ve dvou sekcích.** `ux-design/pravidla/tlacitka.md` (tvrdá pravidla,
+  třídy A) a `enterprise-ui/komponenty/tlacitka-varianty.md` (taxonomie variant a skupin, třída B).
+  Dělení je záměrné a obě noty na sebe odkazují s explicitním určením, kdo v konfliktu vyhrává,
+  ale je to místo, kde se rada může rozejít. **Když měníš pravidlo o tlačítkách, otevři obě.**
