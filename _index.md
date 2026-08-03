@@ -102,6 +102,7 @@ Kde se Carbon rozchází s `ux-design/pravidla/`, vyhrává knihovna a konflikt 
 - [Skladba formuláře](enterprise-ui/vzory/formular-skladba.md) - rozvržení, sekce, mezery, poloha tlačítek, technika pro dlouhé formuláře, a rozpor s knihovnou v načasování validace.
 - [Stavové indikátory](enterprise-ui/vzory/stavove-indikatory.md) - jak sdělit stav nebo závažnost, čtyři varianty, kolik kanálů musí stav nést podle WCAG, plus zdokumentovaná nekonzistence uvnitř Carbonu.
 - [Přetečení obsahu a zkracování](enterprise-ui/vzory/preteceni-a-truncation.md) - kde smíš zkrátit výpustkou, kde nikdy, a kdy místo zkrácení nabídnout „Zobrazit více".
+- [Stabilita layoutu při změně dat](enterprise-ui/vzory/stabilita-layoutu.md) - když uživatel přepne filtr nebo rozsah, má se změnit obsah a nic jiného. Proč automatická šířka sloupců je funkce dat, proč tabulární číslice nestačí, a kam patří ovládání, které tu změnu vyvolává.
 - [Disabled, read-only, nebo skryté](enterprise-ui/vzory/disabled-vs-read-only.md) - tři způsoby, jak udělat prvek neovladatelný. Volba mezi nimi je přístupnostní rozhodnutí, ne vizuální.
 - [Běžné akce](enterprise-ui/vzory/bezne-akce.md) - slovník opakujících se akcí (save, cancel, delete, remove, close), které Carbon definuje úzce a velí používat jen popsaným způsobem.
 

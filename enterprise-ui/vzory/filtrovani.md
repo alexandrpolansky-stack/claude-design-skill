@@ -3,7 +3,8 @@
 Jak nechat uživatele zúžit množinu dat zapínáním a vypínáním předem daných atributů.
 
 Související: [Hledání](hledani.md) · [Datové tabulky](../komponenty/datove-tabulky.md) ·
-[Volba komponenty](../zaklady/volba-komponenty.md) · [Tagy](../komponenty/tagy.md)
+[Volba komponenty](../zaklady/volba-komponenty.md) · [Tagy](../komponenty/tagy.md) ·
+[Stabilita layoutu při změně dat](stabilita-layoutu.md)
 
 ---
 

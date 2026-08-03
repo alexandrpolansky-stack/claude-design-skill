@@ -100,6 +100,11 @@ Zdroj: https://carbondesignsystem.com/components/pagination/usage/
 **Tabulka vyžaduje tři nebo víc sloupců.**
 Zdroj: https://carbondesignsystem.com/components/data-table/style/
 
+**Pozor, tohle platí o jednom vykreslení.** Když se sada řádků mění za běhu (filtr, přepínač
+rozsahu, stránkování), znamená „šířka podle obsahu" jinou mřížku pro každou sadu, takže uživatel
+přepne filtr a dostane k tomu posun všech sloupců. Co s tím:
+[Stabilita layoutu při změně dat](../vzory/stabilita-layoutu.md).
+
 ## Umístění
 
 **PRAVIDLO:** Tabulku dej do hlavní obsahové oblasti stránky a dej jí **dost prostoru, aby zobrazila
