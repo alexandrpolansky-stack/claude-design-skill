@@ -87,6 +87,44 @@ spočítat, kde zkrácení začne). **Mid-line vlastní CSS třídu nemá, potř
 **ZDROJ:** Carbon, Overflow content, Variations a Code.
 https://carbondesignsystem.com/patterns/overflow-content/
 
+### Zkracování na `<span>` mlčky nefunguje
+
+**PRAVIDLO:** Prvek, který má zkracovat, musí být blokový. Když stylopis říká
+`overflow: hidden; text-overflow: ellipsis; white-space: nowrap`, ale v markupu je `<span>`, který
+zůstal `display: inline`, **nezkrátí se nic a prohlížeč nenahlásí chybu**. Text vyteče v plné délce
+a sedne si na sousedy na stejném řádku. Buď dej prvku `display: block`, nebo z něj udělaj položku
+flexu či gridu, což ho blokifikuje taky.
+**KDY PLATÍ:** Každé zkrácení psané v CSS, hlavně když stylopis vznikl proti návrhu a markup psal
+někdo jiný později.
+**PROČ:** `text-overflow` platí podle specifikace jen na **block container elements**, `overflow` na
+**block-containers, flex containers, and grid containers**. Nereplacovaný inline box není ani jedno,
+takže obě deklarace projdou validací, dědí se, ukážou se v devtools jako spočítaná hodnota a nedělají
+nic. Selhání je tiché a vypadá jako chybějící mezera nebo rozbitý layout, ne jako nefungující
+zkracování, takže se hledá na špatném místě.
+**TŘÍDA:** A (chování dané specifikací, ne názor)
+**ZDROJ:** MDN, `text-overflow`, formální definice, verbatim „Applies to: block container elements";
+MDN, `overflow`, verbatim „Applies to: Block-containers, flex containers, and grid containers".
+https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow ·
+https://developer.mozilla.org/en-US/docs/Web/CSS/overflow
+**Souvisí:** svislý `margin` na nereplacovaném inline boxu se taky zahodí, takže dvojice
+„jméno nad popiskem", psaná jako dva `<span>`, skončí na jednom řádku i bez odsazení, které si
+stylopis vyžádal.
+
+**Jak to najít, místo aby se to hledalo okem.** Prohlížeč to zodpoví za jeden průchod, a odpověď je
+úplná, na rozdíl od čtení stylopisu:
+
+```js
+[...document.querySelectorAll('*')].filter((el) => {
+  const s = getComputedStyle(el);
+  if (s.display !== 'inline') return false;
+  return s.textOverflow === 'ellipsis' || s.overflowX === 'hidden' ||
+    parseFloat(s.marginTop) || parseFloat(s.marginBottom);
+});
+```
+
+Než takové sondě uvěříš prázdný výsledek, nasaď si do stránky vlastní rozbitý `<span>` a ověř, že ho
+najde. Čistý výsledek ze sondy, která neumí nic najít, je jen tiché selhání o patro výš.
+
 ## Samotná výpustka
 
 **PRAVIDLO:** Výpustka může zastupovat kondenzovaný obsah i sama za sebe. Tenhle typ zkrácení
