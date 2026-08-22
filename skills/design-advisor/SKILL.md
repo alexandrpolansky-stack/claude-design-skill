@@ -22,13 +22,15 @@ Když navrhuju cokoliv user-facing, nejdřív si vytáhnu relevantní znalost, a
 Knihovna žije v rootu repa, ne uvnitř skillu. Cesty níže jsou relativní ze složky skillu,
 což platí, když je repo naklonované celé. Kdyby relativní cesta neexistovala (skill
 nakopírovaný samostatně), najdi `_index.md` v rootu repa `claude-design-skill` a jdi odtud.
-[../../_index.md](../../_index.md) – mapa celé knihovny (88 not v pěti sekcích: neuro-design, ux-design, enterprise-ui, web-dev, sheets). Otevři index, vyber relevantní sekce a přečti je. Nečti celý index dokola; vezmi jen to, co k úkolu patří, a odkaž na konkrétní notu.
+[../../_index.md](../../_index.md) - mapa celé knihovny (89 not v pěti sekcích: neuro-design, ux-design, enterprise-ui, web-dev, sheets). Otevři index, vyber relevantní sekce a přečti je. Nečti celý index dokola; vezmi jen to, co k úkolu patří, a odkaž na konkrétní notu.
 
 ## Postup
 1. **Souvislosti první:** čí je to výstup, kdo ho čte/používá, jaký je jeho cíl, co má být hned jasné, jaký je hlavní flow.
 2. **Vytáhni relevantní sekci** z indexu (UX zákony, barvy, typografie, layout, proces, příklad DS).
    U netriviální stavby UI přečti navíc [neuro-design master](../../neuro-design/neuro-design-master.md):
-   vizuální váha prvků, F/Z-pattern, kognitivní zátěž, diagnostika chyb. Je to nejhutnější dokument v knihovně.
+   vizuální váha prvků, F/Z-pattern, kognitivní zátěž, diagnostika chyb. Je to jediné místo v knihovně
+   s explicitní metodikou vizuální hierarchie, ale je ve vrstvě 3 a nemá u tvrzení zdroje.
+   **Ber z něj metodiku, ne čísla** (má nahoře blok „Jak tuhle notu číst" s výčtem toho, co v něm neplatí).
 3. **Stavíš produktovou aplikaci?** (dashboard, CRUD, administrace, interní nástroj, cokoliv
    s datovou tabulkou, filtry, vícekrokovým formulářem nebo notifikacemi.) Pak jdi do
    [enterprise-ui/](../../enterprise-ui/), ne jen do `ux-design/`. Pořadí čtení:
@@ -43,7 +45,10 @@ nakopírovaný samostatně), najdi `_index.md` v rootu repa `claude-design-skill
    **Konflikty:** knihovna má tři vrstvy důvěryhodnosti a v konfliktu vyhrává ta vyšší:
    1. `ux-design/pravidla/` a `ux-design/kontext/` (třídy A: WCAG, měření, peer-reviewed)
    2. `enterprise-ui/` (třída B, publikovaná konvence design systému, odvozeno z IBM Carbonu)
-   3. zbytek `ux-design/` a `web-dev/` (původní import studijních poznámek, **bez třídy důkazu**)
+   3. zbytek `ux-design/`, celý `neuro-design/` a `web-dev/` (původní import studijních poznámek,
+      **bez třídy důkazu**)
+
+   `sheets/` stojí vedle škály: domácí pravidla, pro Sheets platí přednostně.
 
    Noty ve třetí vrstvě jsou často užitečné, ale nikdy nepřebíjejí první dvě, a noty označené
    v indexu **[archiv]** nepoužívej při návrhu vůbec. Konkrétní rozpory jsou vypsané v
@@ -56,7 +61,11 @@ nakopírovaný samostatně), najdi `_index.md` v rootu repa `claude-design-skill
    - Barvy 60-30-10 + sémantika; stav nikdy jen barvou (přidej text/ikonu).
    - Typografie a čitelnost; kontrast WCAG min. 4.5:1.
    - U interaktivního UI navíc: zpětná vazba na akce, viditelný focus, ovladatelnost klávesnicí.
-5. **U větší stavby** projdi proces (uživatel → cíl → flow → wireframe): [step-by-step-ux-ui](../../ux-design/proces/step-by-step-ux-ui.md).
+5. **U větší stavby** projdi proces sám, protože knihovna na něj úplnou notu nemá:
+   kdo je uživatel → jaký má cíl → jakou cestou se k němu dostane → co je na které obrazovce →
+   teprve pak vzhled. [Step by step](../../ux-design/proces/step-by-step-ux-ui.md) k tomu dá přehled
+   21 kroků a materiál k user flow diagramu, ale je **[neúplné]**: rozvedené má jen user flow
+   a wireframy a druhá sekce se láme uprostřed. Neber ji jako návod ke krokům, které nepopisuje.
 6. **Hotový příklad** design systému s konkrétními tokeny: [design-system-drive](../../ux-design/priklady-ds/design-system-drive.md).
 7. **Když píšeš UI kód**, drž se destilátu [rules/frontend-ux-detailed.md](../../rules/frontend-ux-detailed.md).
    Implementační pasti, které mlčky nezaberou (zkracování, `min-width: 0`, stacking context,

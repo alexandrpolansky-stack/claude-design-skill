@@ -205,6 +205,26 @@ Carbon jmenuje čtyři situace:
 **ZDROJ:** Carbon, Progress indicator usage, When to use.
 https://carbondesignsystem.com/components/progress-indicator/usage/
 
+**Konflikt s knihovnou: indikátor postupu není samozřejmost.** Carbon ho výše u dlouhých formulářů
+a onboardingu doporučuje. Knihovna má v
+[Formuláře a stavy](../../ux-design/pravidla/formulare-a-stavy.md), sekce „Progress indikátor
+u multi-step není samozřejmost", pravidlo **nepřidávej automaticky, měj důvod**, opřené o případ
+týmu Carer's Allowance, který dvanáctikrokový indikátor odebral „with no effect on completion rates
+or times".
+
+**Tenhle spor nevyhrává knihovna automaticky.** Obě strany jsou třída B a knihovna svůj zdroj sama
+označuje za slabší (jedna služba, jeden případ, publikoval ho vlastník služby). Rozhoduje se podle
+toho, co indikátor slibuje:
+
+| Situace | Co udělat | Proč |
+|---|---|---|
+| Pevný a dopředu známý počet kroků (kasa, onboarding na čtyři kroky) | Indikátor **ano** | Nese slib „skončí to u čtvrtého", a ten slib dodržíš. Carbon i knihovna se tu shodnou, viz „KDY NEPLATÍ" v pravidle knihovny |
+| Dlouhý wizard, kde si uživatel potřebuje nachystat podklady | Indikátor **ano** | Odpovídá na „mám do toho jít teď?" |
+| Počet kroků závisí na odpovědích | Indikátor **ne** | Slib porušíš, tři z pěti se změní na tři ze sedmi. Platí i pro dynamický počet |
+| Dlouhá řada krátkých otázek bez jasného konce | **Zvaž odebrání** | Tady měřený případ ukazuje, že indikátor nic nepřidal |
+
+Krátce: **rozhoduje předvídatelnost počtu kroků, ne jejich počet.**
+
 ## Kdy nepoužít
 
 **PRAVIDLO:** Nepoužívej indikátor postupu, když:

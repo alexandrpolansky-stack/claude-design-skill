@@ -1,6 +1,18 @@
 # Step by step: UX/UI web a app design
 
-Celý postup od user flow po iteraci. Otevři na začátku větší stavby.
+**[neúplné]** Zápisky z kurzu ke dvěma krokům procesu: user flow a wireframy. Vrstva 3, bez třídy
+důkazu.
+
+**Co v notě je a co ne.** Nahoře je přehled 21 kroků procesu, od Understand po Optimization, každý
+na jednu řádku. Rozvedené do sekcí jsou z nich **jen dva**: User Flow a Wireframes. Sekce
+o wireframech navíc **nemá konec**, láme se větou „Wireframe obsahuje, kde se nachází každý element".
+
+Prototypování, testování s uživateli, srovnávací testy a iterace tedy najdeš jako položku
+v přehledu, ne jako návod. AIDA je čtyři odrážky uvnitř jednoho příkladu (software na sledování
+rozpočtu), ne rámec ke stavbě stránky. Text má překlepy z původního přepisu.
+
+**Kdy ji otevřít:** na materiál k user flow diagramu, k tomu, co patří do wireframu, a na přehled
+kroků procesu jako check-listu. Ne na to, jak kterýkoli krok kromě prvních dvou provést.
 
 Související: [Definice problému](../ux-zaklady/define-the-problem.md) · [Poznej své uživatele](../ux-zaklady/understand-your-users.md) · [Discovery](../ux-zaklady/discovery.md) · [Designový proces](../ux-zaklady/design-process.md) · [Metody UX výzkumu](../ux-zaklady/design-research-methods.md)
 
@@ -39,7 +51,7 @@ Související: [Definice problému](../ux-zaklady/define-the-problem.md) · [Poz
 	20. Monitoring and Analytics - monitorování analýz a metrim, abyste porozuměli tomu, jak uživatelé interagují
 	21. Optimazition - na základě zpětné vazby provádět úpravy a optimalizovat
 ##  1. User Flow
-<mark style="background: #FF5582A6;">1. KROK Mapování</mark>
+**1. KROK Mapování**
 	Musíme zmapovat uživatele, klienta, který na **stránku přijde**, to děláme pomocí **USER FLOW DIAGRAMU**
 		1. Určit svůj cíl a cíl uživatelů
 		2. SEO - určit jak náštěvnící najdou webové stránky, a jak najdou na nich obsach
@@ -57,7 +69,7 @@ Související: [Definice problému](../ux-zaklady/define-the-problem.md) · [Poz
 	Představme si, že náš web je jako **haunted house escape room**,  musíme vědět jak se naši hosté pohybují, abychom věděli kde vypustit strašidla, do jakých míst je nahnat atd.
 		**Tok uživatele neboli User Flow** - všechny interakce, které by uživatelé měli mít na stránce, UX tým musí určit, jak se uživatelé mají pohybovat k přihlédnutím potřebám uživatele
 		**Cesta uživatele neboli User Journey** - je celá cesta uživatele, ne pouze na naši stránce, ale začíná vyhledávním na googlu, pokračuje na různé weby a pak klidně na náš web. User Flow je část User Journey
-	Proč používat <mark style="background: #ADCCFFA6;">User Flow Diagram</mark> =Poté co se zamyslíme nad zákaznickou zkušeností a potřebami uživatelů, abychom zjistili tok webu nebo aplikace. Abychom zajistili co nejlepší podmínky pro uživatele je důležité zmapovat a vizualizovat
+	Proč používat **User Flow Diagram** =Poté co se zamyslíme nad zákaznickou zkušeností a potřebami uživatelů, abychom zjistili tok webu nebo aplikace. Abychom zajistili co nejlepší podmínky pro uživatele je důležité zmapovat a vizualizovat
 		Diagram nám pomůže udělat návrh dopředu, aby bylo jasné jak má design postupovat, a ne ho pote menit na konci
 **Příklad**
 	Řekněme například, že prodáváte software pro sledování rozpočtu. Vaši zákazníci budou pravděpodobně postupovat podle fází AIDA na následující cestě přes váš web:
@@ -66,7 +78,7 @@ Související: [Definice problému](../ux-zaklady/define-the-problem.md) · [Poz
 		**DESIRE = Touha** - Klikne na stránku o ceně softwaru, přemýšlející jak super by bylo zbavit se všech dluhů
 		**ACTION = Akce** - návštěvník zakoupí software
 	Pokud bychom nechápali, co chce návštěvník získat a co mu předat z každé strany, tak bude frustrovaný, že nemůže informace najít a ze stránky odejde. Pokud však pečlivě připravíme User Flow, maximalizujeme jejich zážitek na webu.	
-	<mark style="background: #BBFABBA6;">2 DRUHÝ KROK Vytváření Diagramu</mark>
+	**2 DRUHÝ KROK Vytváření Diagramu**
 	**Určete svůj cíl a cíle svých uživatelů**
 	1. Kdo jsou moji uživatelé
 		1. **Příklad**: Pokud jste provozovatel online obchodu s oblečením, vaši uživatelé mohou zahrnovat mladé dospělé, kteří hledají trendy oblečení.
@@ -94,15 +106,15 @@ Související: [Definice problému](../ux-zaklady/define-the-problem.md) · [Poz
 			Odkazované stránky
 			E-mail
 		Zvažte, co tyto různé vstupní body vypovídají o vašich uživatelích a jak můžete lépe přizpůsobit prostředí tomu, co potřebují. Tyto vstupní body budou začátkem vašeho diagramu toku uživatelů.
-<mark style="background: #FFF3A3A6;">3. KROK Identifikujte, jaké informace vaši uživatelé potřebují a kdy je potřebují</mark>
+**3. KROK Identifikujte, jaké informace vaši uživatelé potřebují a kdy je potřebují**
 		Poskytnout správné informace v danou chvíli
 			Opět se ptáme na otázky, a vstupujeme s **myslí začátečníka**
-<mark style="background: #FFB86CA6;">Jakou akci bych měl na této stránce provést, pokud bych byl zákazník</mark>
-<mark style="background: #ABF7F7A6;">				Jak se orientuji v procesu placení</mark>
-<mark style="background: #D2B3FFA6;">Kdybych byl tento typ zákazníka, jak bych se cítil ohledně tohoto videa s doporučením</mark>
-<mark style="background: #FF5582A6;">Zvažte, co zákazník od konkrétní stránky očekává, co může cítit a v jakém je rozpoložení</mark>
+**Jakou akci bych měl na této stránce provést, pokud bych byl zákazník**
+**Jak se orientuji v procesu placení**
+**Kdybych byl tento typ zákazníka, jak bych se cítil ohledně tohoto videa s doporučením**
+**Zvažte, co zákazník od konkrétní stránky očekává, co může cítit a v jakém je rozpoložení**
 
-<mark style="background: #D2B3FFA6;">4. KROK Tvoření Diagramu</mark> 
+**4. KROK Tvoření Diagramu** 
 Příklad Diagramu vytvořeného ve figmě
 	Kolečka - **Start, End, Finální akce**
 	Obdelníky - **obrazovka**
@@ -127,7 +139,7 @@ Standart UML - **podívat se**
 7. **Labels musí mít smysl** - Ne dát do rectanglu jenom screen, ale co je to za screen - nákup, detaily, o nás, select task, welcome. Stejné u tagu, ne jenom decision, ale je to yes/no nebo approve/not approve - třeba u serach rectanglu = **found**
 7. **Labels musí mít smysl** - Ne dát do rectanglu jenom screen, ale co je to za screen - nákup, detaily, o nás, select task, welcome. Stejné u tagu, ne jenom decision, ale je to yes/no nebo approve/not approve - třeba u serach rectanglu = **found/not found**
 ## 2. Wireframes
-<mark style="background: #FF5582A6;">1. KROK Obecná teorie</mark>
+**1. KROK Obecná teorie**
 	Z user flow diagramu začneme tvořit wireframy, každý diagram by měl odpovídat jednomu screenu wireframu.
 	![Pasted image 20240124032329](../_assets/pasted-image-20240124032329.png)
 	Wireframy vyžadují dost přemýšlení a promýšlení nad uživatelským chováním, zde je pár příkladů uživatelského chování

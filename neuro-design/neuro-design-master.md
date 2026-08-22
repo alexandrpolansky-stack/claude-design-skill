@@ -5,6 +5,25 @@ Tento dokument slouží jako absolutní instrukční databáze a referenční r�
 
 ---
 
+## JAK TUHLE NOTU ČÍST
+
+**Tahle nota je ve vrstvě 3 (import), nemá u tvrzení třídu důkazu ani dohledatelné zdroje.**
+Zdrojem je „Extrahováno z Google Search výzkumů 2024-2026", což není citace. Zároveň je to jediné
+místo v knihovně s explicitní metodikou vizuální hierarchie, a ta je použitelná.
+
+**Ber z ní metodiku, ne čísla.** Použitelné je: výpočet vizuální váhy prvku, pravidlo jednoho focal
+pointu, odstupňování whitespace podle úrovně vztahu, Gestalt jako nástroj seskupování, diagnostika
+chyb. Nepoužitelné bez ověření je každé konkrétní procento a každý odkaz na klasický UX zákon.
+
+**Dvě konkrétní tvrzení, která přebíjí vrstva 1:**
+
+| V téhle notě | Co platí | Kde |
+|---|---|---|
+| „chunking dle Millerova zákona, který limituje paměť na 7±2 položky" | Millerovou sedmičkou **nikdy nezdůvodňuj** počet položek, úrovní ani sekcí. Text z roku 1956 není experiment a Miller sám to číslo nazval „pernicious, Pythagorean coincidence". Gestalt seskupování platí dál, jen ne z tohohle důvodu. | [Typografie](../ux-design/pravidla/typografie.md), třída A |
+| „uživatelé věnují **80 %** svého vizuálního času horní třetině obrazovky" | Číslo je bez zdroje a nedohledal jsem ho k primárnímu výzkumu. Směr tvrzení (pozornost klesá dolů po stránce) doložený je, konkrétní podíl ne. Neuváděj ho jako fakt. | nedoloženo |
+
+---
+
 ## MODUL 1: BIOLOGIE VIZUÁLNÍ PERCEPCE
 *(Zdroj: Extrahováno z Google Search výzkumů 2024–2026 + Interní poznámky k UX)*
 
@@ -50,7 +69,7 @@ function calculateWhitespace(element_importance, base_unit) {
 
 ### Gestalt fyzika jako gravitační síly
 Při generování UI aplikujeme Gestalt principy jako vektory fyzikální přitažlivosti:
-*   **Zákon blízkosti (Proximity):** Prvky oddělené mezerou menší než `base_unit * 3` jsou mozkem vnímány jako jedna sémantická jednotka. Slouží ke shlukování dat ("chunking" dle Millerova zákona, který limituje paměť na 7±2 položky).
+*   **Zákon blízkosti (Proximity):** Prvky oddělené mezerou menší než `base_unit * 3` jsou mozkem vnímány jako jedna sémantická jednotka. Slouží ke shlukování dat. **Pozor:** původní znění tu shlukování zdůvodňovalo Millerovou sedmičkou. To neplatí, viz blok „Jak tuhle notu číst" nahoře. Blízkost funguje jako seskupovací signál sama o sobě, limit paměti k tomu není potřeba.
 *   **Zákon podobnosti (Similarity):** Stejný font, barva či tvar vytváří propojení bez ohledu na vzdálenost.
 *   **Zákon společné oblasti:** Ohraničení boxem nebo podbarvením vytváří neprostupnou kognitivní zeď.
 

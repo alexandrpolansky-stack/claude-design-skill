@@ -159,6 +159,16 @@ upload, načítání dat, odeslání formuláře, uložení změn).
 - Když postup určují akce uživatele (dokončené tutoriály, zabrané místo), ne akce systému.
 - Když proces trvá **méně než 5 sekund**: loading indikátor.
 
+**Konflikt s knihovnou k hranici mezi spinnerem a progress barem.** Carbon posouvá progress bar dolů
+už od 5 s. Knihovna má v [Formuláře a stavy](../../ux-design/pravidla/formulare-a-stavy.md), sekce
+„Který indikátor při jaké délce", hranici 10 s, a to doslovně ze zdroje (NN/g, Sherwin 2014:
+„Percent-done progress indicators should be used for longer processes that take 10 or more
+seconds"). Shodnou se všude kromě pásma **5 až 10 s**: tam Carbon dovolí progress bar, knihovna drží
+spinner. **Knihovna vyhrává**, má citovaný primární zdroj proti nezdrojovanému číslu.
+
+Prakticky: pod 2 s nic nebo indikátor s odkladem, 2 až 10 s spinner, nad 10 s procenta. Když délku
+neznáš dopředu, spinner s odkladem asi 500 ms, protože determinovaný pruh bez reálné hodnoty lže.
+
 **Tři typy operací a jejich vyčíslitelnost podle Carbonu:**
 
 | Operace | Vyčíslitelnost |

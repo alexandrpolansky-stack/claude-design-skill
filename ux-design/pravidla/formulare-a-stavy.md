@@ -25,7 +25,7 @@ Související: [anti-slop](anti-slop.md) · [UX Laws](../zakony-principy/ux-laws
 4. Chyba = error summary nahoře s focusem, plus hláška u pole. Zadané hodnoty nemazat.
 5. Hláška říká co se stalo a jak to opravit, imperativem. Žádné "invalid", "oops", "please".
 6. Prázdný stav = stav systému plus vysvětlení plus akce. Nikdy jen "žádná data".
-7. Do 1 s bez indikátoru, 1 až 10 s spinner, nad 10 s procentní progress.
+7. Do 1 s bez indikátoru, 2 až 10 s spinner, nad 10 s procentní progress.
 
 ---
 

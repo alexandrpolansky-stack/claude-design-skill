@@ -177,7 +177,7 @@ jmenovaný marker generovaného dark modu.
 SAPAT (vyvážený poměr obrázek a text). LAPIC a SAPAT hodnoceny esteticky lépe než SCOFA, SAPAT má
 nejlepší paměťovou výbavnost. (Přeneseno z průzkumu fáze 1, sekce o kontextové podmíněnosti.) ·
 HN 47864393 k fialovému dark modu. https://news.ycombinator.com/item?id=47864393 ·
-Praktický poměr: [Pravidlo 60-30-10](../color/pravidlo-60-30-10.md).
+Praktický poměr: [Pravidlo 60-30-10](../color/pravidlo-60-30-10.md) (vrstva 3, poměr je třída C; nota nese override k hodnotám barev).
 **KDY NEPLATÍ:** Brand, který jednu barvu vlastní a má ji ukotvenou (a i tam se řeší poměr, ne
 monochrom). A pozor na protipříklad: v jedné diplomce ze stejné laboratoře vyšly méně typické palety
 atraktivnější, takže mechanické kopírování palety sektoru není bezpečná cesta.
@@ -240,7 +240,7 @@ pro část uživatelů.
 **TŘÍDA:** C pro počet, B pro "neschovávej informaci jen do barvy" (USWDS: "Start in black and
 white", plus demografie barvosleposti 8 % mužů, 0,5 % žen, z průzkumu fáze 1).
 **ZDROJ:** USWDS, designsystem.digital.gov (přes průzkum fáze 1) ·
-[Pravidlo 60-30-10](../color/pravidlo-60-30-10.md).
+[Pravidlo 60-30-10](../color/pravidlo-60-30-10.md) (vrstva 3, poměr je třída C; nota nese override k hodnotám barev).
 **KDY NEPLATÍ:** Kategorická paleta v grafu, kde je barva jediný nosič kategorie. Tam je víc barev
 nutnost, ale musí být doplněná labelem nebo tvarem.
 
