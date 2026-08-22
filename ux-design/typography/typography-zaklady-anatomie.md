@@ -4,8 +4,7 @@ Názvosloví písma: typeface vs. font, klasifikace, kerning a leading.
 
 Související: [Typografie](../pravidla/typografie.md) · [Serif a Sans Serif](serif-a-sans-serif.md) · [Práce s fontem](prace-s-fontem.md)
 
-<mark style="background: #FF5582A6;">Typografie je umění nebo technika zobrazování textu nebo slov čtivým, stravitelným nebo přitažlivým způsobem
-</mark>
+**Typografie je umění nebo technika zobrazování textu nebo slov čtivým, stravitelným nebo přitažlivým způsobem**
 **TypeFace** = různé styly fontů, které sdílí podobné znaky. Neboli Rodina fontů. Font je jenom jedna část
 	Třeba Times New Roman
 **ClassiFication**
@@ -18,7 +17,7 @@ Související: [Typografie](../pravidla/typografie.md) · [Serif a Sans Serif](s
 - Decorative
 
 ### TypeAnatomy
- Čára, která by byla na vrcholu T se označuje<mark style="background: #FF5582A6;"> AscentLine</mark> a čára, která by byla u konce y se označuje <mark style="background: #FF5582A6;">DescentLine</mark>
+ Čára, která by byla na vrcholu T se označuje**AscentLine** a čára, která by byla u konce y se označuje **DescentLine**
 
 ### Slovník anatomie písma
 

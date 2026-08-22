@@ -133,7 +133,7 @@ Avšak scénář není možné aplikovat na všechno. Scánáře jsou individuá
 
 ### Audity
 - Nenahlížejte na text jako jednu informaci, ale jako na část celku. Uvažujte o celém obsahu
--<mark style="background: #FF5582A6;"> Pokud začínáme nový projekt je dobré udělat audit konkurence, ne abychom jim nápad vzali či kopírovali design, ale abychom porozuměli jak ostatní pracují s daným tématem.</mark>
+-Pokud začínáme nový projekt je dobré udělat audit konkurence, ne abychom jim nápad vzali či kopírovali design, ale abychom porozuměli jak ostatní pracují s daným tématem.
 -
 - Ukázkový audit
 	- ID - id stránky přidělené číslo může sloužit jako navigace v projektu 0 - Home 1.0 - další stránka 1.1 podstránka

@@ -29,4 +29,4 @@ Taky pokud je kompozice přehlcená, tak oko neví, kam se podívat. **F-pattern
 ### Focal Point
 Co je Focal point
  Focal point je **termín používaný v designu** a fotografii, který **označuje bod, na který se zaměřuje pozornost diváka**. Je to **místo** nebo prvek **v** obraze, který **přitahuje oko diváka a určuje hlavní téma nebo zprávu**. Focal point může být **vytvořen kontrastem, barvou, velikostí nebo umístěním prvku v obraze**. Cílem focal pointu je **vést divákovu pozornost** a umožnit mu **lépe vnímat celkovou kompozici a sdělení obrazu.**
-Pokud je více jak 1 focal point, je to celkem problém, oko neví na co se <mark style="background: #BBFABBA6;">zaměřit a mozek neví jaké informace vyhodnotit jako podstatné</mark>.
+Pokud je více jak 1 focal point, je to celkem problém, oko neví na co se **zaměřit a mozek neví jaké informace vyhodnotit jako podstatné**.

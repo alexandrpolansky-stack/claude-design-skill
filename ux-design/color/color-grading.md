@@ -15,7 +15,7 @@ latitude: 50.07553810
 longitude: 14.43780050
 altitude: 0.0000
 ---
-Před **Color-Gradingem** musí přijit <mark style="background: #ABF7F7A6;">COLOR CORRECTION</mark> 
+Před **Color-Gradingem** musí přijit **COLOR CORRECTION** 
 **Color-Grading** pomáhá vytvořit jakýsi mood nebo náladu záběru. Pomocí Color Gradingu, lze dosáhnout velmi uměleckou, futuristickou či medieval podobu snímku. Color correction je naopak oprava barev obrázku, tak aby vypadal jak ze skutečného světa.
 ![3b2299873f2dfadfd3402c465db469d2.png](../_assets/3b2299873f2dfadfd3402c465db469d2.png)
 ![0c8b975e1cfef0a6e0f93337b9d0eb0c.png](../_assets/0c8b975e1cfef0a6e0f93337b9d0eb0c.png)

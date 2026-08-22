@@ -7,20 +7,20 @@ Související: [Typografie](../pravidla/typografie.md) · [Font pairing](font-pa
 ## Styl - Serif
 ### 4 kategorie Serif fontu**
 x
-	**Old style** - <mark style="background: #ABF7F7A6;">vznikl společně s prvním tiskem, byl navržen tak, aby jeho čitelnost byla velmi jednoduchá, není moc velký rozdíl v tloušťce čar</mark>
+	**Old style** - vznikl společně s prvním tiskem, byl navržen tak, aby jeho čitelnost byla velmi jednoduchá, není moc velký rozdíl v tloušťce čar
 		-<span style="font-family: Garamond; font-size: 25px;">Garamond.</span>
 		-<span style="font-family: Berkeley; font-size: 25px;">Berkeley.</span>
 		-<span style="font-family: Minion; font-size: 25px;">Minion.</span>
 		-<span style="font-family: Palatino; font-size: 25px;">Palati.</span>
-	**Transitional** - <mark style="background: #ABF7F7A6;">zvýšení kontrastu mezi tloušťkami čár</mark>
+	**Transitional** - **zvýšení kontrastu mezi tloušťkami čár**
 		-<span style="font-family: TimesNewRoman; font-size: 25px;">Times New Roman.</span>
-	**Didone/Modern** - <mark style="background: #ABF7F7A6;">ještě větší kontrast mezi tloušťkou čar, nejvýrazněji na diagonálách písmen jako N, používané často pro luxusní značky</mark>
+	**Didone/Modern** - **ještě větší kontrast mezi tloušťkou čar, nejvýrazněji na diagonálách písmen jako N, používané často pro luxusní značky**
 		-<span style="font-family: Didone; font-size: 25px;">Didone N.</span>
 		-<span style="font-family: Bodoni; font-size: 25px;">Bodoni.</span> - stylové často používané v HighBrand oblečení, pro svoji eleganci
 		a luxury looku
 
 		-<span style="font-family: Didot; font-size: 25px;">Didot</span> - používá třeba Vogue
-	**Slab serif** - <mark style="background: #ABF7F7A6;">velmi odlišný, často používán pro upoutání pozornosti, například na divokém západě nebo nyní v politice. Využíván, když chceme na někoho zaměřit ať něco dělá</mark>
+	**Slab serif** - velmi odlišný, často používán pro upoutání pozornosti, například na divokém západě nebo nyní v politice. Využíván, když chceme na někoho zaměřit ať něco dělá
 		Rockwell
 		.
 		Archer

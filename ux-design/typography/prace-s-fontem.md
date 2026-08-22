@@ -10,7 +10,7 @@ Kvalitní a vhodné typefacy pro práci mají různé styly a weights
 **BOLD** = Když je font **Bold** neboli **Tučný**, tak nás více upoutá (na druhou stranu působí méně elegantně), je to něco podobného, jak kdyby na nás někdo křičel, zvýšil hlas
 	Můžeme pomocí něj označit, co je nejvíce důležité pro uživatele
 	Volání nebo požadovaná akce, je často v **Bolt** stylu, protože jsou důležité = spojitost s #UX
-<mark style="background: #ABF7F7A6;">LIGHT</mark> = Na druhou stranu, když je text <mark style="background:  #ABF7F7A6;">Light</mark>, působí to více elegantně a ne tak moc útočně, řekněme třeba plakát na pomoc s boji s rakovinou, to je něco, co nechceme předat agresivní formou, ale pomocí thinner varianty, může text až pomoc uklidnit.
+**LIGHT** = Na druhou stranu, když je text **Light**, působí to více elegantně a ne tak moc útočně, řekněme třeba plakát na pomoc s boji s rakovinou, to je něco, co nechceme předat agresivní formou, ale pomocí thinner varianty, může text až pomoc uklidnit.
 	**Light fonty nemůžou být moc malé.**
 
 > [!warning] Oprava, 23. 8. 2026
@@ -19,9 +19,9 @@ Kvalitní a vhodné typefacy pro práci mají různé styly a weights
 > jako **podlaha na mobilu, ne jako cíl**. Platné čtení: tenký řez snese ještě míň velikosti než
 > běžný, takže se na malé texty nehodí vůbec. Konkrétní minima ber z `pravidla/typografie.md`,
 > ne odsud.
-<mark style="background: #BBFABBA6;">REGULAR</mark> = ideální pro body copy, pokud bychom použili **Bold** text, vypadalo by to rušivě, a oko by nevědělo kam dříve skočit
+**REGULAR** = ideální pro body copy, pokud bychom použili **Bold** text, vypadalo by to rušivě, a oko by nevědělo kam dříve skočit
 	 Body copy je hlavní textový obsah v grafickém designu, který obsahuje informace pro čtenáře. Jeho velikost, styl a formátování jsou klíčové pro jeho čitelnost a estetický vzhled. Správné použití body copy pomáhá zdůraznit důležité informace a zlepšuje celkovou vizuální prezentaci designu.
-SEMI **BOLD** = Mezi <mark style="background: #BBFABBA6;">REGULAR</mark> a **BOLD**
+SEMI **BOLD** = Mezi **REGULAR** a **BOLD**
 
 ### SPACING A DESIGN
 Spacing může určit tón projektu
@@ -42,9 +42,9 @@ Spacing může určit tón projektu
 	Nemusíme vždy používat pouze jedno zarovnání, při tvorbě headlinu se s tím dá poměrně kreativně pracovat, ale musíme myslet na čitelnost a estetiku zároveň
 
 ## Font Hyerarchie
-<mark style="background: #BBFABBA6;">Pořadí specifických elementů v designu, tak jak jdou důležitostně po sobě</mark>
-	<mark style="background: #ABF7F7A6;">Headline</mark> je většinou nejdůležitější, proto pro něj lze použít jinou **typeface** přidat mu **weight** a nebo **jinou barvu**
-	<mark style="background: #ABF7F7A6;">Subtitle</mark> - není vždy všude, pomáhá určit jisté informace a rozdělit bodycopy a hedline
-	<mark style="background: #ABF7F7A6;">BodyCopy</mark> - většinou další, méně výrazný, pro ty co si chtějí přečíst více; ale lidé moc nečtou
-	<mark style="background: #ABF7F7A6;">Call to Action</mark> - asi nejdůležitější část, říká uživateli co má udělat, aby se dostal k produktu - text musí být výrazný a dobře viditelný, ať už tím, že je **tučný** a nebo jinak <mark style="background: #FF5582A6;">barevný</mark> či jiná *možnost*
+**Pořadí specifických elementů v designu, tak jak jdou důležitostně po sobě**
+	**Headline** je většinou nejdůležitější, proto pro něj lze použít jinou **typeface** přidat mu **weight** a nebo **jinou barvu**
+	**Subtitle** - není vždy všude, pomáhá určit jisté informace a rozdělit bodycopy a hedline
+	**BodyCopy** - většinou další, méně výrazný, pro ty co si chtějí přečíst více; ale lidé moc nečtou
+	**Call to Action** - asi nejdůležitější část, říká uživateli co má udělat, aby se dostal k produktu - text musí být výrazný a dobře viditelný, ať už tím, že je **tučný** a nebo jinak **barevný** či jiná *možnost*
 

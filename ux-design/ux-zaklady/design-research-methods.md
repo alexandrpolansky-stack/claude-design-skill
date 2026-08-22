@@ -22,19 +22,19 @@ Vytváříme hypotézy a testujeme je, ale tyto hypotézy lze měnit i za běhu 
 		Kvalitativní a kvantitativní
 		Generativní a hodnotící
 		Behaviorální(Chování) a postojové
-	<mark style="background: #BBFABBA6;">Kvalitativní a Kvantitativní</mark>
+	**Kvalitativní a Kvantitativní**
 	**Kvantitativní** metody jsou ty co lze spočítat - čas na stránce, procento uživatelů odebírající newsletter, zobrazení stránek, toky uživatelů, čas do dokončení úkolu. Tyto testy většinou lze provádět pomocí Analytiky nebo se pustiti do - porovnání dvou nebo více variant designu nebo obsahu s cílem zjistit, která verze dosahuje lepších výsledků = jaké jsou konverze (žádaný cíl, které chce podnik dosáhnout od svých uživatelů), uživatelská angažovanost nebo retence. Tyto testy jsou většinou úspěšné velkým množstvím dat.
 	**Kvalitativní** - pronikají do citů, pocitů, chování, postojů a emocí, to lze dělat například pomocí **diary studies** pomocí kvalitních **soft skills** 
 Tyto dva styly výzkumů by se daly označit jako 2 strany téže mince, vzájemně se doplňují.	
-<mark style="background: #BBFABBA6;">Generativní a hodnotící</mark>
+**Generativní a hodnotící**
 	Generativní = Počátky myšlenky
 	Hodnotící = Je to co budujeme správné? A jde to správným směrem?
-<mark style="background: #BBFABBA6;">Behaviorální(Chování) a postojové</mark>
+**Behaviorální(Chování) a postojové**
 	Rozděluje výzkumné metody do dvou dimenzí
 		Jaké názory má uživatel na službu nebo produkt?
 		Jak uživatel skutečně komunikuje s produktem nebo službou?
 	Záleží na situaci, občas pro nás bude důležitější co si uživatel myslí, ale v jiných, co skutečně dělají
-<mark style="background: #BBFABBA6;">Design Research Metods</mark>
+**Design Research Metods**
 	**Safari Service** - vydáte se do přírody a zažijete službu na vlastní kůži. Bývá snažší pokud pracujete ve velké organizaci. = všímejte si interakcí
 	**Focus Groups** - zahrnuje setkání uživatelů, kteří hovoří o produktu nebo službě. Někdy je kritizována, protože má tendenci zdůrazňovat skupinové myšlení a neidentifikuje "neuspokojené potřeby"
 		- Může být efektivní způsob jak začít pracovat na projektu, může být užitečné dát dohromady skupinu **potencionálních uživatelů**, aby diskutovali o nápadech = otestovat předpoklady týmu, začít získávat data, nápady na produkty
