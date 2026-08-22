@@ -331,6 +331,7 @@ https://carbondesignsystem.com/components/structured-list/usage/
 
 ## Co tahle nota neřeší
 
+- Hromadné akce nad stránkovanou a filtrovanou množinou (co znamená „vybrat vše", co s výběrem při přepnutí stránky, částečné selhání dávky) jsou v [Hromadné akce](../vzory/hromadne-akce.md).
 - Tokeny barev a konkrétní rozestupy tabulky. Carbon je má na stránce `style`, odkud je záměrně
   nepřebírám.
 - „AI presence" vizuál tabulky. To je Carbonova identita.

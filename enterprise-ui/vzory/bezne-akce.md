@@ -205,6 +205,7 @@ https://carbondesignsystem.com/components/button/usage/
 
 ## Co tahle nota neřeší
 
+- Delete a Remove nad víc položkami zároveň, včetně toho, čím nahradit ruční opsání názvu u dávky, jsou v [Hromadné akce](hromadne-akce.md).
 - Varianty tlačítek (primary, secondary, tertiary, ghost, danger) a jejich kombinace ve skupině.
   [Tlačítka: varianty a volba](../komponenty/tlacitka-varianty.md).
 - Text chybové hlášky do detailu a zakázaný slovník.

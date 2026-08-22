@@ -221,6 +221,7 @@ Detail: [Datové tabulky](datove-tabulky.md)
 
 ## Co tahle nota neřeší
 
+- Jak se má chovat výběr řádků při přepnutí stránky, je v [Hromadné akce](../vzory/hromadne-akce.md).
 - Infinite scroll. Carbon ho nedokumentuje, v přečtené kopii k němu není nic.
 - „Zobrazit více" a „Načíst více" jako alternativy.
   [Přetečení a truncation](../vzory/preteceni-a-truncation.md) a

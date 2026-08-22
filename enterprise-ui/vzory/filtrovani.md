@@ -149,6 +149,7 @@ Viz [Načítání a čekání](nacitani-a-cekani.md).
 
 ## Co tahle nota neřeší
 
+- Co se stane s vybranými řádky, když uživatel změní filtr, je v [Hromadné akce](hromadne-akce.md).
 - Prázdný výsledek filtru. To je [Prázdné stavy](prazdne-stavy.md) a s tvrdšími zdroji
   [formuláře a stavy](../../ux-design/pravidla/formulare-a-stavy.md).
 - Hledání jako alternativu nebo doplněk filtru. [Hledání](hledani.md).
