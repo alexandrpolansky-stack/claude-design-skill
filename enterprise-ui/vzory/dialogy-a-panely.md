@@ -4,7 +4,7 @@ Kdy přerušit uživatele překryvem a kdy ne. Kde má být akce a co se stane p
 
 Související: [Volba komponenty](../zaklady/volba-komponenty.md) ·
 [Klávesnice a focus](../zaklady/klavesnice-a-focus.md) · [Notifikace](notifikace.md) ·
-[Skladba formuláře](formular-skladba.md)
+[Skladba formuláře](formular-skladba.md) · [Překryvy a vrstvení](prekryvy-a-vrstveni.md)
 
 ---
 

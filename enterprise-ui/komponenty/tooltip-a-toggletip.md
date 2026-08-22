@@ -5,7 +5,8 @@ interakci**.
 
 Související: [Textová pole](textova-pole.md) ·
 [Klávesnice a focus](../zaklady/klavesnice-a-focus.md) ·
-[Oznámení pro čtečky](../zaklady/oznameni-pro-ctecky.md)
+[Oznámení pro čtečky](../zaklady/oznameni-pro-ctecky.md) ·
+[Překryvy a vrstvení](../vzory/prekryvy-a-vrstveni.md)
 
 ---
 

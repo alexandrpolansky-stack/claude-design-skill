@@ -18,8 +18,10 @@ Související: [Datové tabulky](../komponenty/datove-tabulky.md) · [Tagy](../k
    víc** znaků.
 5. Samotná výpustka bez textu = potřebuje **overflow menu** na hover, ne tooltip.
 6. Hodně přetékajícího obsahu = tlačítko „Zobrazit více", ne scroll, gradient nebo fade.
-7. Label tlačítka nezkracuj nikdy, ať se zalomí.
-8. Checkbox label nezkracuj, radši přeformuluj, nebo ať se zalomí.
+7. Zkracovaný prvek musí být **blokový**, a když je položkou flexu nebo gridu, potřebuje navíc
+   **`min-width: 0`**. Bez toho zkrácení mlčky neproběhne.
+8. Label tlačítka nezkracuj nikdy, ať se zalomí.
+9. Checkbox label nezkracuj, radši přeformuluj, nebo ať se zalomí.
 
 ---
 
@@ -125,6 +127,44 @@ stylopis vyžádal.
 Než takové sondě uvěříš prázdný výsledek, nasaď si do stránky vlastní rozbitý `<span>` a ověř, že ho
 najde. Čistý výsledek ze sondy, která neumí nic najít, je jen tiché selhání o patro výš.
 
+### Blokový box ve flexu a gridu ještě nestačí
+
+**PRAVIDLO:** Když je zkracovaný prvek **položkou flexu nebo gridu**, samotné `overflow: hidden;
+text-overflow: ellipsis; white-space: nowrap` nestačí. Položka se nesmrskne pod velikost svého
+obsahu, takže ke zkrácení nikdy nedojde a místo něj se roztáhne celý řádek. Dej té položce
+**`min-width: 0`** (ve sloupcovém směru `min-height: 0`).
+**KDY PLATÍ:** Každá položka flexu nebo gridu, která má zkracovat. Tedy skoro každý řádek seznamu,
+buňka postavená na flexu, hlavička s názvem vedle akcí.
+**PROČ:** `min-width` má výchozí hodnotu `auto` a ta se u položek flexu a gridu neřeší jako nula.
+Rozpadne se na navrženou velikost, přenesenou velikost, nebo `min-content`, takže položka drží
+šířku svého nejdelšího nedělitelného obsahu. `min-width: 0` tu automatickou minimální velikost
+zruší.
+**TŘÍDA:** A (chování dané specifikací)
+**ZDROJ:** MDN, `min-width`, hodnota `auto`, verbatim: „For flex items and grid items, the minimum
+width value is either the specified suggested size, such as the value of the `width` property, the
+transferred size, calculated if the element has an `aspect-ratio` set and the height is a definite
+size, otherwise, the `min-content` size is used." A dál k výjimce: „If the flex or grid item is a
+scroll container, or if a grid item spans more than one flexible column track, the automatic minimum
+size is `0`." https://developer.mozilla.org/en-US/docs/Web/CSS/min-width
+
+**Proč `overflow: hidden` funguje jako druhá cesta:** dělá z položky scroll container a MDN výše
+říká, že u scroll containeru je automatické minimum nula. Není to tedy náhoda ani trik, ale druhý
+konec téhož pravidla. Praktický rozdíl: `min-width: 0` říká, co chceš, `overflow: hidden` má vedlejší
+efekt na ořezávání, takže na sdíleném prvku je čitelnější `min-width: 0`.
+
+**Grid má vlastní podobu téhož.** Stopa definovaná jako `1fr` se nesmrskne pod obsah, protože `auto`
+jako minimum znamená největší minimální velikost položek v té stopě. Když má sloupec zkracovat,
+napiš `minmax(0, 1fr)`.
+**ZDROJ:** MDN, `minmax()`, hodnota `auto` jako `min`, verbatim: „As `min`, it represents the largest
+minimum size (as specified by `min-width`/`min-height`) of the grid items occupying the grid track."
+https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
+
+**Souvislost, kvůli které tahle sekce stojí hned tady:** předchozí sekce řeší prvek, který není
+blokový. Tahle řeší prvek, který blokový je a přesto se nezkrátí. Jsou to dvě různé příčiny stejného
+symptomu a obě mlčí, takže když opravíš jednu a nic se nezmění, oprava byla správná a chybí ta
+druhá. Třetí příčina téhož symptomu je tabulka bez fixního layoutu, viz
+[Stabilita layoutu](stabilita-layoutu.md).
+
 ## Samotná výpustka
 
 **PRAVIDLO:** Výpustka může zastupovat kondenzovaný obsah i sama za sebe. Tenhle typ zkrácení
@@ -222,3 +262,11 @@ IBM Carbon Design System, Overflow content pattern, lokální kopie přečtená 
 https://carbondesignsystem.com/patterns/overflow-content/
 Doplněno sekcemi Overflow content ze stránek `usage` jednotlivých komponent. Vzor je krátký a nemá
 sekci References, Carbon k němu žádné externí zdroje neuvádí. Třída **B**.
+
+Mechanika samotného zkracování v CSS je doložená z MDN a je **třída A**, protože jde o chování dané
+specifikací: `text-overflow` a `overflow` (na koho platí),
+https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow ·
+`min-width`, hodnota `auto` u položek flexu a gridu,
+https://developer.mozilla.org/en-US/docs/Web/CSS/min-width ·
+`minmax()`, hodnota `auto` jako minimum stopy,
+https://developer.mozilla.org/en-US/docs/Web/CSS/minmax

@@ -5,7 +5,7 @@ jiného**. Otevři při stavbě jakékoli obrazovky, kde jedno ovládání měn�
 
 Související: [Filtrování](filtrovani.md) · [Datové tabulky](../komponenty/datove-tabulky.md) ·
 [Přetečení a zkracování](preteceni-a-truncation.md) ·
-[Načítání a čekání](nacitani-a-cekani.md)
+[Načítání a čekání](nacitani-a-cekani.md) · [Překryvy a vrstvení](prekryvy-a-vrstveni.md)
 
 ---
 

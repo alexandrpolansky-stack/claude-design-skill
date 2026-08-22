@@ -4,7 +4,7 @@ Carbonův model: notifikace se skládá ze **stavu** (co sděluje) a **typu** (j
 Obojí se volí zvlášť a kombinuje.
 
 Související: [Dialogy a panely](dialogy-a-panely.md) · [Stavové indikátory](stavove-indikatory.md) ·
-[Oznámení pro čtečky](../zaklady/oznameni-pro-ctecky.md)
+[Oznámení pro čtečky](../zaklady/oznameni-pro-ctecky.md) · [Překryvy a vrstvení](prekryvy-a-vrstveni.md)
 
 ---
 

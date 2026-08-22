@@ -4,7 +4,7 @@
 
 Související: [Volba komponenty](../zaklady/volba-komponenty.md) ·
 [Klávesnice a focus](../zaklady/klavesnice-a-focus.md) · [Skladba formuláře](../vzory/formular-skladba.md) ·
-[Filtrování](../vzory/filtrovani.md)
+[Filtrování](../vzory/filtrovani.md) · [Překryvy a vrstvení](../vzory/prekryvy-a-vrstveni.md)
 
 ---
 
