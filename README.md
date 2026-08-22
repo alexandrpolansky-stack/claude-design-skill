@@ -3,7 +3,7 @@
 Knihovna designové znalosti, kterou umí Claude použít. Second-brain styl: znalost je rozdělená do
 tematických sekcí v rootu, `skills/` je jen tenká vrstva, která Claudeovi říká, kdy do knihovny sáhnout.
 
-**88 not, ~139 000 slov.** Vstupní bod do celé knihovny: [`_index.md`](_index.md).
+**89 not, ~142 000 slov.** Vstupní bod do celé knihovny: [`_index.md`](_index.md).
 
 ## Knihovna
 

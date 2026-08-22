@@ -1,21 +1,21 @@
 # Stav znalosti a co doplnit
 
-Snímek k 23. 8. 2026 (po doplnění tichých selhání layoutu do `enterprise-ui/vzory/`). Účel: aby bylo vidět,
+Snímek k 23. 8. 2026 (po retenčním testu a opravách, které z něj vypadly). Účel: aby bylo vidět,
 kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i tenhle soubor.
 
 ## Souhrn
 
 | | |
 |---|---|
-| Not v knihovně celkem | 88 |
+| Not v knihovně celkem | 89 |
 | `neuro-design/` | 1 (master dokument, 5 modulů) |
 | `ux-design/` | 51 (31 původních + 11 v `pravidla/` + 9 v `kontext/`) |
-| `enterprise-ui/` | 29 (6 `zaklady/` + 13 `vzory/` + 10 `komponenty/`) |
+| `enterprise-ui/` | 30 (6 `zaklady/` + 14 `vzory/` + 10 `komponenty/`) |
 | `web-dev/` | 4 |
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
 | Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~131 v 11 notách |
 | Sektorových pravidel (`ux-design/kontext/`) | ~87 v 9 notách |
-| Pravidel s třídou důkazu (`enterprise-ui/`) | 155 v 29 notách, 355 blocích ZDROJ |
+| Pravidel s třídou důkazu (`enterprise-ui/`) | ~168 v 30 notách, ~365 blocích ZDROJ |
 | Obrázků v repu | 32 |
 | Odkazů na obrázky, které ve zdroji nejsou | 24, všechny v notách označených **[archiv]** (bylo 99) |
 | Not pod 120 slov (kostra) | 5, z toho 3 označené **[archiv]** a 2 **[stub]** |
@@ -175,6 +175,60 @@ přitom ukázal, že soubor má +3 řádky a jednu změněnou. Byl to falešný 
 skriptu. **Autoritativní je `git diff --numstat` a porovnání množin řádků, ne podobnostní metrika.**
 Je to druhý případ během jednoho dne, kdy vlastní kontrolní skript lhal a málem podle něj vzniklo
 špatné rozhodnutí; ten první tvrdil, že `layout-theory.md` nikdo nepoužívá.
+
+## 0c. Retenční test a co z něj vypadlo (23. 8. 2026)
+
+**Metoda.** Čtyři čisté subagenty, každý dostal jeden reálný úkol, vstupní bod `_index.md` a zákaz
+procházet složky. Úkoly: filtrovatelná tabulka uživatelů s hromadnými akcemi, modál pod stickym
+headerem s `z-index: 9999`, jednostránková landing page, čtyřkrokový onboarding wizard. Očekávané
+výsledky byly zapsané předem, aby se laťka po přečtení odpovědí neposouvala.
+
+**Výsledek retrievalu: 4 ze 4.** Nikdo nesáhl do noty označené **[archiv]**, nikdo neskončil ve
+`web-dev/`, opravený rozpor font-pairing versus anti-slop drží. Z-index se trefil na první pokus.
+Přidávání dalších not tedy není to, co knihovnu zlepší; nálezitelnost a rozpory bolí víc.
+
+**Šest vad, které audity minuly a test našel:**
+
+| # | Vada | Oprava |
+|---|---|---|
+| 1 | `neuro-design/` a `sheets/` nebyly v pravidle o vrstvách, přestože index doporučuje neuro-design jako první čtení | `_index.md` má tabulku tří vrstev, která pokrývá všechny sekce, plus varování „ber z něj metodiku, ne čísla" |
+| 2 | `SKILL.md` krok 5 posílal na `step-by-step-ux-ui.md`, která nemá konec | Krok 5 nese proces sám, nota má **[neúplné]** a poctivý popis |
+| 3 | Živý mezivrstvový rozpor: `neuro-design-master.md` zdůvodňoval shlukování Millerovou sedmičkou, `pravidla/typografie.md` (třída A) to zakazuje | Blok „Jak tuhle notu číst" nahoře v notě plus inline oprava. Výzkum zůstal, override je nad ním |
+| 4 | `pravidlo-60-30-10.md` radil akcent „90 % saturace, 90 % jasu", což u primárního CTA vyrábí porušení kontrastu | Override blok se dvěma variantami akcentu. `anti-slop.md` už notu neuvádí jako oporu bez výhrady |
+| 5 | 128 zbytků `<mark style="background: #...">` ve 12 notách (minulý úklid řešil jen `#Tag`) | Převedeno na tučné, u nadpisů a dlouhých pasáží odstraněno bez zvýraznění |
+| 6 | `formulare-a-stavy.md` si protiřečila (shrnutí „1 až 10 s", pravidlo „2 až 10 s"); práh 5 s versus 10 s proti Carbonu nepojmenovaný; `navigace-v-hierarchii.md` hlásila konflikt u validace, ne u progress indikátoru | Shrnutí srovnáno podle doslovného zdroje (NN/g), oba konflikty pojmenované v místě |
+
+**Popisky v indexu.** Systematická vada: popisovaly téma noty, ne situaci, ve které ji otevřít.
+Přepsáno 17 řádků a dva nadpisy sekcí. Konkrétní chyby, které stojí za zapamatování:
+
+- „multi-step a Cowanovo 3-5" vyrábělo přesně to nedorozumění, které nota tři odstavce vyvrací.
+- `bezne-akce.md` slibovalo „save", které ve slovníku není.
+- `layout-theory.md` slibovalo „padding", který v notě není ani jednou.
+- „Otevři, když váháš" u `volba-komponenty.md` se sama vyfiltrovala, agent notu přeskočil, přestože
+  `SKILL.md` velí otevřít ji první.
+- Slova „onboarding", „wizard" a „z-index" v indexu nebyla vůbec, přestože knihovna k nim materiál má.
+- Vzor, jak to má vypadat: `stabilita-layoutu.md` pojmenuje situaci („uživatel přepne filtr"), ne
+  komponentu, a agent ji našel, aniž věděl, že takový problém řeší.
+
+**Nová nota.** [Hromadné akce nad filtrovanou a stránkovanou množinou](enterprise-ui/vzory/hromadne-akce.md).
+Test ukázal, že na jádro nejběžnější enterprise obrazovky knihovna neodpovídala: co znamená „vybrat
+vše" nad 4 812 filtrovanými řádky, co s výběrem při přepnutí stránky, jak potvrdit smazání 200
+položek, když pravidlo velí opsat název zdroje a žádný jeden název neexistuje, a jak nahlásit, že
+z dávky prošlo 197 z 200. **Většina pravidel je třída C**, protože Carbon tuhle oblast nepokrývá,
+a nota to říká na konci sama.
+
+**Mezery, které test pojmenoval a které zůstávají otevřené:**
+
+- Stav filtru, stránky a výběru v URL. Sdílitelnost pohledu odkazem a chování tlačítka zpět.
+- Oprávnění na úrovni jednotlivého řádku („nemůžu smazat sám sebe", „posledního admina").
+- Výchozí počet položek na stránku. Carbon komponentu popisuje, hodnotu nedoporučuje.
+- Buňka s identitou člověka (avatar plus jméno plus e-mail), nejčastější buňka seznamu uživatelů.
+- Sektor „interní nástroj pro zaměstnance". Osm not v `kontext/` a ani jedna na tenhle případ.
+- Struktura landing page: jaké sekce a v jakém pořadí, kolikrát opakovat CTA při scrollu.
+- Animace spouštěné scrollem. `pravidla/pohyb.md` je nemá a index to teď říká.
+- Onboarding jako samostatný vzor (přeskočení, dokončení později, opuštění uprostřed).
+- `inert` se v knihovně nevyskytuje, přestože `prekryvy-a-vrstveni.md` požaduje zneaktivnění obsahu
+  pod modálem.
 
 ## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 
