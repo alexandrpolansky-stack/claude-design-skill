@@ -1,3 +1,9 @@
+# Obecná UX znalost
+
+Don Norman, afordance, viditelnost, zpětná vazba, mapování, role v UX týmu.
+
+Související: [UX zákony](../zakony-principy/ux-laws.md) · [Etika v UX](etika-v-ux.md) · [Designový proces](design-process.md)
+
 UX je všude kolem nás
 - ovladač na TV
 - ovládání v autě

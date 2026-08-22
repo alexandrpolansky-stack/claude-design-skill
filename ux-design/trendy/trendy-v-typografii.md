@@ -1,3 +1,10 @@
+# Trendy v typografii
+
+> [!note] Archiv: nota je prázdná, obsah byl v obrázcích
+> Deset chybějících ukázek a jeden nadpis. Nezbylo nic, co by se dalo použít.
+> **Typografii drží [Typografie](../pravidla/typografie.md)** (délka řádku, WCAG, škála)
+> a [Font pairing](../typography/font-pairing.md). Zatříděno 23. 8. 2026.
+
 *[chybějící obrázek: Pasted image 20240116020953.png]*
 *[chybějící obrázek: Pasted image 20240116021006.png]*
 

@@ -22,7 +22,7 @@ Když navrhuju cokoliv user-facing, nejdřív si vytáhnu relevantní znalost, a
 Knihovna žije v rootu repa, ne uvnitř skillu. Cesty níže jsou relativní ze složky skillu,
 což platí, když je repo naklonované celé. Kdyby relativní cesta neexistovala (skill
 nakopírovaný samostatně), najdi `_index.md` v rootu repa `claude-design-skill` a jdi odtud.
-[../../_index.md](../../_index.md) – mapa celé knihovny (86 not v pěti sekcích: neuro-design, ux-design, enterprise-ui, web-dev, sheets). Otevři index, vyber relevantní sekce a přečti je. Nečti celý index dokola; vezmi jen to, co k úkolu patří, a odkaž na konkrétní notu.
+[../../_index.md](../../_index.md) – mapa celé knihovny (88 not v pěti sekcích: neuro-design, ux-design, enterprise-ui, web-dev, sheets). Otevři index, vyber relevantní sekce a přečti je. Nečti celý index dokola; vezmi jen to, co k úkolu patří, a odkaž na konkrétní notu.
 
 ## Postup
 1. **Souvislosti první:** čí je to výstup, kdo ho čte/používá, jaký je jeho cíl, co má být hned jasné, jaký je hlavní flow.
@@ -40,9 +40,13 @@ nakopírovaný samostatně), najdi `_index.md` v rootu repa `claude-design-skill
      vlastní interaktivní komponentu.
    - [Mřížka a breakpointy](../../enterprise-ui/zaklady/2x-grid-a-breakpointy.md) na rozvržení.
 
-   **Konflikty:** `enterprise-ui/` je odvozené z IBM Carbonu, tedy třída **B** (publikovaná
-   konvence design systému). Když si odporuje s `ux-design/pravidla/` (třídy A: WCAG, měření,
-   peer-reviewed), **vyhrává `ux-design/pravidla/`**. Konkrétní rozpory jsou vypsané v
+   **Konflikty:** knihovna má tři vrstvy důvěryhodnosti a v konfliktu vyhrává ta vyšší:
+   1. `ux-design/pravidla/` a `ux-design/kontext/` (třídy A: WCAG, měření, peer-reviewed)
+   2. `enterprise-ui/` (třída B, publikovaná konvence design systému, odvozeno z IBM Carbonu)
+   3. zbytek `ux-design/` a `web-dev/` (původní import studijních poznámek, **bez třídy důkazu**)
+
+   Noty ve třetí vrstvě jsou často užitečné, ale nikdy nepřebíjejí první dvě, a noty označené
+   v indexu **[archiv]** nepoužívej při návrhu vůbec. Konkrétní rozpory jsou vypsané v
    [STATUS.md](../../STATUS.md), sekce 0. Z Carbonu nikdy neber tokeny, hex hodnoty, IBM Plex ani
    elevation škály: přebíráme principy, ne vizuál.
 4. **Aplikuj základ** (i na tabulky/sheety/reporty, ne jen UI):
@@ -54,8 +58,12 @@ nakopírovaný samostatně), najdi `_index.md` v rootu repa `claude-design-skill
    - U interaktivního UI navíc: zpětná vazba na akce, viditelný focus, ovladatelnost klávesnicí.
 5. **U větší stavby** projdi proces (uživatel → cíl → flow → wireframe): [step-by-step-ux-ui](../../ux-design/proces/step-by-step-ux-ui.md).
 6. **Hotový příklad** design systému s konkrétními tokeny: [design-system-drive](../../ux-design/priklady-ds/design-system-drive.md).
-7. **Když píšeš UI kód**, drž se destilátu [rules/frontend-ux-detailed.md](../../rules/frontend-ux-detailed.md)
-   a implementačních not v [web-dev/](../../web-dev/).
+7. **Když píšeš UI kód**, drž se destilátu [rules/frontend-ux-detailed.md](../../rules/frontend-ux-detailed.md).
+   Implementační pasti, které mlčky nezaberou (zkracování, `min-width: 0`, stacking context,
+   `sticky` pod `overflow`, stabilita layoutu při změně dat), jsou v
+   [enterprise-ui/vzory/](../../enterprise-ui/vzory/) a jsou třída A ze specifikace.
+   [web-dev/](../../web-dev/) je úvodní materiál k HTML a CSS z původního importu, ne referenční
+   příručka: sahej po něm jen na základy, ne na řešení konkrétního problému.
 
 ## Vztah k ostatním vrstvám
 - Tento skill = trigger podle SMYSLU úkolu (i bez frontend souboru).

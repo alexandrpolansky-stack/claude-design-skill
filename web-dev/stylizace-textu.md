@@ -1,3 +1,9 @@
+# Stylizace textu v CSS
+
+Jak zvýraznit text proti okolí.
+
+Související: [HTML a CSS](html-a-css.md) · [Typografie](../ux-design/pravidla/typografie.md)
+
 ---
 title: Stylizace textu
 updated: 2023-07-17 14:12:40Z

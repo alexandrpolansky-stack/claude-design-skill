@@ -1,3 +1,12 @@
+# Color grading
+
+> [!note] Archiv: mimo rozsah knihovny
+> Tahle nota je o **color gradingu videa v Premiere** (LUT, Adjustment Layer, Basic Correction).
+> To je postprodukce videa, ne to, jak vypadá rozhraní a jak se v něm člověk orientuje, takže to
+> spadá mimo tvrdé pravidlo v [CLAUDE.md](../../CLAUDE.md). **Při návrhu rozhraní sem nesahej.**
+> Barvy v UI drží [Kontrast a barva](../pravidla/kontrast-a-barva.md) a
+> [Color Theory](color-theory.md). Zatříděno 23. 8. 2026, ponecháno kvůli úplnosti archivu.
+
 ---
 title: Color Grading
 updated: 2023-04-25 15:16:51Z

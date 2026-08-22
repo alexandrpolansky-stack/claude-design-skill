@@ -1,3 +1,9 @@
+# Discovery
+
+První fáze návrhu: sběr informací o uživatelích a jejich potřebách.
+
+Související: [Definice problému](define-the-problem.md) · [Metody UX výzkumu](design-research-methods.md) · [Poznej své uživatele](understand-your-users.md)
+
 **Co je discovery v UX**
 	 Discovery v UX je proces, který se používá k tomu, aby se získaly informace o uživatelích a jejich potřebách. Jedná se o první fázi v návrhu uživatelského rozhraní (UX), kde se shromažďují informace o cílových uživatelích, jejich potřebách, cílech a chování. Tento proces zahrnuje různé techniky, jako jsou rozhovory s uživateli, dotazníky, průzkumy trhu a analýzy konkurence. Cílem discovery je porozumět uživatelským potřebám a použít tyto informace k navržení uživatelsky zaměřeného produktu nebo služby.
 Psychologie objevování

@@ -1,3 +1,9 @@
+# Principy a heuristiky
+
+Peak-End, Dohertyho práh, Occamova břitva, Paretův princip.
+
+Související: [UX zákony](ux-laws.md) · [Kognitivní efekty](efekty.md) · [Pohyb](../pravidla/pohyb.md)
+
 **Pravidlo vrcholu a konce (Peak-End Rule)**
 • **Definice:** Lidé hodnotí zážitek převážně podle toho, jak se cítili v jeho nejintenzivnějším momentě (vrcholu) a na jeho konci, nikoliv podle průměru celé zkušenosti.
 • **Využití:** Zaměřte se na vylepšení kritických momentů (např. čekání na odvoz, odeslání kampaně) a finální fáze procesu. Příkladem je MailChimp, který přidává humor a "high five" animaci při stresujícím odesílání newsletteru, čímž mění konec zážitku na pozitivní.

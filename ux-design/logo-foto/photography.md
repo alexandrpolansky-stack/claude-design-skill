@@ -1,3 +1,11 @@
+# Photography: základy expozice
+
+> [!note] Archiv: mimo rozsah knihovny
+> Tahle nota vysvětluje **ovládání fotoaparátu** (expozice, clona, závěrka, ISO), ne práci
+> s fotografií v designu. [Gastro](../kontext/gastro.md) na ni odkazuje jako na „obecnou práci
+> s fotografií", což tahle nota nepokrývá: to je otevřená mezera, ne obsah, který by tu byl.
+> Zatříděno 23. 8. 2026.
+
 **Expozice** - kolik světla je zachyceno kamerou
 *[chybějící obrázek: Pasted image 20240116014226.png]*
 

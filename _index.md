@@ -3,7 +3,20 @@
 Vstupní bod do celé knihovny. Princip: tahle mapa je levný index, ze kterého se vytáhne jen
 relevantní nota. Nenačítat všechno.
 
-Značka **[stub]** = nota je zatím kostra, hodí se doplnit. Stav a mezery: [STATUS.md](STATUS.md).
+Značky u not:
+
+| Značka | Význam |
+|---|---|
+| **[stub]** | nota je zatím kostra, hodí se doplnit |
+| **[archiv]** | studijní materiál z původního vaultu nebo téma mimo rozsah knihovny. **Při návrhu sem nesahej**, je to tu jako záznam, ne jako opora |
+
+**Dvě vrstvy důvěryhodnosti.** Noty v `ux-design/pravidla/`, `ux-design/kontext/` a `enterprise-ui/`
+mají u každého pravidla **třídu důkazu** a zdroj. Zbytek `ux-design/` a `web-dev/` pochází
+z původního importu studijních poznámek a **třídu důkazu nemá**. Když si ty dvě vrstvy odporují,
+**platí ta s třídou**. Stalo se to už dvakrát (gridlines, počet fontů), pokaždé to stálo měsíce
+špatné rady, takže to není teorie. Detail v [STATUS.md](STATUS.md).
+
+Stav a mezery: [STATUS.md](STATUS.md).
 
 ## Sekce
 
@@ -11,7 +24,7 @@ Značka **[stub]** = nota je zatím kostra, hodí se doplnit. Stav a mezery: [ST
 |---|---|---|
 | [neuro-design/](neuro-design/) | 1 | Kognitivní ergonomie, eye-tracking, algoritmy vizuální váhy. Nejhutnější dokument v knihovně. |
 | [ux-design/](ux-design/) | 51 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
-| [enterprise-ui/](enterprise-ui/) | 27 | Produktové aplikace: volba komponenty podle úkolu, vzory (prázdné stavy, notifikace, filtrování), komponenty (tabulky, formulářové prvky, taby), klávesnice a čtečky. Principy z IBM Carbonu, bez jeho vizuálu. |
+| [enterprise-ui/](enterprise-ui/) | 29 | Produktové aplikace: volba komponenty podle úkolu, vzory (prázdné stavy, notifikace, filtrování), komponenty (tabulky, formulářové prvky, taby), klávesnice a čtečky. Principy z IBM Carbonu, bez jeho vizuálu. |
 | [web-dev/](web-dev/) | 4 | HTML/CSS základy, vkládání CSS, stylizace textu, práce s obrázky. |
 | [sheets/](sheets/) | 3 | Google Sheets reporty: rozhodovací rámec, brand tokeny, Apps Script vrstva. |
 
@@ -31,7 +44,7 @@ Značka **[stub]** = nota je zatím kostra, hodí se doplnit. Stav a mezery: [ST
 - [Understand who your users are](ux-design/ux-zaklady/understand-your-users.md) – kdo jsou uživatelé, persony.
 - [Discovery](ux-design/ux-zaklady/discovery.md) – fáze objevování problému a kontextu.
 - [Etika v UX](ux-design/ux-zaklady/etika-v-ux.md) – etika, dark patterns naopak.
-- [UX experience](ux-design/ux-zaklady/ux-experience.md) – z čeho se skládá uživatelský zážitek. **[stub]**
+- [UX experience](ux-design/ux-zaklady/ux-experience.md) - dva vlastní zápisky o špatném UX, ilustrace, ne pravidla. **[archiv]**
 
 ## Zákony a principy (nejvíc akční pro stavbu)
 
@@ -82,6 +95,10 @@ elevation škály ani ikonová knihovna. Většina pravidel je třída **B** (pu
 systému), citované WCAG a peer-reviewed studie jsou **A**, vlastní syntéza je označená **C**.
 Kde se Carbon rozchází s `ux-design/pravidla/`, vyhrává knihovna a konflikt je popsaný v místě.
 
+Tři noty ve `vzory/` z Carbonu nepocházejí: stabilita layoutu, překryvy a vrstvení a část přetečení
+stojí na MDN a na praxi, a jsou proto **třída A**. Řeší jednu rodinu problémů: chování, které mlčky
+neproběhne a jehož symptom vypadá jako úplně jiná chyba.
+
 ### Základy
 
 - [Vrstvy enterprise UI](enterprise-ui/zaklady/vrstvy-a-vzory.md) - vstupní nota sekce: tři vrstvy (prvky, komponenty, vzory), v jaké vrstvě hledat jakou odpověď, a explicitní seznam toho, co z Carbonu záměrně nepřebíráme a proč.
@@ -102,6 +119,7 @@ Kde se Carbon rozchází s `ux-design/pravidla/`, vyhrává knihovna a konflikt 
 - [Skladba formuláře](enterprise-ui/vzory/formular-skladba.md) - rozvržení, sekce, mezery, poloha tlačítek, technika pro dlouhé formuláře, a rozpor s knihovnou v načasování validace.
 - [Stavové indikátory](enterprise-ui/vzory/stavove-indikatory.md) - jak sdělit stav nebo závažnost, čtyři varianty, kolik kanálů musí stav nést podle WCAG, plus zdokumentovaná nekonzistence uvnitř Carbonu.
 - [Přetečení obsahu a zkracování](enterprise-ui/vzory/preteceni-a-truncation.md) - kde smíš zkrátit výpustkou, kde nikdy, a kdy místo zkrácení nabídnout „Zobrazit více".
+- [Překryvy a vrstvení](enterprise-ui/vzory/prekryvy-a-vrstveni.md) - proč překryv nevyleze nad sousedy, nedrží se při scrollu, nebo se pozicuje vůči něčemu jinému, než čekáš. Co všechno zakládá stacking context, top layer jako řešení, sonda do konzole. Třída A ze specifikace.
 - [Stabilita layoutu při změně dat](enterprise-ui/vzory/stabilita-layoutu.md) - když uživatel přepne filtr nebo rozsah, má se změnit obsah a nic jiného. Proč automatická šířka sloupců je funkce dat, proč tabulární číslice nestačí, a kam patří ovládání, které tu změnu vyvolává.
 - [Disabled, read-only, nebo skryté](enterprise-ui/vzory/disabled-vs-read-only.md) - tři způsoby, jak udělat prvek neovladatelný. Volba mezi nimi je přístupnostní rozhodnutí, ne vizuální.
 - [Běžné akce](enterprise-ui/vzory/bezne-akce.md) - slovník opakujících se akcí (save, cancel, delete, remove, close), které Carbon definuje úzce a velí používat jen popsaným způsobem.
@@ -127,7 +145,7 @@ Kde se Carbon rozchází s `ux-design/pravidla/`, vyhrává knihovna a konflikt 
 
 - [Color Theory](ux-design/color/color-theory.md) – teorie barev, barevné kruhy, schémata.
 - [Color Psychology](ux-design/color/color-psychology.md) – psychologie barev a emoce.
-- [Color Grading](ux-design/color/color-grading.md) – ladění barev.
+- [Color Grading](ux-design/color/color-grading.md) - color grading videa v Premiere, mimo rozsah knihovny. **[archiv]**
 - [Pravidlo 60-30-10](ux-design/color/pravidlo-60-30-10.md) – poměr primární/sekundární/akcentní barvy.
 
 ## Typografie
@@ -135,7 +153,7 @@ Kde se Carbon rozchází s `ux-design/pravidla/`, vyhrává knihovna a konflikt 
 - [Typography – základy, anatomie](ux-design/typography/typography-zaklady-anatomie.md) – anatomie písma, základy.
 - [Serif a Sans Serif](ux-design/typography/serif-a-sans-serif.md) – kdy patkové vs. bezpatkové.
 - [Práce s fontem](ux-design/typography/prace-s-fontem.md) – praktická práce s fonty.
-- [Font pairing](ux-design/typography/font-pairing.md) – párování fontů. **[stub]**
+- [Font pairing](ux-design/typography/font-pairing.md) - jak vybrat dvě rodiny, aby to vypadalo jako rozhodnutí. Přepsáno 23. 8. 2026, původní verze radila 3-4 fonty a šla proti `anti-slop.md`.
 
 ## Layout
 
@@ -146,8 +164,8 @@ Kde se Carbon rozchází s `ux-design/pravidla/`, vyhrává knihovna a konflikt 
 
 - [HTML a CSS](web-dev/html-a-css.md) – základy HTML a CSS, box model, selektory. Největší nota v sekci.
 - [Stylizace textu](web-dev/stylizace-textu.md) – práce s textem v CSS.
-- [Inserting CSS](web-dev/inserting-css.md) – způsoby vkládání CSS.
-- [Using best images possible](web-dev/using-best-images.md) – volba a příprava obrázků.
+- [Inserting CSS](web-dev/inserting-css.md) – způsoby vkládání CSS. **[stub]**
+- [Using best images possible](web-dev/using-best-images.md) – volba a příprava obrázků. **[stub]**
 
 ## Google Sheets
 
@@ -161,12 +179,16 @@ Kde se Carbon rozchází s `ux-design/pravidla/`, vyhrává knihovna a konflikt 
 
 ## Trendy
 
-- [Grafické trendy](ux-design/trendy/graficke-trendy.md) **[stub]** · [Trendy v typografii](ux-design/trendy/trendy-v-typografii.md) **[stub]**
+- [Grafické trendy](ux-design/trendy/graficke-trendy.md) - deset názvů trendů, všechny ukázky chybí. **[archiv]**
+- [Trendy v typografii](ux-design/trendy/trendy-v-typografii.md) - prázdná nota, obsah byl v obrázcích. **[archiv]**
+
+Postoj knihovny k trendům drží [Anti-slop](ux-design/pravidla/anti-slop.md) a
+[Vizuální craft](ux-design/pravidla/vizualni-craft.md), tam jsou pravidla se třídou důkazu.
 
 ## Další
 
-- [Logo Design](ux-design/logo-foto/logo-design.md) – návrh loga.
-- [Photography](ux-design/logo-foto/photography.md) – základy fotografie pro design.
+- [Logo design](ux-design/logo-foto/logo-design.md) - na čem stojí použitelné logo: rozpoznatelnost bez barvy, v každé velikosti, negative space.
+- [Photography](ux-design/logo-foto/photography.md) - ovládání fotoaparátu (expozice, clona, ISO), ne práce s fotografií v designu. **[archiv]**
 
 ## Destiláty pro moment psaní kódu
 
@@ -177,5 +199,5 @@ Nepatří do knihovny, jsou to imperativy vytažené z toho, co je výše:
 
 ## Zdroje k učení
 
-- [Kurzy](ux-design/zdroje/kurzy.md) – grafické a UX kurzy.
-- [Videa](ux-design/zdroje/videa.md) – UX/UI a barevné tutoriály. **[stub]**
+- [Kurzy](ux-design/zdroje/kurzy.md) - osobní seznam absolvovaných a plánovaných kurzů. **[archiv]**
+- [Videa](ux-design/zdroje/videa.md) - dva odkazy na tutoriály. **[archiv]**

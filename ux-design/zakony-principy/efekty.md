@@ -1,3 +1,9 @@
+# Kognitivní efekty
+
+Von Restorff, sériová pozice, Zeigarnik, cílový gradient, utopené náklady a aesthetic-usability.
+
+Související: [UX zákony](ux-laws.md) · [Principy a heuristiky](principy-a-pravidla.md) · [Neuro-design master](../../neuro-design/neuro-design-master.md)
+
 ## ***Efektu estetické použitelnosti***  (Aesthetic-Usability Effect)
 
 > [!important] Populární verze tohoto efektu (tolerance k chybám) je nepodložená

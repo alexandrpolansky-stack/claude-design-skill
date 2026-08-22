@@ -1,3 +1,9 @@
+# Psychologie barev
+
+Jaké asociace barvy vyvolávají a proč nejsou univerzální napříč kulturami.
+
+Související: [Teorie barev](color-theory.md) · [Kontrast a barva](../pravidla/kontrast-a-barva.md) · [Luxury](../kontext/luxury.md)
+
 Psychologie barev **se zabývá  vlivem barev na lidské chování, nálady a emoce.** Tento obor zkoumá, **jaké pocity a asociace vyvolávají různé barvy** u jednotlivých lidí a jak se dají tyto poznatky využít například při designování interiéru, marketingových kampaní nebo terapii.
 
 Psychologie barev není univerzální, to znamená, že různě po světě mohou barvy působit naprosto jinak, ať už díky asociacím, tak kultuře, náboženství. Příkladem může být **<mark style="background: #00000000;">ČERNÁ</mark> barva** v US,EU ji máme spojenou se zármutkem a truchlení. Avšak v někde v Asii je <mark style="background: #FFFFFFFF;">BÍLÁ</mark> barva brána jako truchlící a Jižní Africe je to <mark style="background: #FF5582A6;">červená</mark>.

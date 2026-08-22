@@ -1,4 +1,8 @@
-Je ## Kurz
+# Typografie: základy a anatomie
+
+Názvosloví písma: typeface vs. font, klasifikace, kerning a leading.
+
+Související: [Typografie](../pravidla/typografie.md) · [Serif a Sans Serif](serif-a-sans-serif.md) · [Práce s fontem](prace-s-fontem.md)
 
 <mark style="background: #FF5582A6;">Typografie je umění nebo technika zobrazování textu nebo slov čtivým, stravitelným nebo přitažlivým způsobem
 </mark>
@@ -6,38 +10,35 @@ Je ## Kurz
 	Třeba Times New Roman
 **ClassiFication**
 - Serif = Times New Roman
-	- *[chybějící obrázek: Pasted image 20231201161409.png]* Díky těmto ocáskům je text snadnější na přečtení a proto se například často používá v knihách
+	-  Díky těmto ocáskům je text snadnější na přečtení a proto se například často používá v knihách
 - Sans Serif = Helvetica
-	- Nemá ty ocásky, jak můžeme vidět na fotce. Dělá skvělé headliny, protože je jednoduchý
-- Script Fonts = 
+	- Nemá ty ocásky. Dělá skvělé headliny, protože je jednoduchý
+- Script Fonts =
 	- často custom, může být těžké přečíst pro někoho; může poskytnou velmi unikátní a hezký look
 - Decorative
 
 ### TypeAnatomy
-*[chybějící obrázek: Pasted image 20231203015929.png]* Čára, která by byla na vrcholu T se označuje<mark style="background: #FF5582A6;"> AscentLine</mark> a čára, která by byla u konce y se označuje <mark style="background: #FF5582A6;">DescentLine</mark>
+ Čára, která by byla na vrcholu T se označuje<mark style="background: #FF5582A6;"> AscentLine</mark> a čára, která by byla u konce y se označuje <mark style="background: #FF5582A6;">DescentLine</mark>
 
-### Slovník
-*[chybějící obrázek: Pasted image 20231203020201.png]***TAIL**
+### Slovník anatomie písma
 
-*[chybějící obrázek: Pasted image 20231203020314.png]* **STEM**
+Původně to byla galerie obrázků s jednoslovnými popisky. Ukázky v repu nejsou, takže z popisků
+jsou definice.
 
-*[chybějící obrázek: Pasted image 20231203020325.png]* **EARS**
-
-*[chybějící obrázek: Pasted image 20231203020415.png]* **SHOULDER**
-
-*[chybějící obrázek: Pasted image 20231203020511.png]*
-**LOOPS**
-
-*[chybějící obrázek: Pasted image 20231203020548.png]*
-**CLOSED COUNTER**
-
-*[chybějící obrázek: Pasted image 20231203020955.png]*
-**LEG**
-
-*[chybějící obrázek: Pasted image 20231203021214.png]* **CROSSBARS**
+| Pojem | Co to je |
+|---|---|
+| **TAIL** (ocas) | Sestupný tah vybíhající z písmene, u Q, R a K |
+| **STEM** (dřík) | Hlavní svislý tah písmene, kostra znaku |
+| **EAR** (ouško) | Malý výběžek na pravé straně horní části dvoupatrového g |
+| **SHOULDER** (rameno) | Oblouk vycházející z dříku dolů, u h, m a n |
+| **LOOP** (smyčka) | Dolní uzavřená část dvoupatrového g |
+| **CLOSED COUNTER** (uzavřená vnitřní plocha) | Prázdné místo obklopené tahy, u o, p, d, b |
+| **LEG** (noha) | Sestupný tah u K a R, který nese znak dolů doprava |
+| **CROSSBAR** (příčka) | Vodorovný tah spojující dva tahy, u A a H |
+| **ASCENDER LINE** | Linka, ke které sahají horní dotažnice, například vrchol b, d, k |
+| **DESCENDER LINE** | Linka, ke které sahají dolní dotažnice, například spodek g, y, p |
 
 **KERNING** - manuálně udělaná mezera mezi fontem, pomocí jeho roztažení, pokud toto uděláme tvoříme akci Kearning = například dobře využitelné u loga
 
 **LEADING** - Mezera mezi jednotlivýmy paragraphy = větší mezery mohou vypadat čistě a elegantně
 
-*[chybějící obrázek: TheAnatomyofTypography-Poster-01.jpg]*

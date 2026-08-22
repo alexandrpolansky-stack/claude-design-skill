@@ -1,5 +1,11 @@
+# Poznej své uživatele
+
+Pět W a H, a proč designér není uživatel.
+
+Související: [Discovery](discovery.md) · [Definice problému](define-the-problem.md) · [Metody UX výzkumu](design-research-methods.md) · [Senioři](../kontext/seniori.md) · [Děti](../kontext/deti.md)
+
 Prvně je důležité pochopit, kdo jsou vaši uživatelé než začneme budovat samotný projekt.
-	Toho lze dosáhnout #Research a #Discovery
+	Toho lze dosáhnout **výzkumem** a **discovery**
 Stát se dobrým UX designerem vyžaduje **mluvit s uživateli** = dělat research
 	**Vy nejste uživatel** - při navrhování je důležité si uvědomit, že vy nejste uživatel. Uživatelé mohou mít různé **motivace**, **zájmy**, **dovednosti** atd. to vše je potřeba vzít v úvahu
 	Pamatujte, že **uživatelé nejsou designéři a designéři nejsou uživatelé**
@@ -13,7 +19,7 @@ Pět W+H (WHO, WHAT, WHY, WHERE, WHEN a HOW)
 	**Jak se k tomu dostanou** - telefon?, počítač?, tablet?, notebook?, pomalé/rychlé připojení?
 Pokud budete navrhovat pro **Studenta** nebo **Prarodiče** požadované výsledky budou rozlišné. Věci jako velikost písma, barva tlačítek atd. budou zásadní
 **Filozofie Googlu = soustřeďte se na uživatele a vše ostatní přijde samo**
-# Po tom co se definují uživatelé a udělá se #Research následují tyto metody
+## Po tom co se definují uživatelé a udělá se #Research následují tyto metody
 **User Stories**
 	Jedním ze způsobu jak udělat, aby se projekty zaměřovaly na uživatele. Krátké výroky, které se zaměřují na pohled uživatele a jejich cílů
 		Nejprve je NUTNÉ provést **výzkum**, abychom věděli na jaké uživatele se zaměřit
@@ -30,5 +36,5 @@ Pokud budete navrhovat pro **Studenta** nebo **Prarodiče** požadované výsled
 		Jako [podnikatel] chci [mít možnost platit online], abych [usnadnil svým zákazníkům nákup a zvýšil obrat].
 	Tyto příběhy jsou většinou umístěny do backlogu
 	Kde jim jsou přiřazovány body. Když má úkol 5 bodů, je 2x tak náročný na realizaci jako úkol s 2 body
-#UsabilityTesting 
+**Usability testing**
 	Testování použitelnosti je způsob, jak zapojit uživatele do celého procesu návrhu tím, že se koncepty, prototypy a aktualizace funkcí testují spíše na skutečných uživatelích než na představách, jak bude něco fungovat. Úkolem osoby, která testování použitelnosti vede, je klást otevřené otázky, soustředit se na naslouchání, sledovat chování uživatelů a dozvědět se, jak lze produkt dále vylepšit.

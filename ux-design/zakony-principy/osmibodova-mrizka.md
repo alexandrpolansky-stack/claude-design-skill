@@ -1,3 +1,9 @@
+# Osmibodová mřížka
+
+8pt grid jako nástroj konzistentního spacingu a proč na tom záleží.
+
+Související: [Layout: whitespace a kompozice](../layout/layout-theory.md) · [Mřížka a breakpointy](../../enterprise-ui/zaklady/2x-grid-a-breakpointy.md) · [Anti-slop](../pravidla/anti-slop.md)
+
 Jak rychle a efektivně, konzistentně navrhnout uživatelské rozhraní. Hlavně efektivní pro mobilní rozhraní, ale dá se použít i pro webové aplikace
 
 V dnešní době je téměř cokoli, co lze vytvořit v návrhovém nástroji, možné vytvořit i v kódu, ale existuje několik důvodů – od použitelnosti přes časové harmonogramy spuštění až po problémy s výkonem – proč by návrh nemusí být praktické vytvořit.

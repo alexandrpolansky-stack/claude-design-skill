@@ -1,24 +1,25 @@
 # Stav znalosti a co doplnit
 
-Snímek k 30. 7. 2026 (po importu principů z IBM Carbonu do `enterprise-ui/`). Účel: aby bylo vidět,
+Snímek k 23. 8. 2026 (po doplnění tichých selhání layoutu do `enterprise-ui/vzory/`). Účel: aby bylo vidět,
 kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i tenhle soubor.
 
 ## Souhrn
 
 | | |
 |---|---|
-| Not v knihovně celkem | 86 |
+| Not v knihovně celkem | 88 |
 | `neuro-design/` | 1 (master dokument, 5 modulů) |
 | `ux-design/` | 51 (31 původních + 11 v `pravidla/` + 9 v `kontext/`) |
-| `enterprise-ui/` | 27 (6 `zaklady/` + 11 `vzory/` + 10 `komponenty/`) |
+| `enterprise-ui/` | 29 (6 `zaklady/` + 13 `vzory/` + 10 `komponenty/`) |
 | `web-dev/` | 4 |
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
 | Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~131 v 11 notách |
 | Sektorových pravidel (`ux-design/kontext/`) | ~87 v 9 notách |
-| Pravidel s třídou důkazu (`enterprise-ui/`) | 144 v 27 notách, 347 blocích ZDROJ |
+| Pravidel s třídou důkazu (`enterprise-ui/`) | 155 v 29 notách, 355 blocích ZDROJ |
 | Obrázků v repu | 32 |
-| Odkazů na obrázky, které ve zdroji nejsou | 97 (78 ux-design + 17 web-dev + 2 ostatní) |
-| Not pod 120 slov (kostra) | 6 |
+| Odkazů na obrázky, které ve zdroji nejsou | 24, všechny v notách označených **[archiv]** (bylo 99) |
+| Not pod 120 slov (kostra) | 5, z toho 3 označené **[archiv]** a 2 **[stub]** |
+| Not označených **[archiv]** | 8 |
 
 ## 0. Enterprise UI z IBM Carbonu (30. 7. 2026)
 
@@ -54,6 +55,126 @@ focus management), komponenty mimo tlačítka (včetně původní otázky „kdy
 vs. jen CTA uvnitř"), breakpointy a responzivní layout. Částečně uzavřený dluh
 „design-systémové citace bez URL" ze sekce 5: Carbon je teď citovaný konkrétními URL, Base Web,
 Fluent 2, Apple HIG a Atlassian pořád ne.
+
+### Doplněno 23. 8. 2026: tichá selhání layoutu
+
+Tři noty, které do sekce nepřišly z Carbonu, ale z praxe a ze specifikace, a tvoří spolu jednu
+rodinu: **chování, které mlčky neproběhne**. Stylopis projde validací, devtools ukáže spočítanou
+hodnotu, a nestane se nic. Symptom přitom vypadá jako jiná chyba, takže se hledá na špatném místě.
+
+| Nota | Co mlčí |
+|---|---|
+| `vzory/stabilita-layoutu.md` | Automatický layout tabulky se přeměří z právě načtených řádků, takže filtr překreslí celou mřížku |
+| `vzory/preteceni-a-truncation.md`, dvě sekce | Zkrácení na nereplacovaném inline boxu se zahodí; položka flexu nebo gridu se bez `min-width: 0` nesmrskne pod obsah |
+| `vzory/prekryvy-a-vrstveni.md` | `z-index` neuteče ze stacking contextu, `position: fixed` uvnitř transformovaného předka není vůči viewportu, `sticky` umře pod předkem s `overflow` |
+
+**Proč je tahle rodina cennější než další import.** Evidenčně je to většinou **třída A**, protože
+jde o chování dané specifikací, ne o doporučení design systému. Carbon takové věci nepopisuje ze
+své podstaty: říká, jak má komponenta vypadat, ne co se stane, když ji někdo napíše. Zdroje jsou
+MDN a vlastní praxe, ne druhá ruka.
+
+**Metodická věc, která se osvědčila:** ke každé pasti patří **sonda do konzole**, protože čtení
+stylopisu na tyhle chyby nestačí. Vada je v kombinaci předka a potomka, ne v jedné deklaraci.
+A ke každé sondě patří ověření sondy: nasadit si vlastní rozbitý případ a zkontrolovat, že ho
+najde. Prázdný výsledek z nefunkční sondy je tiché selhání o patro výš.
+
+## 0b. Audit a zatřídění původního importu (23. 8. 2026)
+
+Knihovna byla fakticky dvě knihovny v jednom repu: 49 not s třídou důkazu (`pravidla/`,
+`kontext/`, `enterprise-ui/`) a 35 not z původního importu studijních poznámek, bez tříd,
+bez nadpisů a z velké části bez příchozích odkazů. Audit prošel obsah všech 35, ne jen jejich
+velikost.
+
+**Zavedeny tři vrstvy důvěryhodnosti.** V konfliktu vyhrává vyšší: (1) `pravidla/` a `kontext/`,
+(2) `enterprise-ui/`, (3) zbytek `ux-design/` a `web-dev/`. Pravidlo je zapsané v `_index.md`
+i v `skills/design-advisor/SKILL.md`, protože skill je místo, kde se rozhoduje.
+
+**Nalezené a opravené rozpory.** Tohle je hlavní důvod, proč audit nebyl kosmetika:
+
+| Kde | Co bylo špatně | Oprava |
+|---|---|---|
+| `typography/font-pairing.md` | radila „3-4 fonty na design", a **`pravidla/anti-slop.md` na ni odkazovala jako na svůj zdroj** u pravidla „dvě rodiny jsou strop" | Nota přepsána, aby souhlasila. Override blok vysvětluje původní chybu, `anti-slop.md` má upřesněný odkaz |
+| `typography/serif-a-sans-serif.md` | „Sans Serif je starší než Serif, byl vytvořen pro počítače" | Faktická chyba, opravena calloutem. Bezpatkové je z 19. století, patkové o staletí starší |
+| `typography/prace-s-fontem.md` | podlaha velikosti písma **8 px** | Callout s odkazem na `pravidla/typografie.md` a `kontext/seniori.md`, kde je 16 px podlaha na mobilu |
+| `zdroje/kurzy.md` | osobní cesta `C:\Users\...`, což `CLAUDE.md` zakazuje | Odstraněna |
+
+Rozpor u fontů je druhý případ stejného druhu jako gridlines (viz sekce 5), tentokrát horší:
+pravidlo se třídou citovalo jako oporu notu, která tvrdila opak.
+
+**Zatříděno, ne smazáno.** Sedm not dostalo značku **[archiv]** a banner přímo v souboru:
+`trendy/` obojí (obsah byl jen v chybějících obrázcích), `color/color-grading.md` (postprodukce
+videa v Premiere, mimo rozsah), `logo-foto/photography.md` (ovládání fotoaparátu, ne práce
+s fotografií v designu), `zdroje/` obojí a `ux-zaklady/ux-experience.md` (osobní zápisky).
+Nic se nemazalo: kontrola příchozích odkazů ukázala, že i zdánlivě prázdné noty jsou odkazované
+(`graficke-trendy.md` z `anti-slop.md`, `photography.md` z `kontext/gastro.md`), takže mazání by
+rozbilo odkazy v evidence-classed notách.
+
+**Doplněno 26 chybějících nadpisů.** Ani jedna nota z původního importu neměla H1 titulek a větu
+o tom, k čemu je. Doplněno u všech, spolu s řádkem `Související:`, což zároveň spravilo sirotky.
+
+| | Před | Po |
+|---|---|---|
+| Not bez příchozího odkazu | 14 | 6, z toho 5 označených **[archiv]** |
+| Not bez H1 nadpisu | 26 | 0 |
+| Známých rozporů mezi vrstvami | 3 neodhalené | 0 |
+
+**Metodická poznámka, která stojí za zapamatování:** první verze tohohle auditu měla špatná data,
+protože hledala příchozí odkazy grepem na zkrácené jméno souboru (`serif-a-sans` nenajde
+`serif-a-sans-serif.md`). Podle těch dat vycházelo, že `layout-theory.md` je nepoužívaná, přitom
+na ni odkazuje sedm not. **Příchozí odkazy se musí počítat rozpuštěním relativní cesty na skutečný
+soubor, ne shodou podřetězců.**
+
+### Druhá část úklidu (23. 8. 2026)
+
+**Mrtvé obrázky vyřešené, z 99 zbylo 24.** Postupováno podle pravidla v `CLAUDE.md`: chybějící
+ukázka se nahradí popisem toho, co měla ukázat. Kde text ukázku nepotřeboval, odkaz odešel; kde ji
+nesl (slovník anatomie písma), vznikly z popisků skutečné definice. `web-dev/html-a-css.md` přišel
+o 16 odkazů a 14 osiřelých titulků typu „Ukázka kódu:", které bez obrázku nic neznamenaly.
+**Zbylých 24 je záměrně**: leží v notách označených **[archiv]**, kde banner vysvětluje, že obsah
+byl právě v těch obrázcích. Mazat je by ten důkaz zahodilo.
+
+**Tři falešné sliby ve `web-dev/`.** `pravidla/hloubka-a-stiny.md` odkazovala na
+`web-dev/html-a-css.md` „pro `box-shadow`", `enterprise-ui/zaklady/2x-grid-a-breakpointy.md`
+„pro implementaci CSS gridu" a `pravidla/formulare-a-stavy.md` „pro konkrétní implementaci".
+Ověřeno grepem: ta nota má **nula** výskytů `box-shadow`, `grid` i `flexbox`. Všechny tři odkazy
+opraveny tak, aby říkaly pravdu, a `html-a-css.md` dostal explicitní rozsah. Mezera je přiznaná,
+ne zamaskovaná.
+
+**`rules/` sjednoceno.** Dva destiláty se rozešly (25 shodných řádků, 14 unikátních v krátké
+verzi), přesně jak tenhle dokument předpovídal. `frontend-ux-detailed.md` je nově **označený jako
+zdroj**, `frontend-ux.md` jako odvozená path-scoped varianta, obojí to má napsané v hlavičce.
+Opraven zastaralý ukazatel na neexistující `plugin/skills/design-advisor/references/INDEX.md`
+a dva překlepy. Do obou přibyla sekce o implementačních pastech, které mlčky nezaberou.
+
+**Štěp `formulare-a-stavy.md`: rozhodnuto nedělit.** Nota má **přes 50 příchozích odkazů** z asi
+dvaceti souborů a řada z nich adresuje konkrétní sekce jménem („sekce Loading stavy", „sekce
+Chybové stavy"). Rozdělení by znamenalo přesměrovat všechny a u každého rozhodnout, do které
+poloviny patří. Cena a riziko převyšují užitek: nota má nahoře „Rychlý průchod" a jasné `##`
+sekce, které odkazy už používají jako kotvy. **Přestává to být otevřený dluh**, je to rozhodnutí.
+
+### Třetí část: zbytky z Obsidian vaultu a kontrola ztráty obsahu (23. 8. 2026)
+
+**Odstraněno 18 inline tagů z vaultu** (`#Research`, `#DivergentníMyšlení`, `#UsabilityTesting`
+a podobně), které se mimo Obsidian renderují jako doslovný text a vypadají jako rozbitá syntaxe.
+Nahrazeny běžným zvýrazněním. Ponechány čtyři, které tagy nejsou: `#N/A` jako chybová hodnota
+tabulky a tři CSS ID selektory v `web-dev/html-a-css.md`.
+
+**Devět vnitřních H1 srovnáno na H2.** Noty z vaultu měly víc nadpisů první úrovně, protože
+v Obsidianu titulek nese jméno souboru. Ponechány dvě výjimky, kde druhá úroveň nese vlastní
+podstrukturu, a jeden falešný nález: `# Výpočet celkové vizuální váhy prvku` v neuro-designu je
+komentář uvnitř Python bloku, ne nadpis.
+
+**Nic se nesmazalo, jen archivovalo.** Po celém úklidu proběhla kontrola ztráty obsahu: pro každý
+změněný soubor se porovnal seznam řádků proti verzi v HEAD. Výsledek: **83 zmizelých řádků, všech
+83 dohledaných jako záměrná úprava** (opravený odkaz, odstraněný tag, přepsaná věta, sloučený
+popisek). Nula neúmyslných ztrát.
+
+**Metodická poznámka podruhé.** První verze té kontroly použila fuzzy porovnání a nahlásila
+**91 ztracených řádků v `pravidla/formulare-a-stavy.md`**, tedy v evidence-classed notě. `git diff`
+přitom ukázal, že soubor má +3 řádky a jednu změněnou. Byl to falešný poplach kvůli chybě ve
+skriptu. **Autoritativní je `git diff --numstat` a porovnání množin řádků, ne podobnostní metrika.**
+Je to druhý případ během jednoho dne, kdy vlastní kontrolní skript lhal a málem podle něj vzniklo
+špatné rozhodnutí; ten první tvrdil, že `layout-theory.md` nikdo nepoužívá.
 
 ## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 
@@ -100,45 +221,47 @@ zdůvodňuje, ale kdo z toho staví klientský artefakt, ať si formulaci ověř
 Devět souborů (včetně `_index.md`, `README.md`, částí `sheets/`) ho obsahovalo z dřívějška,
 sjednoceno na en-dash 29. 7. 2026.
 
-## 2. Chybějící obrázky (největší mezera)
+## 2. Chybějící obrázky (vyřešeno 23. 8. 2026)
 
-97 odkazů v textu ukazuje na obrázky, které nejsou ani v původním vaultu, ani nikde jinde:
-zůstala po nich jen prázdná místa. V textu jsou označené jako `*[chybějící obrázek: nazev.png]*`,
-takže se dají najít grepem:
+Bylo 99 odkazů na obrázky, které nejsou ani v původním vaultu, ani nikde jinde. **Zbývá 24
+a všechny jsou záměrné.**
+
+Postup byl podle pravidla v [CLAUDE.md](CLAUDE.md): chybějící ukázka se nahradí popisem toho, co
+měla ukázat. V praxi to vyšlo na tři případy:
+
+| Situace | Řešení | Kde |
+|---|---|---|
+| Text ukázku nepotřeboval, nesl informaci sám | odkaz odstraněn | `layout-theory`, `grids-a-golden-ratio`, `serif-a-sans-serif`, `prace-s-fontem`, `pravidlo-60-30-10`, `logo-design` |
+| Obrázek **byl** obsah, popisek u něj byl jen jméno pojmu | z popisků vznikly skutečné definice | `typography-zaklady-anatomie`: TAIL, STEM, EAR, SHOULDER, LOOP, CLOSED COUNTER, LEG, CROSSBAR |
+| Screenshoty kódu a výsledků, titulky bez nich nic neznamenaly | odkaz i osiřelý titulek odstraněn, ztráta přiznaná v hlavičce noty | `html-a-css` (16 odkazů, 14 titulků) |
+
+**Zbylých 24 se nechává schválně.** Leží v notách označených **[archiv]** (`trendy/` obojí 20,
+`photography` 3, `color-grading` 1), kde banner nahoře vysvětluje, že obsah byl právě v těch
+obrázcích. Odstranit je by zahodilo důkaz, proč je nota prázdná.
+
+Kontrola:
 
 ```bash
-grep -rn "chybějící obrázek" ux-design/ web-dev/
+grep -rn "chybějící obrázek" ux-design/ web-dev/   # smí hlásit jen noty s [archiv]
 ```
-
-Nejvíc zasažené noty (obrázek tam nesl podstatnou část informace, takže text sám nedává smysl):
-
-| Nota | Chybí | Dopad |
-|---|---|---|
-| `ux-design/typography/typography-zaklady-anatomie.md` | 11 | Anatomie písma se bez obrázku nevysvětlí. |
-| `ux-design/layout/layout-theory.md` | 11 | Whitespace/margin/padding jsou popsané jako komentář k obrázkům. |
-| `ux-design/layout/grids-a-golden-ratio.md` | 11 | Totéž, mřížky bez ukázky. |
-| `ux-design/trendy/graficke-trendy.md` | 10 | Nota je skoro jen galerie, bez obrázků prakticky prázdná. |
-| `ux-design/trendy/trendy-v-typografii.md` | 10 | Totéž. |
-| `ux-design/typography/serif-a-sans-serif.md` | 7 | Srovnání řezů. |
-| `ux-design/color/pravidlo-60-30-10.md`, `ux-design/typography/prace-s-fontem.md`, `ux-design/logo-foto/logo-design.md` | 4 každá | Ukázky poměrů a variant. |
-| `ux-design/logo-foto/photography.md` | 3 | |
-| `ux-design/ux-zaklady/content-strategy-ux-writing.md`, `ux-design/typography/font-pairing.md` | 1 každá | |
-| `web-dev/html-a-css.md` | 14 | Box model, selektory a layout jsou vysvětlené na screenshotech. |
-| `web-dev/inserting-css.md`, `web-dev/using-best-images.md` | 3 dohromady | |
-
-Možnosti nápravy, od nejlevnější: **(a)** obrázek nahradit textovým popisem toho, co ukazoval
-(u typografie často stačí), **(b)** vyrobit vlastní ukázku, **(c)** odkaz smazat a odstavec
-přepsat, aby stál sám. U trendových not zvážit, jestli je vůbec držet.
 
 ## 3. Noty, které jsou zatím kostra
 
+Po zatřídění 23. 8. 2026 zbývají **dvě**. Ostatní z původního seznamu se buď přepsaly, nebo dostaly
+značku **[archiv]**, což je odpověď na otázku „co dopsat": nic, nejsou to stavební noty.
+
 | Nota | Slov | Co dopsat |
 |---|---|---|
-| `ux-design/zdroje/videa.md` | 30 | Doplnit seznam, nebo sloučit do `zdroje/kurzy.md`. |
-| `ux-design/trendy/trendy-v-typografii.md` | 56 | Celé; závislé i na chybějících obrázcích. |
-| `ux-design/ux-zaklady/ux-experience.md` | 57 | Definice UX a složky zážitku. Překrývá se s `general-ux-knowledge.md`, možná sloučit. |
-| `ux-design/trendy/graficke-trendy.md` | 67 | Celé; viz výše. |
-| `ux-design/typography/font-pairing.md` | 94 | Konkrétní ověřené páry + pravidlo, proč fungují. |
+| `web-dev/using-best-images.md` | 80 | Formáty a kdy který, komprese, `srcset` a responzivní obrázky. |
+| `web-dev/inserting-css.md` | 81 | Zůstává jako základ; dopsat, proč se v praxi používá externí stylopis. |
+
+Vyřešené z původního seznamu:
+
+| Nota | Jak vyřešeno |
+|---|---|
+| `typography/font-pairing.md` | **Přepsána.** Původní verze navíc radila 3-4 fonty proti `anti-slop.md`, viz sekce 0b. |
+| `zdroje/videa.md`, `ux-zaklady/ux-experience.md` | Označeny **[archiv]**, je to osobní materiál |
+| `trendy/` obojí | Označeny **[archiv]**, obsah byl výhradně v chybějících obrázcích |
 
 ## 4. Témata, která v bázi úplně chybí
 
@@ -192,13 +315,9 @@ verbatim znění zákona 40/1995 Sb. o reklamě na alkohol, prevalence PDF/obrá
 Seznam, který v praxi potřebujeme. Přeškrtnuté položky jsou hotové, u každé je napsané, čím
 a co z ní zbývá:
 
-- **Gastro jako sektor v `kontext/`, s vysokou prioritou (zadal Alex 29. 7. 2026).** Uvnitř
-  jednoho oboru je obrovský rozptyl podle cenové/luxusní úrovně, mnohem větší než u ostatních
-  osmi sektorů. Konkrétní příklad od Alexe: luxusní bar (`beyondthebar.cz`) potřebuje jinou
-  grafiku než běžná kavárna (`mujsalekkavy.cz`), přestože obě spadají pod "gastro". Než se do
-  toho půjde, rozmyslet, jestli je to jeden sektor s vnitřním rozpětím luxury↔casual (podobně
-  jako obecný luxury sektor už rozpětí řeší), nebo dva samostatné sektory. Zatím NEDĚLAT žádný
-  research, jen si tenhle úkol nezapomenout otevřít, až Alex řekne.
+- ~~**Gastro jako sektor v `kontext/`.**~~ **Hotovo 29. 7. 2026**, viz sekce „Gastro sektor" výše.
+  Vyřešeno jako jedna nota s osou destinace ↔ sousedská utilita, ne dva sektory.
+  Zbytek k dohledání je vypsaný přímo v `ux-design/kontext/gastro.md`.
 - ~~**Přístupnost do hloubky nad rámec kontrastu a velikosti cíle.**~~ **Hotovo 30. 7. 2026.**
   Klávesová navigace a focus management napříč komponentami v
   `enterprise-ui/zaklady/klavesnice-a-focus.md`, čtečky a ARIA vzory (live regiony, role, vystavení
@@ -230,17 +349,18 @@ a co z ní zbývá:
 
 ## 5. Dluhy ve struktuře
 
-- **Duplicita destilátu.** `rules/frontend-ux.md` a `rules/frontend-ux-detailed.md` mají
-  stejný obsah ve dvou souborech. Rozejdou se. Chce to jeden zdroj a druhý generovat, nebo jeden zrušit.
+- ~~**Duplicita destilátu.**~~ **Vyřešeno 23. 8. 2026.** Soubory se skutečně rozešly.
+  `frontend-ux-detailed.md` je označený jako zdroj, `frontend-ux.md` jako odvozená varianta,
+  a obojí to nese v hlavičce s pokynem opravovat obě místa najednou.
 - **Konflikt gridlines byl v bázi, ne jen ve skillu.** Znalostní báze Sheets doporučovala gridlines
   skrývat (Tufte, data-ink), ale domácí pravidlo je nechat viditelné. Skill to měl opravené, báze ne.
   Při migraci srovnáno callout blokem a čtyřmi opravami. Poučení: když se opraví skill, opravit i bázi.
 - **Jazyk.** Znalost je česky, názvy souborů anglicky/kebab-case. Zatím záměr, ale u nových not to drž,
   ať se to nerozjede.
-- **`formulare-a-stavy.md` míchá tři témata v jednom souboru** (formuláře, prázdné/chybové stavy,
-  loading), proti zásadě „jedna nota = jedno téma" z `CLAUDE.md`. Zatím drží pohromadě díky sekci
-  Rychlý průchod nahoře. Přirozený štěp při dalším růstu: `formulare-a-validace.md` +
-  `stavy-rozhrani.md`.
+- ~~**`formulare-a-stavy.md` míchá tři témata v jednom souboru.**~~ **Rozhodnuto 23. 8. 2026
+  nedělit.** Přes 50 příchozích odkazů, mnohé adresují konkrétní sekce jménem. Sekce `##` fungují
+  jako kotvy a „Rychlý průchod" nahoře notu drží pohromadě. Riziko přesměrování převyšuje užitek
+  z dodržení zásady „jedna nota = jedno téma".
 - **Design-systémové citace bez URL, částečně vyřešeno 30. 7. 2026.** Fáze 1 cituje Carbon, Base
   Web, Fluent 2, Apple HIG a Atlassian formulacemi bez odkazu na zdrojovou stránku.
   `pravidla/tlacitka.md` to přiznává. **Carbon je od 30. 7. 2026 citovaný konkrétními URL

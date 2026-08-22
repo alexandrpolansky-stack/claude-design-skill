@@ -171,7 +171,9 @@ je legitimní změna typu.
 - Whitespace jako výrazový prostředek a vztah margin/padding.
   [Layout theory](../../ux-design/layout/layout-theory.md).
 - Délku řádku a typografickou škálu. [Typografie](../../ux-design/pravidla/typografie.md).
-- Implementaci CSS gridu. [HTML a CSS](../../web-dev/html-a-css.md).
+- **Implementaci CSS gridu knihovna nepokrývá.** `web-dev/html-a-css.md` je úvod do HTML a CSS
+  a grid ani flexbox v něm nejsou. Jediná gridová mechanika, kterou knihovna má, je `minmax(0, 1fr)`
+  proti nesmrštitelné stopě, viz [Přetečení a zkracování](../vzory/preteceni-a-truncation.md).
 
 ## Zdroj
 

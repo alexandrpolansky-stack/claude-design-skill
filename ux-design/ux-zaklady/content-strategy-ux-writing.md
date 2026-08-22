@@ -1,3 +1,9 @@
+# Content strategy a UX writing
+
+Myslet jako editor: co s obsahem dřív, než se začne psát rozhraní.
+
+Související: [Formuláře a stavy](../pravidla/formulare-a-stavy.md) · [UX copy v produktu](../../enterprise-ui/zaklady/ux-copy-v-produktu.md)
+
 Lidé čtou zhruba jenom 20 procent obsahu na webu což je průzkum z roku 2008, takže dnes to bude ještě menší nejspíš. Takže s obsahem a slovy na obrazovce je důležité brát opatrně; pokud web není efektivní, tak nebudete mít zákazníky, důležité je si je urdžet aby se vraceli zpátky. Obsah je všude od domovské stránky, FAQ, chybové zprávy.
 
 Více kontentu nedělá něco lepší, (avšak to neznamená, že vždy je vhodné se snažit udělat text co nejkratší, jisté případy vyžadují obsáhlější text) o kontentu by se mělo přemýšlet velmi kriticky.
@@ -16,9 +22,7 @@ příklad špatného UX psaní, aby se stahování zrušilo musí se kliknout na
 
 Text, který vás provede zážitkem, vám pomůže získat jistotu, že produkt, který kupujete, skutečně obdržíte. Pokud by byl text na webu nepříjemný, pravděpodobně byste si mysleli, že je web trochu povrchní, a chtěli byste své podnikání přesunout jinam. Psaní UX však může uživateli pomoci dodat sebedůvěru. K tomu může dojít, když uživatel narazí na kopii, která na další obrazovce odhalí, co může očekávat (informace, které může chtít vědět, ale není vždy zřejmá), potvrzovací obrazovku, která indikuje, že nákup je dokončen (což uživatele ujišťuje, že jeho kreditní karta fungovala), nebo potvrzovací nebo děkovný e-mail (jednoduché gesto, které zákazníkovi ukáže, že společnosti na něm záleží).
 
-
 Úvodní obrazovky pro meditační aplikaci Headspace pomáhají řídit očekávání a pomáhají uživatelům budovat návyky. Grafické prvky, jako je zubní kartáček, doplňují text, který říká "Po vyčištění zubů"
-
 
 Více textu není vždy lépe, častokrát se dá text vyjádřit obrázky, videii, grafy, digramy etc.
 
@@ -32,26 +36,26 @@ Například aplikace HeadSpace (meditace) se při prvním spuštění ptá, koli
 
 Jejich [studie ukázaly](https://www.nngroup.com/articles/plain-language-experts/), že si nikdo nestěžuje, když je text snadno srozumitelný, a že "vysoce vzdělaní online čtenáři touží po stručných informacích, které lze snadno skenovat".
 - Rozluštění vyžaduje méně úsilí
-    
+
 - Přínos pro všechny (zejména pro mezinárodní publikum)
-    
+
 - Lepší výsledky ve výsledcích vyhledávání
 **SHRNUTÍ**
 - Vezměte v úvahu informace, které uživatel chce a potřebuje v každém kroku toku uživatele.
-    
+
 - Nejlepší obsah je komunikován efektivně a přichází ve správný čas.
-    
+
 - Přání uživatelů se ne vždy shodují s informacemi, které společnosti a organizace prezentují na webových stránkách.
-    
+
 - Zvažte cestu uživatele a to, jak se cítí v každém kroku, abyste vytvořili obsah, který je pro něj užitečný.
-    
+
 - Používejte jazyk, kterému snadno rozumí každý, a vyhněte se používání žargonu.
 
 Nejdůležitější je práce se zákazníky, zkoumejte o co jim jde, například i přes sociální sítě, kde můžete skvěle zjistit, co od vás zákazníci očekávají.
 
 **Metriky a analýzy**
 O terminologii se dá dozvědět hodně, pokud budeme hledat výrazy, které lidé používají k tomu, aby se dostali na web = google analytics, [Google Trends](https://trends.google.com/trends/). Můzeme se podívat na tomto grafu, který mám hezky ukazuje, které slovo je pro zákazníky nejpřívětivější a nejpoužívanější mezi zákazníky, kteří tuto akci chtejí dokončit.
-*[chybějící obrázek: Pasted image 20231122230007.png]*
+
 Důležité je taky myslet na **SEO** neboli optimalizace pro vyhledávače, díky klíčovým slovům vložených do webových stránek. Optimalizací výsledků je větší šance, že se stránka dostane na první příčky vyhledávaní googlu
 
 Tato část je z tohoto článku, kde lze nalézt více informací [Design words with data. How data informs our writing at Dropbox | by John Saito | Dropbox Design | Medium](https://medium.com/dropbox-design/design-words-with-data-fe3c525994e7)
@@ -70,20 +74,20 @@ Na **Readability-Score.com** jsou testy, které vám měří jak je snadné poru
 - [Spotřebitelské průzkumy Google](https://www.google.com/insights/consumersurveys/home)
 
 Zde jsou růžné možnosti, kde snadno provést surveys a zjisti tak názor uživatelů
-Lidé čtou podle studie na webech ve tvaru #písmenaF, zleva doprava, pak dolů a znovu; pokaždé však o něco méně (Lidské oko čte webovou stránku ve tvaru písmena F tak, že při prvním přeletu očima rychle projede horizontální pruh nahoře a poté se sestupuje dolů po levé straně obrazovky, hledajíc klíčová slova a informace. Poté se oko posune doprostřed obrazovky a opět projede horizontální pruh níže. Nakonec se oko soustředí na levou stranu obrazovky, kde hledá další relevantní informace. Tento způsob čtení je založen na lidské tendenci vyhledávat důležité a zajímavé informace na začátku bloku textu nebo výrazných nadpisech.)
+Lidé čtou podle studie na webech ve tvaru písmena F, zleva doprava, pak dolů a znovu; pokaždé však o něco méně (Lidské oko čte webovou stránku ve tvaru písmena F tak, že při prvním přeletu očima rychle projede horizontální pruh nahoře a poté se sestupuje dolů po levé straně obrazovky, hledajíc klíčová slova a informace. Poté se oko posune doprostřed obrazovky a opět projede horizontální pruh níže. Nakonec se oko soustředí na levou stranu obrazovky, kde hledá další relevantní informace. Tento způsob čtení je založen na lidské tendenci vyhledávat důležité a zajímavé informace na začátku bloku textu nebo výrazných nadpisech.)
 
 Na slovech záleží v Dropboxu dělali výzkum, kde se ptali uživatelů zda by použili funkci **Select "Remove Local Copy" to save space** - většina lidí řekla, že ne a měli problém porozumět, co jim funkce nabízí, avšak, když uživatelům nabídli možnost **Save space by selecting "Remove Local Copy"** většina uživatelů řekla, že by funkci použila, že jim přijde užitečná a bylo jednodušší funkci porozumět.
 
 **Shrnutí**
 - Naslouchejte uživatelům a buďte otevření integraci jejich jazyka do vašeho produktu.
-    
+
 - Testy použitelnosti a uživatelský výzkum jsou skvělými nástroji pro pochopení jazyka uživatelů.
-    
+
 - Prozkoumejte, jaké vyhledávací dotazy uživatelé používají, aby se dostali na váš web.
-    
+
 - Integrujte nadpisy, které pomohou rozdělit informace a usnadní uživateli zjistit, na co se dívá.
 
-**UX writing** se zabývá slovy, se kterými se uživatelé setkávají při interakci s produktem, toto psaní má sloužit k motivaci klienta. V UX může mít několik slov obrovský rozdíl. 
+**UX writing** se zabývá slovy, se kterými se uživatelé setkávají při interakci s produktem, toto psaní má sloužit k motivaci klienta. V UX může mít několik slov obrovský rozdíl.
 "Je to jako klimatizace v konferenční místnosti. Nikdo nikdy nepřeruší naše schůzky, aby nám řekl, jak příjemná je teplota. Ani si toho nevšimnou. Teploty v konferenční místnosti si všimneme pouze tehdy, když je příliš chladno nebo příliš horko. Nebo si možná všimneme, že je jednotka příliš hlasitá nebo netěsní po celé podlaze. Ale když to funguje perfektně, stává se to neviditelným."
 
  Pohled Googlu na UX se zaměřuje na Výzkum, Design a Obsahové strategii. Mnoho lidí příkládá Designu největší váhu, avšak jak můžeme vidět na grafu, tak google přikládá designu stejnou váhu jako výzkumu a obshahové strategii.
@@ -92,16 +96,13 @@ Na slovech záleží v Dropboxu dělali výzkum, kde se ptali uživatelů zda by
 **Microcopy = [Microcopy Patterns (tumblr.com)](https://tinywordsmatter.tumblr.com/)** termín používaný k popisu malých kousků textu, které mohou mít velký dopad na uživatelské prostředí, například slova na tlačítku nebo tip, který vám pomůže obnovit zapomenuté heslo. Podobně i **mikrointerakce** například číslo, které se objeví u nákupního košíku, aby vám připomenulo kolik položek máte v košíku.
 Předvídáním toho, co zákazník může potřebovat nám může pomoci zvýšit prodeje, minimalizovat počet výpadku a udělat web,aplikaci přívětivější. Př: Hemingway nabízí možnost platit alternativní metodou, pokud nemáte svoji kartu u sebe, kde také píše securely = což zákazníka psychologicky uklidní.
 
-
-
- 
 Zvýšení o 17% jelikož Check availability je méně závazkové, a proto na to lidé více kliknou.
 
 **Shrnutí**
 - UX psaní se zabývá slovy, se kterými se uživatelé setkávají při interakci s produktem.
-    
+
 - Mikrokopie je malý text, který může pomoci řídit zážitek nebo interakci.
-    
+
 - Měření změn výkonu v důsledku změn textu může být dobrým způsobem, jak prokázat hodnotu obsahu pro zúčastněné strany.
 
 **Psaní scénářu**
@@ -112,7 +113,7 @@ Př scénáře
 - Proč uživatel přichází na web
 - Jaké cíle má uživatel
 - Jak může uživatel pomocí webu/produktu dosáhnout svých cílů?
-Řekněme, že pracujete na aplikaci, která pomáhá spravovat domácí úkoly. Zde je možný scénář:  
+Řekněme, že pracujete na aplikaci, která pomáhá spravovat domácí úkoly. Zde je možný scénář:
 _Jste pracující matka se třemi dětmi, které jsou v různých ročnících. Chcete mít možnost sledovat jejich práci na základě individuálních potřeb._
 
 Následující scénář je poměrně funkční na všechny případy
@@ -130,10 +131,10 @@ Abych mohl [dosáhnout svého cíle...].
 
 Avšak scénář není možné aplikovat na všechno. Scánáře jsou individuální a musí být různorodé podle scénáře.
 
-### Audity 
+### Audity
 - Nenahlížejte na text jako jednu informaci, ale jako na část celku. Uvažujte o celém obsahu
 -<mark style="background: #FF5582A6;"> Pokud začínáme nový projekt je dobré udělat audit konkurence, ne abychom jim nápad vzali či kopírovali design, ale abychom porozuměli jak ostatní pracují s daným tématem.</mark>
--  
+-
 - Ukázkový audit
 	- ID - id stránky přidělené číslo může sloužit jako navigace v projektu 0 - Home 1.0 - další stránka 1.1 podstránka
 	- Page title - název stránky
@@ -144,11 +145,11 @@ Avšak scénář není možné aplikovat na všechno. Scánáře jsou individuá
 
 #### Shrnutí
 - Audity obsahu představují způsob, jak katalogizovat obsah na vašem webu.
-    
+
 - Audity obsahu jsou nástrojem, který vám pomůže strategičtěji přemýšlet o výběru obsahu.
-    
+
 - Tabulky jsou nejlepším způsobem, jak dokumentovat audity obsahu.
-    
+
 - Vzorce se objeví provedením auditu obsahu, který vám pomůže informovat o vašich dalších krocích.
 
 **Typy obsahu**
@@ -157,7 +158,7 @@ Avšak scénář není možné aplikovat na všechno. Scánáře jsou individuá
 	- **Marketing copy** - psaní propagačních materiálů, popisů produktů, blogových příspěvků, sociálních médií a tiskových materiálů. Pro každý kontent je důležité zvážit obsah z pohledu uživatele; je zaměřen na nové uživatele? Na někoho, kdo už je platící uživatel
 	- **User generated content** - může zahrnovat recenze, komentáře, posudky. Budování vztahů s uživateli může být velmi přínosné, pokud chcete integrovat obsah vytvářený uživateli.
 	- **Cuarated content** - značky zvou blogery, aby upravovali články a obsah, který pomůže zaujmout jejich publikum. Tím, že přivedete zvučná jména, je cílem přilákat na web také nové uživatele
-	- **Aggregated content** - obsah automaticky převzat z jiných webů 
+	- **Aggregated content** - obsah automaticky převzat z jiných webů
 	- **Licensed content** - obsah (články, video, zvuky) z jiných zdrojů jako je Creative Commons = [Homepage - Creative Commons](https://creativecommons.org/)
 	- **Support content** -  je obsah, který mohou servisní týmy použít k reakci na požadavky, včetně formulářů obsahu, předpřipravených odpovědí (není třeba pokaždé začínat od nuly!), informací o centru nápovědy a technické dokumentace.
 		- FAQ se dá dnes využít i jinak, a celkově FAQ je poměrně neefektivní, pokud koukneme třeba na amazon, je to zde mnohem lépe vyřešeno [Help & Contact Us - Amazon Customer Service](https://www.amazon.com/gp/help/customer/display.html)
@@ -167,13 +168,12 @@ Avšak scénář není možné aplikovat na všechno. Scánáře jsou individuá
  **Skici**
 Je dobré si vždy obsah naplánovat dopředu, je mnohem jednodušší kreslit novou skicu, než předělávat nový web
 
-
 1. Uveďte účel a požadované výsledky stránky nebo toku, abyste mohli vyhodnotit nejdůležitější obsah.
-    
+
 2. Promyslete si, co budou uživatelé od obsahu potřebovat, a případné dotazy.
-    
+
 3. Spolupracujte se svým týmem, abyste určili skutečné téma a témata, kterým se musíte věnovat.
-    
+
 4. Pomocí témat určete skutečný obsah a ta nejdůležitější umístěte na začátek. (Začněte s lepicími papírky a během práce diskutujte o každém tématu.)
-    
+
 5. Vytvořte skutečný redakční program, designový směr a specifikace a získejte zpětnou vazbu od uživatelů a zúčastněných stran k ověření obsahu.

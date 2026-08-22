@@ -252,7 +252,8 @@ nutnost, ale musí být doplněná labelem nebo tvarem.
 **PROČ:** Každá další rodina je další sada rozhodnutí (velikosti, řezy, spacing), která se musí
 udržet konzistentní. Tři rodiny se neudrží.
 **TŘÍDA:** C
-**ZDROJ:** obecně uznávaná praxe. Viz [Font pairing](../typography/font-pairing.md).
+**ZDROJ:** obecně uznávaná praxe. Techniku párování drží [Font pairing](../typography/font-pairing.md),
+která byla 23. 8. 2026 opravena, aby s tímhle pravidlem souhlasila (dřív radila 3-4 rodiny).
 **KDY NEPLATÍ:** Displejové písmo použité na jediném místě (logotyp, jeden hero nadpis) a technický
 monospace na kód. To se nepočítá jako třetí rodina do textového systému.
 

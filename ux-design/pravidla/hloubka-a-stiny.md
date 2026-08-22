@@ -252,4 +252,5 @@ V M3 je ta hodnota vstup do tonálního posunu plochy, ne primárně do stínu.
   na stejnou škálu jako spacing.
 - [Design system DRIVE](../priklady-ds/design-system-drive.md) jako příklad, jak se tokeny
   zapisují do hotového systému.
-- [HTML a CSS](../../web-dev/html-a-css.md) pro `box-shadow` a box model.
+- Box model má [HTML a CSS](../../web-dev/html-a-css.md). **Syntaxi `box-shadow` knihovna nikde
+  nepopisuje**, `web-dev/` je úvod do HTML a CSS a stín v něm není. Ber ji z MDN.

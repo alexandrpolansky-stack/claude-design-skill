@@ -1,4 +1,9 @@
-#Research
+# Metody UX výzkumu
+
+Jaké metody použít na jakou otázku o uživatelích.
+
+Související: [Discovery](discovery.md) · [Poznej své uživatele](understand-your-users.md) · [Designový proces](design-process.md)
+
 "Práce, která odhaluje a vyjadřuje potřeby jednotlivců a/nebo skupin s cílem strukturovaně navrhnout produkty a služby."
 	Design Research neboli designový výzkům nám umožňuje a poskytuje strukturovaný, metodický přístup k pochopení našich uživatelů;
 	![Pasted image 20240203010637](../_assets/pasted-image-20240203010637.png)
@@ -18,8 +23,8 @@ Vytváříme hypotézy a testujeme je, ale tyto hypotézy lze měnit i za běhu 
 		Generativní a hodnotící
 		Behaviorální(Chování) a postojové
 	<mark style="background: #BBFABBA6;">Kvalitativní a Kvantitativní</mark>
-	**Kvantitativní** metody jsou ty co lze spočítat - čas na stránce, procento uživatelů odebírající newsletter, zobrazení stránek, toky uživatelů, čas do dokončení úkolu. Tyto testy většinou lze provádět pomocí Analytiky nebo se pustiti do #A/Btesting - porovnání dvou nebo více variant designu nebo obsahu s cílem zjistit, která verze dosahuje lepších výsledků = jaké jsou konverze (žádaný cíl, které chce podnik dosáhnout od svých uživatelů), uživatelská angažovanost nebo retence. Tyto testy jsou většinou úspěšné velkým množstvím dat.
-	**Kvalitativní** - pronikají do citů, pocitů, chování, postojů a emocí, to lze dělat například pomocí #DiaryStudies pomocí kvalitních #SoftSkills 
+	**Kvantitativní** metody jsou ty co lze spočítat - čas na stránce, procento uživatelů odebírající newsletter, zobrazení stránek, toky uživatelů, čas do dokončení úkolu. Tyto testy většinou lze provádět pomocí Analytiky nebo se pustiti do - porovnání dvou nebo více variant designu nebo obsahu s cílem zjistit, která verze dosahuje lepších výsledků = jaké jsou konverze (žádaný cíl, které chce podnik dosáhnout od svých uživatelů), uživatelská angažovanost nebo retence. Tyto testy jsou většinou úspěšné velkým množstvím dat.
+	**Kvalitativní** - pronikají do citů, pocitů, chování, postojů a emocí, to lze dělat například pomocí **diary studies** pomocí kvalitních **soft skills** 
 Tyto dva styly výzkumů by se daly označit jako 2 strany téže mince, vzájemně se doplňují.	
 <mark style="background: #BBFABBA6;">Generativní a hodnotící</mark>
 	Generativní = Počátky myšlenky
@@ -46,7 +51,7 @@ Tyto dva styly výzkumů by se daly označit jako 2 strany téže mince, vzájem
 		- V jedné slavné studii Microsoft požádal zákazníky, aby navrhli nové funkce pro Office 2007 před zahájením práce na tomto produktu. Většina požadovaných "nových" příkazů již existovala v Office 2003, takže tým návrhářů správně dospěl k závěru, že jejich hlavním problémem je zjistitelnost stávající funkcionality.
 		- **Interviews** nám, ale mohou poskytnou **dobrou** zpětnou vazbu, **co si myslí o webu po jeho použití**
 		- Nebo prozkoumat **obecné postoje uživatelů**
-		-Metoda #KritickýchIncidentůCIT : Požádejte uživatele, aby si vzpomněli na konkrétní případy, kdy čelili obzvláště obtížnému případu nebo kdy něco fungovalo obzvláště dobře. Tyto extrémní případy jsou často v myslích uživatelů živější a poskytnou vám podrobnosti potřebné k tomu, abyste přišli s užitečnými funkcemi.
+		- **Metoda kritických incidentů (CIT):** Požádejte uživatele, aby si vzpomněli na konkrétní případy, kdy čelili obzvláště obtížnému případu nebo kdy něco fungovalo obzvláště dobře. Tyto extrémní případy jsou často v myslích uživatelů živější a poskytnou vám podrobnosti potřebné k tomu, abyste přišli s užitečnými funkcemi.
 		- Může se stát, že díky otázce způsobíte v uživateli ještě větší zmatek a vyjádří se k něčemu na co by normálně nepomyslel = zeptáte se na design a kritizuje barvy, avšak při běžném používání by je nějak velce nezaznamenal
 	**Surveys - dotazníky, průzkumy**
 		- Na získání rychlého přehledu
@@ -69,7 +74,7 @@ Tyto dva styly výzkumů by se daly označit jako 2 strany téže mince, vzájem
 		1. Zadání otázek = kladení konkrétních otázek nebo témat
 		2. Doplňující otázky - **PROČ** T:Jak jsi se cítil? U:Dobře T: PROČ? (T-Tazazel U-Uživatel)
 		3. Analýza - zkoumání vzorů, témata, emocionální aspekty vyprávění 
-		Může být použito při tvorbě #UserPersona = abychom hluboce pochopili motivace a potřeby uživatelů.
+		Může být použito při tvorbě **user person** = abychom hluboce pochopili motivace a potřeby uživatelů.
 	**Diary Studie**
 		Dokumentace myšlenek uživatele, který prochází určitým zážitkem
 		Prostřednictvím deníku od účastníků, kteří zaznamenávají své zážitky, myšlenky a interakce v **REÁLNÉM ČASE** = hlubší náhled do každodenního života s produktem
@@ -103,7 +108,7 @@ Tyto dva styly výzkumů by se daly označit jako 2 strany téže mince, vzájem
 	**Mental modeling map**
 		K reprezentaci myšlenkových modelů uživatelů. Jak si uživatelé představují strukturu informací, procesy a vztahy v rámci daného systému nebo produktu.
 		https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/f6f9675a-6304-4ef5-80e7-eb551af52b25/mental-models-500.jpg - komiks, který dobře popisuje tuto metodu
-	#UsabilityTesting - testování použitelnosti
+	**Usability testing** - testování použitelnosti
 		Návrh projde více lidmi, aby se zjistilo, zda funguje, zda je srozumitelný a snadno se tam hledají informace, komunikuje atd.
 		Říká nám jak efektivně, účinně a uspokojivě mohou uživatelé interagovat s daným produktem.
 			Metody mohou být
@@ -114,7 +119,7 @@ Tyto dva styly výzkumů by se daly označit jako 2 strany téže mince, vzájem
 		Díky těmto testům můžete předvést reálná čísla a tím tak prosadit to, co skutečně funguje.
  		Cílem = identifikovat potencionální problémy ve způsobu jakým uživatelé používají produkt.
 		Zahrnuje mockupy, prototype, design, drawing, live code - dáte uživatelům úkol a požádáte je, aby tento úkol splnili za vašeho pozorování
-	**A/B Testing** #A/Btesting 
+	**A/B testing** 
 		Ukážeme našemu testerovi možnost A a B požádáme je aby nám poskytli zpětnou vazbu a porovnal klady a zápory obou možností
 		Každý A/B testing by se měl řídit touto formulou
 		1. Definování záměrů uživatele a námitek

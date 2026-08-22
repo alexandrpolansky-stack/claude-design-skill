@@ -1,3 +1,9 @@
+# Volba a příprava obrázků
+
+Hlavní typy obrázků a kdy který.
+
+Související: [HTML a CSS](html-a-css.md)
+
 ---
 title: Using best images possible
 updated: 2023-07-18 22:04:36Z

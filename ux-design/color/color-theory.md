@@ -1,3 +1,9 @@
+# Teorie barev
+
+Barevný kruh, harmonie, saturace, value, kontrast a nástroje na výběr palety.
+
+Související: [Kontrast a barva](../pravidla/kontrast-a-barva.md) · [Pravidlo 60-30-10](pravidlo-60-30-10.md) · [Psychologie barev](color-psychology.md)
+
 Barva je vlastnost, kterou vidíme, když reaguje se světlem a dalšími objekty. Jednoduše řečeno světlo se dotkne objektu a to buďto absorbuje světlo a nebo ho reflektuje zpátky do našeho
 
 ## Základní barvy - neboli primární barvy

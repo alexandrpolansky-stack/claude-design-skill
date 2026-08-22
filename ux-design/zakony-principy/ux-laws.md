@@ -1,3 +1,9 @@
+# UX zákony
+
+Fitts, Hick, Jakob, Miller, Tesler, Postel, Parkinson a Gestalt, včetně opravy tří populárních verzí.
+
+Související: [Kognitivní efekty](efekty.md) · [Principy a heuristiky](principy-a-pravidla.md) · [Obecná UX znalost](../ux-zaklady/general-ux-knowledge.md)
+
 ## **Fittsův zákon** (Fitts Law)
 
 > [!important] Popularizovaná verze tohoto zákona je nepřesná

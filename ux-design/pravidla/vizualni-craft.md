@@ -1,5 +1,8 @@
 # Vizuální craft: art direction a rozvoj vkusu
 
+Související je [Logo design](../logo-foto/logo-design.md): tytéž otázky o rozpoznatelnosti
+a redukci, jen na jednom znaku místo celé stránky.
+
 Nota řeší vrstvu, kterou zbytek `pravidla/` záměrně neřeší: kdy je návrh technicky správný
 (kontrast OK, radius konzistentní, pohyb podle pravidel), ale přesto působí ploše, genericky
 nebo bezradně. Otevři ji při volbě vizuálního směru projektu (odvážný vs. zdrženlivý), při

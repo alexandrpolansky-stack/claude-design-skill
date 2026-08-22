@@ -78,7 +78,7 @@ Co potřebuje vědět, **až už skill používá**, jde do knihovny.
 - **Odkazy relativní markdown**, tedy text v hranatých a cesta v kulatých závorkách, relativně
   ke složce noty. Žádné Obsidian wikilinky `[[...]]`, mimo Obsidian se nerozkliknou.
 - **Obrázky** do `_assets/` v dané sekci, jméno taky ASCII kebab-case.
-- **Neodkazuj na obrázek, který nenahráváš.** V repu je 97 mrtvých odkazů z prvního importu,
+- **Neodkazuj na obrázek, který nenahráváš.** V repu je 24 mrtvých odkazů z prvního importu,
   označených `*[chybějící obrázek: ...]*`. Nepřidávej další. Když ukázka chybí, popiš slovy,
   co měla ukázat, to je použitelnější než prázdné místo.
 

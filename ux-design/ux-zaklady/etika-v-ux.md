@@ -1,3 +1,9 @@
+# Etika v UX
+
+Odpovědnost designéra, dark patterns a plagiátorství.
+
+Související: [Obecná UX znalost](general-ux-knowledge.md) · [Děti](../kontext/deti.md) · [Gastro](../kontext/gastro.md)
+
 - Designér je zodpovědný za práci, kterou vloží do světa.
 - Designér upřednostňuje dopad před formou.
 - Designér dluží lidem, kteří si ho najímají, nejen svou práci, ale i své rady.

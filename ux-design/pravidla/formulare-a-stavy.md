@@ -588,7 +588,10 @@ rezervuj minimální výšku a přiznej, že se doplní.
   [Content strategy a UX writing](../ux-zaklady/content-strategy-ux-writing.md).
 - Markery generického vzhledu, včetně bezokrajových polí a "oops" hlášek. Viz
   [anti-slop](anti-slop.md).
-- Konkrétní implementaci v HTML a CSS. Viz [HTML a CSS](../../web-dev/html-a-css.md).
+- Konkrétní implementaci formuláře v HTML. `web-dev/html-a-css.md` má jen základy značek, ne
+  formulářové vzory. Rozvržení formuláře drží
+  [Skladba formuláře](../../enterprise-ui/vzory/formular-skladba.md), drátování labelů a chyb pro
+  čtečky [Oznámení pro čtečky](../../enterprise-ui/zaklady/oznameni-pro-ctecky.md).
 
 ## Nedořešené mezery
 

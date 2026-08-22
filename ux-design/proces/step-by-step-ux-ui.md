@@ -1,7 +1,13 @@
+# Step by step: UX/UI web a app design
+
+Celý postup od user flow po iteraci. Otevři na začátku větší stavby.
+
+Související: [Definice problému](../ux-zaklady/define-the-problem.md) · [Poznej své uživatele](../ux-zaklady/understand-your-users.md) · [Discovery](../ux-zaklady/discovery.md) · [Designový proces](../ux-zaklady/design-process.md) · [Metody UX výzkumu](../ux-zaklady/design-research-methods.md)
+
  UX má spousty kroků, záleží na složitosti produktu, ale většina kroků jsou nějak v takovémto pořadí
 	1.Understand
 	2. Reserech
-	3. #UserPersona - fiktivní charakteristika reprezentující typického uživatele produktu nebo služby
+	3. **User persona** - fiktivní charakteristika reprezentující typického uživatele produktu nebo služby
 		1. k lepšímu porozumění potřebám, cílům, chování. Vytváření zahrnuje následující prvky
 			1. **Demografické info** = věk, pohlaví, vzdělání, zaměstnání
 			2. **Cíle a motivace** = čeho chce uživatel dosáhnout a proč
@@ -22,7 +28,7 @@
 		1. **Cíl:** Poskytnout detailnější náhled na vizuální aspekty designu a možné interakce.
 	12. Usability testing - provádění testů reálnými uživateli k vyhodnocení, jak efektivní a přívětivý je navržený produkt nebo design
 		1. **Cíl:** Zjistit, jak uživatelé interagují s designem a identifikovat potenciální problémy nebo oblasti vylepšení.
-	13. #A/Btesting testing - porovnání dvou nebo více variant designu nebo obsahu s cílem zjistit, která verze dosahuje lepších výsledků = jaké jsou #konverze (žádaný cíl, které chce podnik dosáhnout od svých uživatelů), uživatelská angažovanost nebo retence.
+	13. **A/B testing** - porovnání dvou nebo více variant designu nebo obsahu s cílem zjistit, která verze dosahuje lepších výsledků = jaké jsou konverze (žádaný cíl, které chce podnik dosáhnout od svých uživatelů), uživatelská angažovanost nebo retence.
 		1. **Cíl:** Poskytnout empirická data na základě reálných uživatelských reakcí a preferencech pro optimalizaci designu.		![Pasted image 20240124034745](../_assets/pasted-image-20240124034745.png)
 	14. Iteration and feedback - zdokonalování designu na základě zpětné vazby od členů týmu
 	15. Implementation - převedení do skutečného produktu
@@ -32,7 +38,7 @@
 	19. User Training -poskytování podpory uživatelů
 	20. Monitoring and Analytics - monitorování analýz a metrim, abyste porozuměli tomu, jak uživatelé interagují
 	21. Optimazition - na základě zpětné vazby provádět úpravy a optimalizovat
-#  1. User Flow
+##  1. User Flow
 <mark style="background: #FF5582A6;">1. KROK Mapování</mark>
 	Musíme zmapovat uživatele, klienta, který na **stránku přijde**, to děláme pomocí **USER FLOW DIAGRAMU**
 		1. Určit svůj cíl a cíl uživatelů
@@ -120,7 +126,7 @@ Standart UML - **podívat se**
 6. **Keep it simple** - ať se lidi soustředí na zprávu a ne na design, jako u wireframu
 7. **Labels musí mít smysl** - Ne dát do rectanglu jenom screen, ale co je to za screen - nákup, detaily, o nás, select task, welcome. Stejné u tagu, ne jenom decision, ale je to yes/no nebo approve/not approve - třeba u serach rectanglu = **found**
 7. **Labels musí mít smysl** - Ne dát do rectanglu jenom screen, ale co je to za screen - nákup, detaily, o nás, select task, welcome. Stejné u tagu, ne jenom decision, ale je to yes/no nebo approve/not approve - třeba u serach rectanglu = **found/not found**
-# 2. Wireframes
+## 2. Wireframes
 <mark style="background: #FF5582A6;">1. KROK Obecná teorie</mark>
 	Z user flow diagramu začneme tvořit wireframy, každý diagram by měl odpovídat jednomu screenu wireframu.
 	![Pasted image 20240124032329](../_assets/pasted-image-20240124032329.png)

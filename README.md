@@ -3,7 +3,7 @@
 Knihovna designové znalosti, kterou umí Claude použít. Second-brain styl: znalost je rozdělená do
 tematických sekcí v rootu, `skills/` je jen tenká vrstva, která Claudeovi říká, kdy do knihovny sáhnout.
 
-**86 not, ~134 000 slov.** Vstupní bod do celé knihovny: [`_index.md`](_index.md).
+**88 not, ~139 000 slov.** Vstupní bod do celé knihovny: [`_index.md`](_index.md).
 
 ## Knihovna
 
@@ -96,9 +96,13 @@ by rady o Sheets reportech byly obecné až k nepoužitelnosti. Zbytek knihovny 
 
 ## Známé mezery
 
-Knihovna je nerovná. Šest not jsou kostry a **97 odkazů na obrázky** ukazuje na soubory, které
-v původním vaultu už nejsou (v textu označené `*[chybějící obrázek: ...]*`). Nejvíc to bolí
-u vizuálních témat, kde nota byla hlavně komentář k obrázkům.
+Knihovna má **tři vrstvy důvěryhodnosti** a v konfliktu vyhrává vyšší: `ux-design/pravidla/`
+a `ux-design/kontext/` (třídy důkazu A) → `enterprise-ui/` (třída B) → zbytek `ux-design/`
+a `web-dev/` (původní import studijních poznámek, bez tříd). Noty označené **[archiv]** jsou
+studijní materiál nebo téma mimo rozsah a při návrhu se nepoužívají.
+
+Po úklidu 23. 8. 2026 zbývá **24 odkazů na chybějící obrázky** (z 99) a všechny leží v notách
+označených **[archiv]**, kde obsah byl právě v těch obrázcích. Dvě noty jsou kostry.
 
 Hotové od původního snímku: evidence-based pravidla s třídou důkazu a sektorový kontext
 (`ux-design/pravidla/`, `ux-design/kontext/`), pak přístupnost do hloubky, komponenty a jejich stavy,

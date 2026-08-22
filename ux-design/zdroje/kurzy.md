@@ -1,3 +1,10 @@
+# Kurzy a knihy
+
+> [!note] Archiv: osobní studijní materiál, ne stavební znalost
+> Tohle je seznam absolvovaných a plánovaných kurzů, ne znalost, ze které se staví.
+> **Při návrhu sem nesahej.** Zůstává v repu jako záznam, odkud znalost v `ux-design/` pochází.
+> Zatříděno 23. 8. 2026.
+
 #### Illustrator + Photoshop + Indesign + Premiere
 [Graphic Design Masterclass - Learn GREAT Design | Udemy](https://www.udemy.com/course/graphic-design-masterclass-everything-you-need-to-know/)
 - [ ] TO-DO
@@ -26,9 +33,9 @@
 
 
 
-# Knihy
+## Knihy
 
-Color psychology for designers - Flux - C:\Users\alexp\OneDrive\Grafika
+Color psychology for designers - Flux
 - [x] DONE
 
 Color Psychology What each color means https://nickkolenda.com/pdf/color.pdf
@@ -46,7 +53,7 @@ The lean startup
 
 
 
-# Aplikace a co se naučit
+## Aplikace a co se naučit
 Naučit se s Webflow
 - [ ] TO-DO
 Naučit se s Google Analytics a Smartlook

@@ -1,3 +1,9 @@
+# Definice problému: Double Diamond a 5x proč
+
+Jak zjistit, že řešíš správný problém, než začneš navrhovat řešení.
+
+Související: [Discovery](discovery.md) · [Poznej své uživatele](understand-your-users.md) · [Designový proces](design-process.md) · [Step by step](../proces/step-by-step-ux-ui.md)
+
 **Double diamond** (Dvojitý diamant)
 	Způsob jak prozkoumat proces navrhování
 	Rodělen do čtyř fází
@@ -6,21 +12,21 @@
 		Vývoj
 		Dodávaní![Pasted image 20240203193515](../_assets/pasted-image-20240203193515.png)
 		**První fáze** = Objevování/Výzkum a Definování/Syntéza
-		 je považováno za #DivergentníMyšlení; touto fází odhalují vhled do problému, kde myšleny rozvíjíme všechny možné myšlenky => poté přecházíme do #KonvergentníMyšlení, kde problém zpřesňujeme a definujeme
+		 je považováno za **divergentní myšlení**; touto fází odhalují vhled do problému, kde myšleny rozvíjíme všechny možné myšlenky => poté přecházíme do **konvergentního myšlení**, kde problém zpřesňujeme a definujeme
 		 <mark style="background: #BBFABBA6;">Objevování/Výzkum</mark>
 			**Rip the Brief** (zpochybnění zadání) - zpochybnění a vyhodnocení každé části. Hledání možností jak rozšířit perspektivu a identifikovat klíčové oblasti zájmu
 			**Seskupení/Zjištení** - Seskupování získaných informací do témat a kategorií. Získání přehledu a připravení na syntézu
-			**Primární a sekundární výzkum** - Aplikace metod primárního #terénního a sekundárního #deskového výzkumu = použití široké škály pro získání prespektivy
+			**Primární a sekundární výzkum** - Aplikace metod primárního (terénního) a sekundárního (deskového) výzkumu = použití široké škály pro získání prespektivy
 			**Stažená nezpracovaných zjištení**
 			<mark style="background: #BBFABBA6;">Definování/Syntéza</mark>
 			**Podobnosti** - seskupení podobných prvků a identifikace klíčových vzorů.
 			**Nalezení vhledů** - hledání hlubšího porozumění motivacím, přáním a frutrací uživatelů
 			**Oblasti** - formulace potenciálních oblastí pro další akce nebo inovace
-			**HMW otázky** #HMWQuestions - "Jak bychom mohli..." => hmatatelným akcím nebo řešením dané oblasti
+			**HMW otázky** („How might we") - "Jak bychom mohli..." => hmatatelným akcím nebo řešením dané oblasti
 		**Druhá fáze** = Vývoj/Nápad
 		zatímco první fáze se zaměřuje na nalezení a definování správného problému, druhý diamant se zaměřuje na nalezení správného problému
 <mark style="background: #BBFABBA6;">Vývoj/Nápad</mark>
-Nápady - #DivergentníMyšlení => vytváření nápadů, volný průběh nalezení řešení
+Nápady - **divergentní myšlení** => vytváření nápadů, volný průběh nalezení řešení
 Konec fáze - na konci fáze vyčleňte pouze užitečné nápady, lze to udělat pomocí bodového hlasování nebo matice proveditelnosti
 	1. **Objevování /Výzkum** – vhled do problému (divergující)
 	2. **Definovat/Syntéza** – oblast, na kterou se zaměřit (konvergence)
