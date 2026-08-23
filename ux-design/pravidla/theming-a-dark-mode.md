@@ -190,8 +190,8 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/t
 ## Co tahle nota neřeší
 
 - **Konkrétní paletu.** Žádné hex hodnoty kromě ukázky tvaru. Paletu si změř.
-- **High contrast a `forced-colors`.** Windows High Contrast Mode je třetí režim s vlastními
-  pravidly a knihovna k němu zatím nemá nic.
+- **High contrast a `forced-colors`.** Řeší [Vynucené barvy](vynucene-barvy.md). Pozor: v tom
+  režimu je `color-scheme` vynucen na `light dark`, takže vlastní téma tam neudržíš.
 - **Dataviz palety pro tmavý režim.** Obecná dataviz mimo Sheets je otevřená mezera, viz
   [STATUS.md](../../STATUS.md).
 - **Přepínání tématu bez záblesku v konkrétním frameworku.** Princip je „aplikuj před prvním

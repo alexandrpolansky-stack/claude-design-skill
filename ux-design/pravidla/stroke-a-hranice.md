@@ -115,3 +115,5 @@ musí indikátor splnit kontrast 3:1 (WCAG 1.4.11, viz první pravidlo).
 Související: [Tvar a radius](tvar-a-radius.md) (stejný princip: konzistence systému
 místo psychologie), [Layout Theory](../layout/layout-theory.md) (whitespace, margin,
 padding jako primární oddělovač).
+
+**Souvislost:** V režimu vynucených barev určuje barvu hranice systém a hranice se stává hlavním nositelem tvaru komponenty, viz [Vynucené barvy](vynucene-barvy.md).

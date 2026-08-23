@@ -256,3 +256,5 @@ V M3 je ta hodnota vstup do tonálního posunu plochy, ne primárně do stínu.
   nepopisuje**, `web-dev/` je úvod do HTML a CSS a stín v něm není. Ber ji z MDN.
 
 **Souvislost:** Celý tmavý režim jako systém, včetně sémantických tokenů a toho, co prohlížeč dělá sám, je v [Theming a dark mode](theming-a-dark-mode.md).
+
+**Souvislost:** V režimu vynucených barev je `box-shadow` vynucen na `none` a barva plochy přepsaná, takže oba nositele hloubky padnou. Náhrada je hranice, viz [Vynucené barvy](vynucene-barvy.md).

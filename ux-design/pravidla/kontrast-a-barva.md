@@ -262,3 +262,5 @@ výkon (nekonzistentní znaménko efektu) a na toleranci chyb (nepodloženo). J�
 neříká nic o tom, KTERÉ vizuální volby estetiku zvyšují.
 
 **Souvislost:** Měření kontrastu zvlášť ve světlém a tmavém tématu je v [Theming a dark mode](theming-a-dark-mode.md).
+
+**Souvislost:** V režimu vynucených barev splynou sémantické barvy stavů do jedné palety, což je nejtvrdší důvod, proč stav nikdy nenést jen barvou. Viz [Vynucené barvy](vynucene-barvy.md).
