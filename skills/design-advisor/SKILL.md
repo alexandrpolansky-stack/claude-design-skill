@@ -1,16 +1,17 @@
 ---
 name: design-advisor
 description: >-
-  Sáhni pro UX/UI/vizuální design znalost při návrhu nebo stavbě ČEHOKOLIV, co
-  uvidí nebo použije člověk. Nejen weby a appky (UI, komponenty, dashboardy, formuláře, landing
-  pages), ale i produktové a enterprise aplikace (CRUD, administrace, datové tabulky, filtrování,
-  notifikace, vícekrokové formuláře, klávesová obsluha, čtečky), ALE i ne-webové výstupy: layout
-  tabulky nebo Google Sheetu pro automatizaci, report,
-  přehled, e-mailová šablona, struktura dokumentu. Spouštěj PROAKTIVNĚ a sám (model-invoked),
-  kdykoliv úkol řeší, jak něco vypadá, jak se v tom člověk orientuje, nebo jak s tím interaguje -
-  i když to uživatel neřekne výslovně. Cíl: rozhodnutí o designu mají oporu ve znalostní bázi
-  (UX zákony, barvy, typografie, layout, přístupnost), ne ad hoc. Spojuj úkol se souvislostmi:
-  kdo je čtenář/uživatel, jaký má cíl, co má být na první pohled jasné.
+  Znalostní báze pro UX, UI a vizuální design, kde každé pravidlo nese třídu důkazu
+  a zdroj: UX zákony, kontrast a barva, typografie, layout a mřížky, komponenty a jejich
+  stavy, produktové vzory (datové tabulky, filtrování, stránkování, hromadné akce,
+  vícekrokové formuláře, notifikace, prázdné stavy), theming a dark mode, vynucené barvy,
+  překryvy a vrstvení, stav pohledu v URL, klávesová obsluha a čtečky. Použij při návrhu
+  nebo stavbě čehokoliv, co uvidí nebo použije člověk: weby, aplikace, komponenty,
+  dashboardy, administrace, landing pages, ale i ne-webové výstupy jako layout tabulky
+  nebo Google Sheetu, report, přehled, e-mailová šablona, struktura dokumentu. Použij
+  i tehdy, když uživatel o design nepožádal výslovně, ale úkol řeší, jak něco vypadá,
+  jak se v tom člověk orientuje, nebo jak s tím interaguje. Účelem je, aby rozhodnutí
+  o designu měla oporu ve zdroji, ne aby vznikala ad hoc.
 ---
 
 # Design advisor
