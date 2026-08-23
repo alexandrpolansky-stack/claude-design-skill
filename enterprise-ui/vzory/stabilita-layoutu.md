@@ -123,6 +123,7 @@ tak, že mine tlačítko.
 
 ## Co tahle nota neřeší
 
+- Kam patří stav ovládání, které změnu vyvolalo, aby přežil sdílení odkazem a tlačítko zpět, je v [Stav pohledu v URL](stav-pohledu-v-url.md).
 - Kdy vůbec ukázat skeleton a kdy spinner. To je [Načítání a čekání](nacitani-a-cekani.md).
   Souvisí ale přímo: skeleton, který nahradí celou stránku při každém obnovení, je největší možný
   posun layoutu.

@@ -273,6 +273,7 @@ https://carbondesignsystem.com/components/tabs/usage/
 
 ## Co tahle nota neřeší
 
+- Jestli má být aktivní tab v adrese, řeší [Stav pohledu v URL](../vzory/stav-pohledu-v-url.md).
 - Klávesovou obsluhu do detailu (jeden tabstop, wrap, dvojí tabstop na panel).
   [Klávesnice a focus](../zaklady/klavesnice-a-focus.md).
 - Content switcher jako komponentu. Carbon ji má, v přečtené kopii její stránka není.

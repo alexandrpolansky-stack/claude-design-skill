@@ -192,8 +192,8 @@ režim spustil.
 
 ## Co tahle nota neřeší
 
-- **Stav filtru, stránky a výběru v URL.** Jestli má být pohled sdílitelný odkazem a co udělá
-  tlačítko zpět, je otevřená otázka celé knihovny.
+- **Stav filtru a stránky v URL.** Řeší [Stav pohledu v URL](stav-pohledu-v-url.md), včetně toho,
+  proč tam výběr řádků nepatří.
 - **Oprávnění na úrovni jednotlivého řádku.** „Nemůžu smazat sám sebe" a „nemůžu smazat posledního
   admina" jsou reálné případy a knihovna k nim nemá nic. Nejblíž je
   [Disabled versus read-only](disabled-vs-read-only.md), ale ta řeší prvek, ne pravidlo.

@@ -221,6 +221,7 @@ Detail: [Datové tabulky](datove-tabulky.md)
 
 ## Co tahle nota neřeší
 
+- Proč má číslo stránky patřit do adresy a co má udělat tlačítko zpět, je v [Stav pohledu v URL](../vzory/stav-pohledu-v-url.md).
 - Jak se má chovat výběr řádků při přepnutí stránky, je v [Hromadné akce](../vzory/hromadne-akce.md).
 - Infinite scroll. Carbon ho nedokumentuje, v přečtené kopii k němu není nic.
 - „Zobrazit více" a „Načíst více" jako alternativy.
