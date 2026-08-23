@@ -260,3 +260,5 @@ Behaviour & Information Technology · Sonderegger et al. (2012), Ergonomics 55(7
 **KDY NEPLATÍ:** Po delším reálném používání (efekt slábne s expozicí), na objektivní
 výkon (nekonzistentní znaménko efektu) a na toleranci chyb (nepodloženo). Jádro navíc
 neříká nic o tom, KTERÉ vizuální volby estetiku zvyšují.
+
+**Souvislost:** Měření kontrastu zvlášť ve světlém a tmavém tématu je v [Theming a dark mode](theming-a-dark-mode.md).
