@@ -37,8 +37,8 @@ Stav a mezery: [STATUS.md](STATUS.md).
 | Sekce | Not | O čem |
 |---|---|---|
 | [neuro-design/](neuro-design/) | 1 | Kognitivní ergonomie, eye-tracking, algoritmy vizuální váhy. Nejhutnější dokument v knihovně. |
-| [ux-design/](ux-design/) | 51 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
-| [enterprise-ui/](enterprise-ui/) | 30 | Produktové aplikace: volba komponenty podle úkolu, vzory (prázdné stavy, notifikace, filtrování), komponenty (tabulky, formulářové prvky, taby), klávesnice a čtečky. Principy z IBM Carbonu, bez jeho vizuálu. |
+| [ux-design/](ux-design/) | 52 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
+| [enterprise-ui/](enterprise-ui/) | 31 | Produktové aplikace: volba komponenty podle úkolu, vzory (prázdné stavy, notifikace, filtrování), komponenty (tabulky, formulářové prvky, taby), klávesnice a čtečky. Principy z IBM Carbonu, bez jeho vizuálu. |
 | [web-dev/](web-dev/) | 4 | HTML/CSS základy, vkládání CSS, stylizace textu, práce s obrázky. |
 | [sheets/](sheets/) | 3 | Google Sheets reporty: rozhodovací rámec, brand tokeny, Apps Script vrstva. |
 
@@ -80,6 +80,7 @@ proč zrovna tahle hodnota, ne jiná.
 - [Hloubka a stíny](ux-design/pravidla/hloubka-a-stiny.md) - kdy hloubku nést barvou plochy a kdy stínem, ověřené elevation škály (Carbon, Material 3), proč stín nikdy nesmí nést hranici ovládacího prvku.
 - [Pohyb](ux-design/pravidla/pohyb.md) - jak dlouho má trvat přechod, kterou vlastnost animovat, jak rychle točit spinner (vztah k vnímanému čekání je konvexní, ne lineární: Ding & Kyung 2025, N≈7000), přerušitelnost, prefers-reduced-motion, WCAG 2.2.2/2.3.3. **Neřeší** animace spouštěné scrollem.
 - [Kontrast a barva](ux-design/pravidla/kontrast-a-barva.md) - proč 4,5:1 je regulatorní baseline, ne percepční práh (a proč má slabší evidenci než aesthetic-usability effect), WCAG 1.4.11, USWDS magic number, sémantika stavů.
+- [Theming a dark mode](ux-design/pravidla/theming-a-dark-mode.md) - **proč invertování nefunguje a co se při přepnutí do tmavého režimu rozbije** (hloubka, hranice, značka, obrázky). Sémantická vrstva tokenů, co dělá prohlížeč sám přes `color-scheme`, proč `prefers-color-scheme: light` znamená taky „uživatel si nevybral", `light-dark()`, přepínač o třech stavech. Třída A z MDN a WCAG tam, kde jde o mechanismus.
 - [Typografie](ux-design/pravidla/typografie.md) - délka řádku 45-75 znaků, WCAG text spacing a resize 200 %, škála jako nástroj konzistence, proč Miller/Cowan neplatí na hierarchii nadpisů.
 - [Formuláře a stavy](ux-design/pravidla/formulare-a-stavy.md) - **nejakčnější nota v sekci.** Label vs. placeholder, kdy validovat (výchozí: až při odeslání), text chybové hlášky, vícekrokový formulář a onboarding wizard, tři prahy čekání a který indikátor při jaké délce, krok kontroly před nevratnou akcí (WCAG 3.3.4), prázdné a chybové stavy. Proti skeleton screenům má měření, ne jen pochybnost. **Cowanovo 3-5 se tu netýká počtu kroků**, ale informace, kterou si uživatel musí nést mezi nimi.
 - [Anti-slop](ux-design/pravidla/anti-slop.md) - markery generického vzhledu s třídou důkazu, včetně naměřeného nálezu, že bezokrajové flat UI stojí uživatele o 22 % víc času (NN/g, Moran 2017).
@@ -103,7 +104,7 @@ pro kterého stavíš.
 
 ## Enterprise UI (produktové aplikace: dashboardy, CRUD, administrace)
 
-**Tři noty v téhle sekci platí i mimo produktové aplikace, protože popisují chování prohlížeče, ne konvenci Carbonu:** [stabilita layoutu](enterprise-ui/vzory/stabilita-layoutu.md), [překryvy a vrstvení](enterprise-ui/vzory/prekryvy-a-vrstveni.md) a [přetečení a zkracování](enterprise-ui/vzory/preteceni-a-truncation.md). Jsou třída A z MDN. Sáhni po nich i u marketingového webu.
+**Čtyři noty v téhle sekci platí i mimo produktové aplikace, protože popisují chování prohlížeče, ne konvenci Carbonu:** [stabilita layoutu](enterprise-ui/vzory/stabilita-layoutu.md), [překryvy a vrstvení](enterprise-ui/vzory/prekryvy-a-vrstveni.md), [přetečení a zkracování](enterprise-ui/vzory/preteceni-a-truncation.md) a [stav pohledu v URL](enterprise-ui/vzory/stav-pohledu-v-url.md). Mechanismus v nich je třída A z MDN. Sáhni po nich i u marketingového webu.
 
 Odvozeno z dokumentace IBM Carbon Design System (lokální kopie, čteno 30. 7. 2026). Přebrané jsou
 **principy, vzory a rozhodovací pravidla**, ne vizuál: žádné Carbon tokeny, hex hodnoty, IBM Plex,
@@ -140,6 +141,7 @@ neproběhne a jehož symptom vypadá jako úplně jiná chyba.
 - [Disabled, read-only, nebo skryté](enterprise-ui/vzory/disabled-vs-read-only.md) - tři způsoby, jak udělat prvek neovladatelný. Volba mezi nimi je přístupnostní rozhodnutí, ne vizuální.
 - [Běžné akce](enterprise-ui/vzory/bezne-akce.md) - co přesně znamená Add, Cancel, Clear, Close, Copy, Delete, Edit, Next, Refresh, Remove a Reset a čím se liší (Delete zničí objekt, Remove ho jen vyjme ze seznamu). Tři úrovně dopadu mazání a jak podle nich odstupňovat potvrzení. **Save ve slovníku není.**
 - [Hromadné akce nad filtrovanou a stránkovanou množinou](enterprise-ui/vzory/hromadne-akce.md) - **co vlastně znamená „vybráno", když je tabulka filtrovaná i stránkovaná.** Checkbox v hlavičce vybírá stránku, ne filtr; co s výběrem při přepnutí stránky a při změně filtru; jak potvrdit smazání 200 položek, když žádný jeden název neexistuje; a co ukázat, když z dávky projde jen část. Většina pravidel je třída C, Carbon tuhle oblast nepokrývá.
+- [Stav pohledu v URL](enterprise-ui/vzory/stav-pohledu-v-url.md) - **co z rozhraní patří do adresy, aby šel pohled poslat odkazem a aby tlačítko zpět vrátilo tentýž filtr.** Tabulka patří/nepatří (výběr řádků nepatří, a proč), `pushState` versus `replaceState` podle toho, jestli změnu uživatel vyvolal vědomě, obnova pozice ve výpisu, neplatná hodnota v adrese. Platí i mimo produktové aplikace.
 
 ### Komponenty
 

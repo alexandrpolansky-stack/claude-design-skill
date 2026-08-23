@@ -7,13 +7,13 @@ kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i t
 
 | | |
 |---|---|
-| Not v knihovně celkem | 89 |
+| Not v knihovně celkem | 91 |
 | `neuro-design/` | 1 (master dokument, 5 modulů) |
-| `ux-design/` | 51 (31 původních + 11 v `pravidla/` + 9 v `kontext/`) |
-| `enterprise-ui/` | 30 (6 `zaklady/` + 14 `vzory/` + 10 `komponenty/`) |
+| `ux-design/` | 52 (31 původních + 12 v `pravidla/` + 9 v `kontext/`) |
+| `enterprise-ui/` | 31 (6 `zaklady/` + 15 `vzory/` + 10 `komponenty/`) |
 | `web-dev/` | 4 |
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
-| Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~131 v 11 notách |
+| Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~140 v 12 notách |
 | Sektorových pravidel (`ux-design/kontext/`) | ~87 v 9 notách |
 | Pravidel s třídou důkazu (`enterprise-ui/`) | ~168 v 30 notách, ~365 blocích ZDROJ |
 | Obrázků v repu | 32 |
@@ -219,7 +219,7 @@ a nota to říká na konci sama.
 
 **Mezery, které test pojmenoval a které zůstávají otevřené:**
 
-- Stav filtru, stránky a výběru v URL. Sdílitelnost pohledu odkazem a chování tlačítka zpět.
+- ~~Stav filtru, stránky a výběru v URL.~~ **Zavřeno 23. 8. 2026**, viz sekce 0d.
 - Oprávnění na úrovni jednotlivého řádku („nemůžu smazat sám sebe", „posledního admina").
 - Výchozí počet položek na stránku. Carbon komponentu popisuje, hodnotu nedoporučuje.
 - Buňka s identitou člověka (avatar plus jméno plus e-mail), nejčastější buňka seznamu uživatelů.
@@ -229,6 +229,42 @@ a nota to říká na konci sama.
 - Onboarding jako samostatný vzor (přeskočení, dokončení později, opuštění uprostřed).
 - `inert` se v knihovně nevyskytuje, přestože `prekryvy-a-vrstveni.md` požaduje zneaktivnění obsahu
   pod modálem.
+
+## 0d. Průzkum cizích repozitářů a dvě noty z něj (23. 8. 2026)
+
+**Co se hledalo.** Repozitáře a skilly, které by knihovně něco přidaly. Filtr byl dvojí: tvrdé
+pravidlo repa (jen grafika a design) a devět mezer z retenčního testu. Hvězdičky ověřené přímo na
+GitHubu, protože agregátory hlásily rozporná čísla (u jednoho repa 59,4k i 79k).
+
+| Repozitář | Licence | Verdikt |
+|---|---|---|
+| [vercel-labs/web-interface-guidelines](https://github.com/vercel-labs/web-interface-guidelines) | MIT, 790 hvězd | **Použito jako osnova.** Trefuje tři mezery: stav v URL, dark mode a theming, `inert`. Jsou to holé imperativy bez odůvodnění, takže posloužil jako seznam otázek a odpovědi jsou dohledané v MDN a WCAG |
+| [voltagent/awesome-design-md](https://github.com/voltagent/awesome-design-md) | MIT repo, ~110k hvězd | **Ne.** Seškrábané hex hodnoty a type ramps od Stripu, Linearu a dalších. Přesně to, co se u Carbonu záměrně nebralo. MIT na repu nedává práva k vizuální identitě těch značek a nota, která učí kopírovat konkrétní značku, jde proti `anti-slop.md` |
+| [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md) | 200 iOS DESIGN.md | **Ne.** Totéž plus dotyková doména, kterou má knihovna vědomě zavřenou |
+| [anthropics/skills](https://github.com/anthropics/skills), frontend-design | Apache 2.0 | **Ne pro import.** Názor bez citací, neřeší dark mode, tabulky ani kontrastní čísla. Překrývá se s `anti-slop.md` a `vizualni-craft.md`, ale s měkčí oporou |
+| [leonxlnx/taste-skill](https://github.com/leonxlnx/taste-skill) | MIT, 79,3k hvězd | **Ne pro import.** Stejný tvar: layout, typografie, motion, spacing bez zdrojů |
+
+**Zobecnění, které stojí za zapamatování.** Po Kowalského `apple-design` (odmítnuto 23. 8. 2026,
+viz sekce 0b) je tohle už třetí repo téhož tvaru: populární, dobře napsaný průvodce vkusem bez
+jediného zdroje. Ekosystém je jimi zahlcený a sourcing je jediné, čím se tahle knihovna liší.
+**Import nezdrojovaného skillu by tu výhodu zahodil.** Kritérium do budoucna: cizí materiál se bere
+jen tehdy, když buď nese dohledatelný zdroj, nebo slouží jako seznam otázek, na které si odpovědi
+dohledá knihovna sama.
+
+**Dvě nové noty:**
+
+- [Theming a dark mode](ux-design/pravidla/theming-a-dark-mode.md) v `pravidla/`. Zavírá mezeru,
+  která byla v STATUS od začátku a kterou dosud pokrývala tři roztroušená pravidla. Sémantická
+  vrstva tokenů, čtyři důvody, proč invertování nefunguje, co dělá prohlížeč sám (`color-scheme`),
+  proč `prefers-color-scheme: light` nerozliší volbu od mlčení, `light-dark()`, přepínač o třech
+  stavech, média, která téma nepřežijí. Mechanismy jsou třída A z MDN, prahy A z WCAG, doporučení C.
+- [Stav pohledu v URL](enterprise-ui/vzory/stav-pohledu-v-url.md) ve `vzory/`. Čtvrtá nota v té
+  sekci, která platí i mimo produktové aplikace. Zavírá mezeru, kterou si jmenovaly Hromadné akce.
+  Tabulka patří/nepatří, proč výběr řádků do adresy nepatří, `pushState` versus `replaceState`,
+  tlačítko zpět, sdílitelnost, `scrollRestoration`, neplatná hodnota v adrese.
+
+**Co Vercel guidelines nepokrývají a co tedy zůstává otevřené:** hustota jako parametr, animace
+spouštěné scrollem, `forced-colors` a Windows High Contrast Mode, dataviz palety pro tmavý režim.
 
 ## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 
