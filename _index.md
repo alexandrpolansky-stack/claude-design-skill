@@ -37,7 +37,7 @@ Stav a mezery: [STATUS.md](STATUS.md).
 | Sekce | Not | O čem |
 |---|---|---|
 | [neuro-design/](neuro-design/) | 1 | Kognitivní ergonomie, eye-tracking, algoritmy vizuální váhy. Nejhutnější dokument v knihovně. |
-| [ux-design/](ux-design/) | 52 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
+| [ux-design/](ux-design/) | 53 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla, kontext podle sektoru. |
 | [enterprise-ui/](enterprise-ui/) | 31 | Produktové aplikace: volba komponenty podle úkolu, vzory (prázdné stavy, notifikace, filtrování), komponenty (tabulky, formulářové prvky, taby), klávesnice a čtečky. Principy z IBM Carbonu, bez jeho vizuálu. |
 | [web-dev/](web-dev/) | 4 | HTML/CSS základy, vkládání CSS, stylizace textu, práce s obrázky. |
 | [sheets/](sheets/) | 3 | Google Sheets reporty: rozhodovací rámec, brand tokeny, Apps Script vrstva. |
@@ -81,6 +81,7 @@ proč zrovna tahle hodnota, ne jiná.
 - [Pohyb](ux-design/pravidla/pohyb.md) - jak dlouho má trvat přechod, kterou vlastnost animovat, jak rychle točit spinner (vztah k vnímanému čekání je konvexní, ne lineární: Ding & Kyung 2025, N≈7000), přerušitelnost, prefers-reduced-motion, WCAG 2.2.2/2.3.3. **Neřeší** animace spouštěné scrollem.
 - [Kontrast a barva](ux-design/pravidla/kontrast-a-barva.md) - proč 4,5:1 je regulatorní baseline, ne percepční práh (a proč má slabší evidenci než aesthetic-usability effect), WCAG 1.4.11, USWDS magic number, sémantika stavů.
 - [Theming a dark mode](ux-design/pravidla/theming-a-dark-mode.md) - **proč invertování nefunguje a co se při přepnutí do tmavého režimu rozbije** (hloubka, hranice, značka, obrázky). Sémantická vrstva tokenů, co dělá prohlížeč sám přes `color-scheme`, proč `prefers-color-scheme: light` znamená taky „uživatel si nevybral", `light-dark()`, přepínač o třech stavech. Třída A z MDN a WCAG tam, kde jde o mechanismus.
+- [Vynucené barvy (forced colors)](ux-design/pravidla/vynucene-barvy.md) - **režim, ve kterém prohlížeč zahodí tvoje barvy a nahradí je uživatelskou paletou** (Windows High Contrast). Otevři hlavně proto, že ruší mechanismy jiných pravidel: `box-shadow` je vynucen na `none`, gradienty mizí, sémantické barvy stavů splynou. Přesný seznam přebitých vlastností, systémová klíčová slova, kdy smíš sáhnout po `forced-color-adjust`. Třída A z MDN.
 - [Typografie](ux-design/pravidla/typografie.md) - délka řádku 45-75 znaků, WCAG text spacing a resize 200 %, škála jako nástroj konzistence, proč Miller/Cowan neplatí na hierarchii nadpisů.
 - [Formuláře a stavy](ux-design/pravidla/formulare-a-stavy.md) - **nejakčnější nota v sekci.** Label vs. placeholder, kdy validovat (výchozí: až při odeslání), text chybové hlášky, vícekrokový formulář a onboarding wizard, tři prahy čekání a který indikátor při jaké délce, krok kontroly před nevratnou akcí (WCAG 3.3.4), prázdné a chybové stavy. Proti skeleton screenům má měření, ne jen pochybnost. **Cowanovo 3-5 se tu netýká počtu kroků**, ale informace, kterou si uživatel musí nést mezi nimi.
 - [Anti-slop](ux-design/pravidla/anti-slop.md) - markery generického vzhledu s třídou důkazu, včetně naměřeného nálezu, že bezokrajové flat UI stojí uživatele o 22 % víc času (NN/g, Moran 2017).

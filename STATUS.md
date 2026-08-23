@@ -7,13 +7,13 @@ kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i t
 
 | | |
 |---|---|
-| Not v knihovně celkem | 91 |
+| Not v knihovně celkem | 92 |
 | `neuro-design/` | 1 (master dokument, 5 modulů) |
-| `ux-design/` | 52 (31 původních + 12 v `pravidla/` + 9 v `kontext/`) |
+| `ux-design/` | 53 (31 původních + 13 v `pravidla/` + 9 v `kontext/`) |
 | `enterprise-ui/` | 31 (6 `zaklady/` + 15 `vzory/` + 10 `komponenty/`) |
 | `web-dev/` | 4 |
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
-| Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~140 v 12 notách |
+| Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~148 v 13 notách |
 | Sektorových pravidel (`ux-design/kontext/`) | ~87 v 9 notách |
 | Pravidel s třídou důkazu (`enterprise-ui/`) | ~168 v 30 notách, ~365 blocích ZDROJ |
 | Obrázků v repu | 32 |
@@ -264,7 +264,50 @@ dohledá knihovna sama.
   tlačítko zpět, sdílitelnost, `scrollRestoration`, neplatná hodnota v adrese.
 
 **Co Vercel guidelines nepokrývají a co tedy zůstává otevřené:** hustota jako parametr, animace
-spouštěné scrollem, `forced-colors` a Windows High Contrast Mode, dataviz palety pro tmavý režim.
+spouštěné scrollem, dataviz palety pro tmavý režim.
+
+### Doplněno tentýž den: univerzální před vendorským
+
+Zadání se upřesnilo na „chceme to víc univerzální, ne zamknuté na jednu věc". To přeskládalo pořadí
+kandidátů a je to správný korektiv: **31 z 91 not bylo odvozených z jednoho design systému** a celá
+`enterprise-ui/komponenty/` je vázaná na to, jak Carbon skládá komponenty. Retenční test to potvrdil
+sám, protože noty, které agenti trefili a použili nejvíc, byly ty mechanismové (překryvy, přetečení,
+stabilita layoutu), ne komponentové.
+
+**Kritérium pro další přidávání:** přednost má znalost o tom, jak se chová prohlížeč a člověk, před
+znalostí o tom, jak jeden dodavatel skládá komponenty. To první platí všude a nezastará s verzí
+design systému.
+
+**Cloudscape (AWS, Apache 2.0, 2,6k hvězd) proto NEIMPORTOVÁN.** Je to poctivý systém pro konzole
+a datově husté aplikace, ale wholesale import by ten vendorský zámek utáhl. Použit jen jako druhý
+hlas tam, kde nám odporuje, viz níže.
+
+**Nová nota:** [Vynucené barvy](ux-design/pravidla/vynucene-barvy.md). Zavírá mezeru `forced-colors`
+a je to přesně ten univerzální typ: mechanismus prohlížeče, třída A z MDN, a hlavně **ruší
+mechanismy čtyř jiných pravidel knihovny**. `box-shadow` je vynucen na `none` (padá hloubka
+ze stínu), `background-image` na `none` u negradientních hodnot, `color-scheme` na `light dark`
+(padá vlastní téma), sémantické barvy stavů splynou. Propojena s `hloubka-a-stiny`,
+`stroke-a-hranice`, `kontrast-a-barva` a `theming-a-dark-mode`.
+
+### Rozpor s Cloudscape u výběru řádků (23. 8. 2026)
+
+Nalezen den po dopsání [Hromadných akcí](enterprise-ui/vzory/hromadne-akce.md), takže nota byla
+opravena hned.
+
+- **Původní znění, třída C:** výběr při přepnutí stránky a při řazení drž, ruš ho až při změně filtru.
+- **Cloudscape, třída B**, verbatim: „Selection is overwritten by: Table sorting, Pagination,
+  Preferences, and as soon as they are no longer visible on the page."
+  https://cloudscape.design/patterns/resource-management/view/table-view/
+
+**Cloudscape vyhrál** podle vlastního pravidla knihovny o vrstvách: publikovaná konvence systému,
+který jede na konzoli AWS, je tvrdší opora než řemeslná úvaha. Nota teď má výchozí chování „zruš při
+každé změně pohledu" a držení výběru připouští jen za podmínky, že je vidět souhrn toho, co je
+vybráno mimo obrazovku. Obě strany jsou v notě citované, nic se nemazalo.
+
+**Poučení, které stojí za zopakování:** rozpor se našel jen proto, že se hledal druhý zdroj k tématu,
+které už bylo „hotové". Nota byla čerstvá a přesto špatně. Vlastní syntéza třídy C je nejrizikovější
+druh obsahu v knihovně a stojí za to ji křížově ověřovat dřív než rok poté.
+
 
 ## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 

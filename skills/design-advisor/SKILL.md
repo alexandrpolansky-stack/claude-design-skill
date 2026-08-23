@@ -22,7 +22,7 @@ Když navrhuju cokoliv user-facing, nejdřív si vytáhnu relevantní znalost, a
 Knihovna žije v rootu repa, ne uvnitř skillu. Cesty níže jsou relativní ze složky skillu,
 což platí, když je repo naklonované celé. Kdyby relativní cesta neexistovala (skill
 nakopírovaný samostatně), najdi `_index.md` v rootu repa `claude-design-skill` a jdi odtud.
-[../../_index.md](../../_index.md) - mapa celé knihovny (91 not v pěti sekcích: neuro-design, ux-design, enterprise-ui, web-dev, sheets). Otevři index, vyber relevantní sekce a přečti je. Nečti celý index dokola; vezmi jen to, co k úkolu patří, a odkaž na konkrétní notu.
+[../../_index.md](../../_index.md) - mapa celé knihovny (92 not v pěti sekcích: neuro-design, ux-design, enterprise-ui, web-dev, sheets). Otevři index, vyber relevantní sekce a přečti je. Nečti celý index dokola; vezmi jen to, co k úkolu patří, a odkaž na konkrétní notu.
 
 ## Postup
 1. **Souvislosti první:** čí je to výstup, kdo ho čte/používá, jaký je jeho cíl, co má být hned jasné, jaký je hlavní flow.
