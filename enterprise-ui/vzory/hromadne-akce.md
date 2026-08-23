@@ -15,7 +15,8 @@ Související: [Datové tabulky](../komponenty/datove-tabulky.md) ·
 2. **Checkbox v hlavičce vybírá jen aktuální stránku.** Nikdy ne celý výsledek filtru.
 3. **Když je vybraná celá stránka a filtr má víc záznamů, nabídni druhý krok:** „Vybrat všech 4 812
    odpovídajících". Až tohle je výběr nad filtrem.
-4. **Výběr při přepnutí stránky drž, při změně filtru zruš.** A oznam to.
+4. **Výběr ruš při každé změně pohledu** (stránka, řazení, filtr) a oznam to. Držet ho přes
+   stránky smíš jen tehdy, když je vidět souhrn toho, co je vybráno mimo obrazovku.
 5. **Počet vybraných piš do každého labelu akce.** „Smazat 12 uživatelů", ne „Smazat".
 6. **U nevratné dávky nesmí potvrzení znít obecně.** Nech uživatele napsat počet, ne název.
 7. **Dávka selhává po částech.** Návrh musí umět „197 hotovo, 3 selhaly" včetně toho, které.
@@ -73,27 +74,43 @@ Zdrojem je pozorování produktů, ne studie.
 
 ## Co se stane s výběrem při navigaci
 
-**PRAVIDLO:**
+Tady si dva zdroje odporují a rozpor je zapsaný, ne zameten.
 
-| Akce uživatele | Co s výběrem | Co oznámit |
+**Cloudscape (AWS), třída B.** Verbatim: „The parent checkbox, living on the table header, only
+selects rows visible on the page. Any actions triggered after selection only affects the selected
+visible rows. **Selection is overwritten by: Table sorting, Pagination, Preferences**, and as soon
+as they are no longer visible on the page."
+https://cloudscape.design/patterns/resource-management/view/table-view/
+
+**Původní znění téhle noty, třída C,** naopak velelo výběr přes stránkování a řazení držet.
+**Cloudscape vyhrává,** protože publikovaná konvence systému, který jede na konzoli AWS, je tvrdší
+opora než řemeslná úvaha. Držení výběru přes stránky ale zůstává legitimní, jen za podmínky, kterou
+většina implementací nesplní.
+
+**PRAVIDLO:** Výchozí chování je **výběr zrušit při každé změně pohledu**. Držet ho smíš jen tehdy,
+když zároveň ukážeš, co je vybráno mimo obrazovku.
+
+| Akce uživatele | Výchozí (bezpečné) | Smíš držet, když... |
 |---|---|---|
-| Přepnutí stránky | **Drž ho** | Nic, ale počet vybraných musí zůstat vidět |
-| Změna počtu položek na stránku | **Drž ho** | Nic |
-| Řazení | **Drž ho** | Nic |
-| Změna filtru nebo hledání | **Zruš ho** | „Výběr zrušen, protože se změnil filtr" |
-| Odchod ze stránky a návrat | **Zruš ho** | Nic |
+| Přepnutí stránky | **Zruš** | ...je vidět souhrn („Vybráno 30 na 3 stránkách") a jde otevřít, co v něm je |
+| Řazení | **Zruš** | ...totéž |
+| Změna počtu položek na stránku | **Zruš** | ...totéž |
+| Změna filtru nebo hledání | **Zruš vždy** | Nikdy. Filtr mění samotnou množinu |
+| Odchod ze stránky a návrat | **Zruš vždy** | Nikdy |
 
 **KDY PLATÍ:** Vždy, když výběr přežívá déle než jednu obrazovku dat.
-**PROČ:** Řazení a stránkování mění pořadí a výřez, ne množinu, takže výběr dál dává smysl. Filtr
-mění samotnou množinu, takže část vybraných záznamů zmizí z dohledu a uživatel by pak potvrzoval
-akci nad něčím, co nevidí. To je stejná past jako u „vybrat vše", jen pomalejší.
-**TŘÍDA:** C.
-**KDY NEPLATÍ:** Filtr, který jen zužuje už zúženou množinu a nemůže odebrat nic vybraného.
-I tam je bezpečnější výběr zrušit než počítat průnik.
+**PROČ:** Obě strany chrání něco jiného a obojí je skutečné. Zrušení chrání před akcí nad řádky,
+které uživatel nevidí, a to je u nevratného mazání ta dražší chyba. Držení chrání rozdělanou práci
+u někoho, kdo vybírá napříč stránkami. Rozhodující je, že **držení bez viditelného souhrnu spojuje
+nevýhody obojího**: uživatel má vybráno něco, co nevidí, a přitom o tom neví.
+**TŘÍDA:** B pro výchozí zrušení (Cloudscape), C pro podmínku, za které jde výběr držet.
+**ZDROJ:** Cloudscape Design System, Table view, viz citace výše. Apache 2.0.
+**KDY NEPLATÍ:** Tabulka, která se celá vejde na jednu stránku. Tam žádná změna pohledu výběr
+neschová.
 
-**Neschovávej vybrané řádky, které vypadly z výřezu.** Když výběr držíš přes stránky, musí být
-vidět souhrn („Vybráno 30 na 3 stránkách") a musí jít otevřít, co v něm je. Výběr, který uživatel
-nemůže zkontrolovat, je výběr, který nemůže potvrdit.
+**Když výběr zrušíš, řekni to.** Tiché zrušení vypadá jako chyba: uživatel odklikal dvacet
+checkboxů, přepnul řazení a je pryč. Krátká zpráva („Výběr zrušen, změnilo se řazení") stojí jeden
+řádek a ušetří zopakování celé práce.
 
 ## Label akce nese počet
 
@@ -208,6 +225,9 @@ režim spustil.
   https://carbondesignsystem.com/components/data-table/usage/ Lokální kopie čtena 23. 8. 2026.
 - Carbon Design System, Pagination usage.
   https://carbondesignsystem.com/components/pagination/usage/
+- Cloudscape Design System (AWS, Apache 2.0), Table view. Zdroj pravidla o rušení výběru
+  při změně pohledu. https://cloudscape.design/patterns/resource-management/view/table-view/
+  Čteno 23. 8. 2026.
 - WCAG 2.2, SC 3.3.4 Error Prevention (Legal, Financial, Data) a SC 4.1.3 Status Messages, Level AA.
   https://www.w3.org/WAI/WCAG22/quickref/
 - Dvoukrokový výběr nad filtrem: pozorovaná konvence produktů (Gmail, GitHub, Google Drive), nikoli
