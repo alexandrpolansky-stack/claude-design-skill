@@ -10,8 +10,8 @@ tematických sekcí v rootu, `skills/` je jen tenká vrstva, která Claudeovi ř
 | Sekce | Not | O čem |
 |---|---|---|
 | [neuro-design/](neuro-design/) | 1 | Kognitivní ergonomie, eye-tracking, algoritmy vizuální váhy, fail-safe protokoly. Nejhutnější dokument. |
-| [ux-design/](ux-design/) | 51 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla s třídou důkazu, kontext podle sektoru. |
-| [enterprise-ui/](enterprise-ui/) | 27 | Produktové aplikace: volba komponenty podle úkolu, vzory, komponenty, klávesnice a čtečky. Principy z IBM Carbonu, bez jeho vizuálu. |
+| [ux-design/](ux-design/) | 53 | UX zákony, proces, barvy, typografie, layout, trendy, etika, hotový design systém, evidence-based pravidla s třídou důkazu (13 not), kontext podle sektoru (9 sektorů). |
+| [enterprise-ui/](enterprise-ui/) | 31 | Produktové aplikace: volba komponenty podle úkolu, vzory, komponenty, klávesnice a čtečky. Principy z IBM Carbonu, bez jeho vizuálu. **Čtyři noty tu platí i mimo produktové aplikace**, protože popisují chování prohlížeče: stabilita layoutu, překryvy a vrstvení, přetečení, stav pohledu v URL. |
 | [web-dev/](web-dev/) | 4 | HTML/CSS základy, vkládání CSS, stylizace textu, práce s obrázky. |
 | [sheets/](sheets/) | 3 | Google Sheets reporty: rozhodovací rámec, brand tokeny, Apps Script vrstva. |
 
@@ -22,7 +22,7 @@ tematických sekcí v rootu, `skills/` je jen tenká vrstva, která Claudeovi ř
 | [`design-advisor`](skills/design-advisor/SKILL.md) | Cokoliv user-facing: weby, komponenty, tlačítka, landing pages, propagace, formuláře, ale i layout tabulky, reportu nebo e-mailu. Model-invoked. |
 | [`sheets-design`](skills/sheets-design/SKILL.md) | Google Sheets reporty a dashboardy, včetně živé aplikace stylů přes Sheets API. Model-invoked. |
 
-Plus [`rules/`](rules/) – destiláty imperativů pro moment, kdy se reálně píše UI kód. Nejsou to noty
+Plus [`rules/`](rules/) - destiláty imperativů pro moment, kdy se reálně píše UI kód. Nejsou to noty
 z knihovny, je to zkrácená verze toho, co je v ní rozepsané.
 
 ## Jak to používat
@@ -96,21 +96,36 @@ by rady o Sheets reportech byly obecné až k nepoužitelnosti. Zbytek knihovny 
 
 ## Známé mezery
 
-Knihovna má **tři vrstvy důvěryhodnosti** a v konfliktu vyhrává vyšší: `ux-design/pravidla/`
-a `ux-design/kontext/` (třídy důkazu A) → `enterprise-ui/` (třída B) → zbytek `ux-design/`
-a `web-dev/` (původní import studijních poznámek, bez tříd). Noty označené **[archiv]** jsou
-studijní materiál nebo téma mimo rozsah a při návrhu se nepoužívají.
+Knihovna má **tři vrstvy důvěryhodnosti** a v konfliktu vyhrává vyšší:
 
-Po úklidu 23. 8. 2026 zbývá **24 odkazů na chybějící obrázky** (z 99) a všechny leží v notách
-označených **[archiv]**, kde obsah byl právě v těch obrázcích. Dvě noty jsou kostry.
+1. `ux-design/pravidla/` a `ux-design/kontext/` (třída A: WCAG, měření, specifikace)
+2. `enterprise-ui/` (třída B, publikovaná konvence design systému)
+3. zbytek `ux-design/`, celý `neuro-design/` a `web-dev/` (původní import, **bez tříd důkazu**)
+
+`sheets/` stojí vedle škály: domácí pravidla, pro Sheets platí přednostně. Pozor na `neuro-design/`:
+doporučuje se jako první čtení u větší stavby, ale je ve třetí vrstvě, takže z něj ber metodiku,
+ne čísla. Úplné znění je v [`_index.md`](_index.md).
+
+Značky u not: **[archiv]** je studijní materiál nebo téma mimo rozsah a při návrhu se nepoužívá,
+**[stub]** je kostra, **[neúplné]** je nota, jejíž text nemá konec.
+
+Po úklidu 23. 8. 2026 zbývá **26 odkazů na chybějící obrázky** (z 99) a všechny leží ve čtyřech
+notách označených **[archiv]**, kde obsah byl právě v těch obrázcích. Dvě noty jsou kostry,
+jedna je **[neúplné]**.
 
 Hotové od původního snímku: evidence-based pravidla s třídou důkazu a sektorový kontext
 (`ux-design/pravidla/`, `ux-design/kontext/`), pak přístupnost do hloubky, komponenty a jejich stavy,
-formuláře, prázdné a chybové stavy, breakpointy (`enterprise-ui/`).
+formuláře, prázdné a chybové stavy, breakpointy (`enterprise-ui/`). Naposledy přibyly theming
+a dark mode, vynucené barvy (Windows High Contrast), stav pohledu v URL a hromadné akce nad
+filtrovanou a stránkovanou množinou.
 
-Pořád nepokryté a přitom potřebné: landing pages jako struktura stránky, dataviz mimo Sheets, design
-tokeny jako proces, mobil jako layout strategie (palec zóna, gesta), brand tokeny mimo Sheets.
-Konkrétní seznam a priority: [STATUS.md](STATUS.md).
+Pořád nepokryté a přitom potřebné: hustota jako záměrná volba, animace spouštěné scrollem, dataviz
+mimo Sheets, landing page jako struktura stránky, mobil jako layout strategie (palec zóna, gesta),
+brand tokeny mimo Sheets. Konkrétní seznam a priority: [STATUS.md](STATUS.md), sekce 0c a 0d.
+
+Kritérium pro přidávání, které vzešlo z retenčního testu: **přednost má znalost o tom, jak se chová
+prohlížeč a člověk, před tím, jak jeden dodavatel skládá komponenty.** To první platí všude
+a nezastará s verzí design systému.
 
 ## Přidáváš do knihovny?
 
