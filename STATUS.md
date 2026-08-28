@@ -309,6 +309,41 @@ které už bylo „hotové". Nota byla čerstvá a přesto špatně. Vlastní sy
 druh obsahu v knihovně a stojí za to ji křížově ověřovat dřív než rok poté.
 
 
+## 0e. Dohledání čtyř design systémů bez URL (28. 8. 2026)
+
+Uzavřený dluh ze sekce 5: [`ux-design/pravidla/tlacitka.md`](ux-design/pravidla/tlacitka.md) citovala
+Atlassian, Apple HIG, Fluent 2 a Base Web formulacemi z fáze 1 bez odkazu. Všechny čtyři jsou teď
+ověřené přímo v jejich dokumentaci, s URL a doslovným anglickým zněním.
+
+**Tři citace se potvrdily, jedna se rozpadla.**
+
+| Systém | Co se ověřilo |
+|---|---|
+| Fluent 2 | „Only use one primary button in a layout for the most important action." |
+| Apple HIG | „Keep the number of prominent buttons to one or two per view." plus zdůvodnění kognitivní zátěží |
+| Atlassian | „Only include one primary button or call to action (CTA) in a page or area." |
+| Base Web | „These are to be used sparingly as the sole action of a view.", tedy per view, ne per section |
+
+**Co se nepotvrdilo.** Anti-pattern „Don't use warning or danger for CTAs that aren't warning or
+danger", který podklad fáze 1 připisuje Atlassianu, v jejich dokumentaci k tlačítku není. Slova
+„warning" ani „danger" se v sekcích s doporučeními nevyskytují ani jednou. Pravidlo v notě zůstalo,
+ale spadlo z třídy B na C a nese explicitní **Necitovat jako Atlassian**. Je to po NHS a zakulacených
+rozích druhý případ, kdy citace bez URL po dohledání neobstála. Poučení je stejné jako u gridlines:
+citace bez URL je dluh, ne detail.
+
+**Vedlejší nález, který zaplnil mezeru.** Nota u pravidla o disabled tlačítkách přiznávala, že
+konkrétní náhradu žádný zdroj nedává a že je to odvození třídy C. Atlassian ji publikuje přímo („Use
+validation or other clear on-screen directions to help people proceed."), takže ta část je teď B.
+Apple k destruktivním akcím přidal „Don't assign the primary role to a button that performs
+a destructive action, even if that action is the most likely choice."
+
+**Metodologie.** Scrapling, ne WebFetch: vrací syrový markdown, takže se dá citovat doslova, a hlásí
+URL po přesměrování. Dvě pasti stály za zmínku. Fluent 2 vrací na neexistující cestu HTTP 200
+se soft 404, takže se URL nesmí hádat, správná cesta obsahuje segment `/core/` a dala se vyčíst
+z navigačního JSONu v hydratačních propsech té 404 stránky. Apple HIG je bez JavaScriptu prázdná,
+ale její obsah leží ve statickém JSONu na `developer.apple.com/tutorials/data/...`, takže prohlížeč
+nebyl potřeba.
+
 ## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 
 Osm paralelních agentů (mix Opus/Fable podle náročnosti rozhodování) napsalo `ux-design/pravidla/`
@@ -494,12 +529,10 @@ a co z ní zbývá:
   nedělit.** Přes 50 příchozích odkazů, mnohé adresují konkrétní sekce jménem. Sekce `##` fungují
   jako kotvy a „Rychlý průchod" nahoře notu drží pohromadě. Riziko přesměrování převyšuje užitek
   z dodržení zásady „jedna nota = jedno téma".
-- **Design-systémové citace bez URL, částečně vyřešeno 30. 7. 2026.** Fáze 1 cituje Carbon, Base
-  Web, Fluent 2, Apple HIG a Atlassian formulacemi bez odkazu na zdrojovou stránku.
-  `pravidla/tlacitka.md` to přiznává. **Carbon je od 30. 7. 2026 citovaný konkrétními URL
-  a verbatim citáty v `enterprise-ui/`**, takže u něj se dá tvrzení dohledat. Base Web, Fluent 2,
-  Apple HIG a Atlassian pořád ne: kdo z těch pravidel staví klientský artefakt, ať si formulaci
-  dohledá a ověří přímo.
+- ~~**Design-systémové citace bez URL.**~~ **Vyřešeno 28. 8. 2026.** Fáze 1 citovala Carbon, Base
+  Web, Fluent 2, Apple HIG a Atlassian bez odkazu na zdrojovou stránku. Carbon se doplnil 30. 7. 2026
+  v `enterprise-ui/`, zbylé čtyři 28. 8. 2026 v [`ux-design/pravidla/tlacitka.md`](ux-design/pravidla/tlacitka.md),
+  viz sekce 0e. Jedna citace se přitom rozpadla, detail tamtéž.
 - **Dvě noty o tlačítkách ve dvou sekcích.** `ux-design/pravidla/tlacitka.md` (tvrdá pravidla,
   třídy A) a `enterprise-ui/komponenty/tlacitka-varianty.md` (taxonomie variant a skupin, třída B).
   Dělení je záměrné a obě noty na sebe odkazují s explicitním určením, kdo v konfliktu vyhrává,

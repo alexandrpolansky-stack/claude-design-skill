@@ -13,8 +13,10 @@ a Fittsovy linie výzkumu o míření. Počet primárních tlačítek, pořadí 
 akce jsou třída B, tedy konvence, kterou drží deset a více organizací nezávisle na sobě. To je
 slabší než studie a výrazně silnější než vkus. Nikdy to neprodávej jako výzkum.
 
-Citace pocházejí z průzkumu fáze 1 (29. 7. 2026). Doslovné anglické formulace jsou přepsané
-z podkladu, kde v podkladu nebyla URL, je to u pravidla uvedené.
+Citace pocházejí z průzkumu fáze 1 (29. 7. 2026). Čtyři systémy, které v podkladu neměly URL
+(Atlassian, Apple HIG, Fluent 2, Base Web), jsou od 28. 8. 2026 ověřené přímo v jejich dokumentaci:
+u nich stojí URL a doslovná anglická formulace tak, jak ji publikují. Jedno tvrzení se ověřit
+nepodařilo a je označené, viz pravidlo o varovné barvě.
 
 ---
 
@@ -29,27 +31,40 @@ ale sekce nebo skupina (karta, modál, panel, řádek formuláře).
 **PROČ:** Primární varianta je nositel informace „tohle je doporučený další krok". Dvě plné plochy
 vedle sebe tu informaci ruší: uživatel místo přečtení hierarchie musí porovnat dva labely a rozhodnout
 se sám. GOV.UK to zdůvodňuje snížením dopadu (víc default tlačítek = každé z nich má menší tah
-a roste nejistota), Apple kognitivní zátěží.
+a roste nejistota), Apple kognitivní zátěží („Presenting too many prominent buttons increases
+cognitive load, requiring people to spend more time considering options before making a choice.")
+a Atlassian soutěží o pozornost („Having multiple primary CTAs in one area can be confusing or
+visually overwhelming because they compete for attention.").
 **TŘÍDA:** B. Shoda 10+ publikovaných systémů s odlišnými zájmy a publiky:
 
 | Systém | Publikovaná formulace |
 |---|---|
 | GOV.UK | „Avoid using multiple default buttons on a single page" |
 | Material Design 3 | „used sparingly, ideally for only one action on a page" |
-| Atlassian | „primary only for one action per section" |
-| Apple HIG | „one or two per view" |
+| Atlassian | „Only include one primary button or call to action (CTA) in a page or area." |
+| Apple HIG | „Keep the number of prominent buttons to one or two per view." |
 | Primer (GitHub) | „never more than one in a group, rarely more than one per page" |
 | Ant Design | „at most one primary button in a section" |
-| NHS, Carbon, Fluent 2, Base Web, Adobe Spectrum | shodná formulace, viz podklad fáze 1 |
+| Fluent 2 | „Only use one primary button in a layout for the most important action." |
+| Base Web | „These are to be used sparingly as the sole action of a view." |
+| NHS, Carbon, Adobe Spectrum | shodná formulace, viz podklad fáze 1 |
+
+**Na čem se systémy neshodnou: jednotka.** Atlassian mluví o „page or area", Apple a Base Web
+o „view", Ant Design a Primer o sekci nebo skupině, Fluent 2 o „layout". Shoda je na počtu (jedno),
+ne na tom, kde se ten počet měří. Formulace „na sekci" v pravidle nahoře je proto syntéza té nejužší
+varianty, ne citát žádného z nich. Kdo se odvolává na konkrétní systém, ať použije jeho jednotku.
 
 **ZDROJ:** `design-system.service.gov.uk/components/button/`, `m3.material.io`, `primer.style`,
 `ant.design/components/button`, `service-manual.nhs.uk/design-system`,
-`carbondesignsystem.com/components/button/usage`, `spectrum.adobe.com/page/button`. Atlassian, Apple
-HIG, Fluent 2 a Base Web jsou v podkladu citované bez URL, formulaci před externím použitím ověř.
+`carbondesignsystem.com/components/button/usage`, `spectrum.adobe.com/page/button`.
+Ověřeno přímo ve zdroji 28. 8. 2026: `atlassian.design/components/button/usage` (sekce „Use one
+primary call to action"), `developer.apple.com/design/human-interface-guidelines/buttons`,
+`fluent2.microsoft.design/components/web/react/core/button/usage`, `baseweb.design/components/button/`.
 **KDY NEPLATÍ:**
 - Stránka rozdělená na nezávislé oblasti (dashboard s widgety, seznam karet, kde každá karta má
-  vlastní akci) může mít primárních tlačítek víc, každé ve své sekci. Atlassian i Primer to formulují
-  per section, respektive per group, ne per page.
+  vlastní akci) může mít primárních tlačítek víc, každé ve své sekci. Primer to formuluje per group.
+  Atlassian píše „in a page or area", takže oblast připouští, ale stránku uvádí jako první. Na
+  Atlassian se u dashboardu odvolávej opatrně, výjimku plně nekryje.
 - Apple HIG připouští dvě na view, takže dvojice „potvrdit / uložit jako" v modálu není chyba, pokud
   jedna z nich vizuálně vede.
 - Dvě skutečně rovnocenné, vzájemně se vylučující volby (typicky nevratné rozhodnutí bez doporučené
@@ -149,10 +164,15 @@ a před provedením vlož potvrzovací krok. Červená barva je až třetí sign
 **PROČ:** Barva je pro část uživatelů nedostupný kanál. USWDS to argumentuje demografií: barvoslepost
 zasahuje 8 % mužů a 0,5 % žen, a proto radí navrhovat „start in black and white", tedy nikdy
 neschovávat informaci výhradně do barvy. U destruktivní akce se ta cena platí přesně v momentě, kdy
-už není co vrátit. GOV.UK to říká přímo: „Do not only rely on the red colour of a warning button".
-**TŘÍDA:** B. Shoda napříč systémy plus explicitní formulace GOV.UK a USWDS. Studie na to
+už není co vrátit. GOV.UK to říká přímo: „Do not only rely on the red colour of a warning button". Apple přidává druhou
+stranu téže mince: destruktivní akci nedávej primární roli, protože „Because of its visual prominence,
+people sometimes choose a primary button without reading it first."
+**TŘÍDA:** B. Shoda napříč systémy plus explicitní formulace GOV.UK, USWDS a Apple HIG. Studie na to
 v podkladech není.
-**ZDROJ:** `design-system.service.gov.uk/components/button/`, `designsystem.digital.gov`.
+**ZDROJ:** `design-system.service.gov.uk/components/button/`, `designsystem.digital.gov`,
+`developer.apple.com/design/human-interface-guidelines/buttons` („Don't assign the primary role to
+a button that performs a destructive action, even if that action is the most likely choice.",
+ověřeno 28. 8. 2026).
 **KDY NEPLATÍ:**
 - Když je akce spolehlivě vratná (undo s dostatečným okamžikem), potvrzovací dialog jen přidává krok
   a uživatel se ho naučí odklikávat naslepo, čímž pojistka přestane fungovat. Tohle je řemeslná
@@ -185,9 +205,16 @@ Oranžové „Save" je chyba, ne odlišení.
 **KDY PLATÍ:** Volba barvy jakéhokoli CTA.
 **PROČ:** Sémantické barvy jsou slovník. Když se stejná barva použije jednou pro „pozor" a jednou pro
 „ulož", uživatel se ten slovník nenaučí a v momentě, kdy má varování zabrat, nezabere.
-**TŘÍDA:** B (Atlassian Design System, anti-pattern formulovaný jako „Don't use warning or danger for
-CTAs that aren't warning or danger"). V podkladu bez URL.
-**ZDROJ:** Atlassian Design System, sekce k tlačítkům, citováno v podkladu fáze 1.
+**TŘÍDA:** C. Ověření 28. 8. 2026 selhalo. Formulace „Don't use warning or danger for CTAs that
+aren't warning or danger", kterou podklad fáze 1 připisuje Atlassianu, na jeho stránkách k tlačítku
+není: prošel jsem `atlassian.design/components/button` i `/components/button/usage` a slova
+„warning" ani „danger" se v sekcích s doporučeními nevyskytují ani jednou. **Necitovat jako
+Atlassian.** Pravidlo platí dál, ale jako řemeslná úvaha o sémantických barvách, ne jako publikovaná
+konvence.
+**ZDROJ:** Nedohledáno. Co Atlassian doopravdy publikuje, je vymezení obou variant významem, což
+pravidlo podpírá definicí místo zákazu: „Warning buttons confirm actions that may cause a significant
+change or a loss of data." a „A danger button appears as a final confirmation for a destructive and
+irreversible action, such as deleting." (`atlassian.design/components/button`, ověřeno 28. 8. 2026).
 **KDY NEPLATÍ:** Když je akcentní barva brandu shodou okolností v oranžovém nebo červeném pásmu.
 Tam pravidlo padá na úroveň systému: pak musí varovná varianta být rozlišená jinak (obrys, ikona,
 tvar), protože barvu už nese primární akce. Pravidlo se týká sémantiky, ne hue.
@@ -285,18 +312,22 @@ nesmí. Buď akci nech dostupnou a chybu vysvětli po pokusu, nebo tlačítko v�
 **PROČ:** Disabled prvek nese dvě vady současně. GOV.UK: „poor contrast and can confuse some users,
 avoid if possible". NHS o svých vlastních disabled variantách přiznává, že nesplňují kontrastní
 poměry. Zároveň disabled neříká, PROČ je akce blokovaná, takže uživatel nemá co udělat. Šedé tlačítko
-je tedy komponenta, která vědomě nesplňuje kontrast a neposkytuje cestu dál.
-**TŘÍDA:** B (GOV.UK Design System, NHS Service Manual). Studie na to není, ale obě organizace to
-publikují jako doporučení a NHS to o sobě přiznává.
+je tedy komponenta, která vědomě nesplňuje kontrast a neposkytuje cestu dál. Atlassian to zužuje
+na nejčastější případ: „Don't disable form submission buttons, as this doesn't give people clear
+a direction for how to proceed." (překlep „clear a direction" je jejich, cituju doslova).
+**TŘÍDA:** B (GOV.UK Design System, NHS Service Manual, Atlassian Design System). Studie na to není,
+ale tři organizace to publikují jako doporučení a NHS to o sobě přiznává.
 **ZDROJ:** `design-system.service.gov.uk/components/button/`,
-`service-manual.nhs.uk/design-system/components/buttons`.
+`service-manual.nhs.uk/design-system/components/buttons`,
+`atlassian.design/components/button/usage` (ověřeno 28. 8. 2026).
 **KDY NEPLATÍ:**
 - Krátkodobá blokace během probíhající operace (zabránit dvojímu odeslání). Tam disabled drží stav
   několik sekund a alternativa, tedy dvojí odeslání, je horší.
 - Když je důvod blokace zjevný z bezprostředního okolí (nezaškrtnutý souhlas přímo nad tlačítkem).
   I tam ale platí kontrastní vada.
-- Náhrada „nech aktivní a vysvětli chybu po kliknutí" je odvození (třída C), GOV.UK v citovaném místě
-  jen varuje, konkrétní náhradu podklad fáze 1 nezaznamenal.
+- Náhradu už není nutné dovozovat. Atlassian ji publikuje přímo: „Use validation or other clear
+  on-screen directions to help people proceed." Tím se ta část dostává z třídy C na B. GOV.UK
+  v citovaném místě pořád jen varuje a náhradu nenabízí.
 
 ---
 
@@ -406,6 +437,10 @@ Vypsané schválně, aby se to příště nedomýšlelo.
 - **GOV.UK A/B test zelených start buttonů** (GitHub issue #34) existuje a zvýšil click-through, ale
   podklad k němu nemá vzorek ani čísla. Neopírej o to volbu barvy a rozhodně z toho nedělej „zelená
   konvertuje".
+- **Anti-pattern „nedávej warning nebo danger barvu na CTA, které není varování" se nepodařilo
+  připsat Atlassianu.** Podklad fáze 1 ho cituje jako jejich formulaci, v jejich dokumentaci
+  k tlačítku ale není (ověřeno 28. 8. 2026). Pravidlo v notě zůstává, zdroj u něj ne. Je to druhý
+  případ v téhle notě, kdy se citace bez URL po dohledání rozpadla, první je NHS a zakulacené rohy.
 - **Tlačítka v hustých mřížkách a tabulkách** (kolizní zóna s pravidlem 24 px) v podkladu nejsou.
 
 ---
