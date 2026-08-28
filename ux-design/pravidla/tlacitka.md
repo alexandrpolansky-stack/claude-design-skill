@@ -15,8 +15,8 @@ slabší než studie a výrazně silnější než vkus. Nikdy to neprodávej jak
 
 Citace pocházejí z průzkumu fáze 1 (29. 7. 2026). Čtyři systémy, které v podkladu neměly URL
 (Atlassian, Apple HIG, Fluent 2, Base Web), jsou od 28. 8. 2026 ověřené přímo v jejich dokumentaci:
-u nich stojí URL a doslovná anglická formulace tak, jak ji publikují. Jedno tvrzení se ověřit
-nepodařilo a je označené, viz pravidlo o varovné barvě.
+u nich stojí URL a doslovná anglická formulace tak, jak ji publikují. U jedné citace se ukázalo,
+že ta věta neexistuje, ačkoliv pravidlo samo zdroj má, viz pravidlo o varovné barvě.
 
 ---
 
@@ -205,16 +205,21 @@ Oranžové „Save" je chyba, ne odlišení.
 **KDY PLATÍ:** Volba barvy jakéhokoli CTA.
 **PROČ:** Sémantické barvy jsou slovník. Když se stejná barva použije jednou pro „pozor" a jednou pro
 „ulož", uživatel se ten slovník nenaučí a v momentě, kdy má varování zabrat, nezabere.
-**TŘÍDA:** C. Ověření 28. 8. 2026 selhalo. Formulace „Don't use warning or danger for CTAs that
-aren't warning or danger", kterou podklad fáze 1 připisuje Atlassianu, na jeho stránkách k tlačítku
-není: prošel jsem `atlassian.design/components/button` i `/components/button/usage` a slova
-„warning" ani „danger" se v sekcích s doporučeními nevyskytují ani jednou. **Necitovat jako
-Atlassian.** Pravidlo platí dál, ale jako řemeslná úvaha o sémantických barvách, ne jako publikovaná
-konvence.
-**ZDROJ:** Nedohledáno. Co Atlassian doopravdy publikuje, je vymezení obou variant významem, což
-pravidlo podpírá definicí místo zákazu: „Warning buttons confirm actions that may cause a significant
-change or a loss of data." a „A danger button appears as a final confirmation for a destructive and
-irreversible action, such as deleting." (`atlassian.design/components/button`, ověřeno 28. 8. 2026).
+**TŘÍDA:** B (Atlassian Design System), ale citaci bylo nutné přeformulovat. Věta „Don't use warning
+or danger for CTAs that aren't warning or danger", kterou podklad fáze 1 uvádí jako Atlassianovu,
+**neexistuje**. Není na `components/button` ani na `components/button/usage`, není ve dvaceti
+archivních snímcích těch stránek z let 2020 až 2026 a doslovnou shodu nenajde ani hledání na webu.
+**Tuhle větu necitovat.** Pravidlo samo Atlassian publikuje, jen na jiné stránce a jinými slovy:
+sémantické barevné role vymezuje významem, takže zákaz z té definice vyplývá.
+**ZDROJ:** `atlassian.design/foundations/color` (ověřeno 28. 8. 2026), tabulka barevných rolí:
+„`warning` Use for UI that communicates caution to prevent a mistake or error from occurring."
+a „`danger` Use for UI that communicates danger or serious error states.", k tomu dvojice Do/Don't
+s pokynem „Use the right color role for your situation." **Pozor na směr:** jejich explicitní Don't
+míří opačně („Don't use an accent when the color has semantic meaning."), tedy zakazuje bezvýznamovou
+barvu tam, kde význam patří. Naše pravidlo je zrcadlo toho jejich, ne jeho citát. Podpůrně
+`atlassian.design/components/button` vymezuje obě varianty účelem: „Warning buttons confirm actions
+that may cause a significant change or a loss of data." a „A danger button appears as a final
+confirmation for a destructive and irreversible action, such as deleting."
 **KDY NEPLATÍ:** Když je akcentní barva brandu shodou okolností v oranžovém nebo červeném pásmu.
 Tam pravidlo padá na úroveň systému: pak musí varovná varianta být rozlišená jinak (obrys, ikona,
 tvar), protože barvu už nese primární akce. Pravidlo se týká sémantiky, ne hue.
@@ -437,10 +442,12 @@ Vypsané schválně, aby se to příště nedomýšlelo.
 - **GOV.UK A/B test zelených start buttonů** (GitHub issue #34) existuje a zvýšil click-through, ale
   podklad k němu nemá vzorek ani čísla. Neopírej o to volbu barvy a rozhodně z toho nedělej „zelená
   konvertuje".
-- **Anti-pattern „nedávej warning nebo danger barvu na CTA, které není varování" se nepodařilo
-  připsat Atlassianu.** Podklad fáze 1 ho cituje jako jejich formulaci, v jejich dokumentaci
-  k tlačítku ale není (ověřeno 28. 8. 2026). Pravidlo v notě zůstává, zdroj u něj ne. Je to druhý
-  případ v téhle notě, kdy se citace bez URL po dohledání rozpadla, první je NHS a zakulacené rohy.
+- **Citace anti-patternu o varovné barvě je vymyšlená, pravidlo ne.** Věta, kterou podklad fáze 1
+  připisuje Atlassianu, neexistuje nikde: ověřeno 28. 8. 2026 na obou stránkách k tlačítku, ve
+  dvaceti archivních snímcích a hledáním doslovné shody na webu. Pravidlo samo Atlassian publikuje
+  na `foundations/color` jako definici barevných rolí, takže zůstává třída B, jen s jiným zdrojem
+  a jiným zněním. Je to druhý případ v téhle notě, kdy citace bez URL po dohledání neobstála, první
+  jsou NHS a zakulacené rohy.
 - **Tlačítka v hustých mřížkách a tabulkách** (kolizní zóna s pravidlem 24 px) v podkladu nejsou.
 
 ---

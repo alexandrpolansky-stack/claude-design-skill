@@ -324,12 +324,28 @@ ověřené přímo v jejich dokumentaci, s URL a doslovným anglickým zněním.
 | Atlassian | „Only include one primary button or call to action (CTA) in a page or area." |
 | Base Web | „These are to be used sparingly as the sole action of a view.", tedy per view, ne per section |
 
-**Co se nepotvrdilo.** Anti-pattern „Don't use warning or danger for CTAs that aren't warning or
-danger", který podklad fáze 1 připisuje Atlassianu, v jejich dokumentaci k tlačítku není. Slova
-„warning" ani „danger" se v sekcích s doporučeními nevyskytují ani jednou. Pravidlo v notě zůstalo,
-ale spadlo z třídy B na C a nese explicitní **Necitovat jako Atlassian**. Je to po NHS a zakulacených
-rozích druhý případ, kdy citace bez URL po dohledání neobstála. Poučení je stejné jako u gridlines:
-citace bez URL je dluh, ne detail.
+**Co se nepotvrdilo, a jak to dopadlo.** Anti-pattern „Don't use warning or danger for CTAs that
+aren't warning or danger", který podklad fáze 1 připisuje Atlassianu, neexistuje. Ověřeno třemi
+nezávislými cestami: na `components/button` i `/usage` se slova „warning" a „danger" v sekcích
+s doporučeními nevyskytují ani jednou, dvacet archivních snímků těch stránek z let 2020 až 2026
+tu větu nemá, a doslovnou shodu nenajde ani hledání na webu.
+
+Zajímavější je druhá půlka. **Pravidlo samo Atlassian publikuje, jen na jiné stránce a jinými
+slovy.** `foundations/color` definuje sémantické role významem („`warning` Use for UI that
+communicates caution to prevent a mistake or error from occurring.", „`danger` Use for UI that
+communicates danger or serious error states.") a přidává Do „Use the right color role for your
+situation." Zákaz z toho plyne definicí. Pravidlo tedy zůstalo ve třídě B, jen s jiným zdrojem
+a s výslovným zákazem citovat tu původní větu.
+
+**Detail, který stojí za zapamatování:** explicitní Don't na té stránce míří opačným směrem („Don't
+use an accent when the color has semantic meaning."), tedy zakazuje bezvýznamovou barvu tam, kde
+význam patří. Naše pravidlo je jeho zrcadlo, ne jeho citát, a nota to takhle říká. Kdyby se to
+nezapsalo, příští čtenář by z Atlassiana odvodil citaci, která tam zase nebude.
+
+Poučení je stejné jako u gridlines: citace bez URL je dluh, ne detail. A přidává se k němu druhé,
+konkrétnější: **když se citace nepotvrdí, hledej dál, než pravidlo odepíšeš.** První kolo ověření
+vypadalo jako čistý neúspěch a skončilo by degradací pravidla na třídu C. Zdroj byl přitom o jednu
+stránku vedle.
 
 **Vedlejší nález, který zaplnil mezeru.** Nota u pravidla o disabled tlačítkách přiznávala, že
 konkrétní náhradu žádný zdroj nedává a že je to odvození třídy C. Atlassian ji publikuje přímo („Use
@@ -338,11 +354,13 @@ Apple k destruktivním akcím přidal „Don't assign the primary role to a butt
 a destructive action, even if that action is the most likely choice."
 
 **Metodologie.** Scrapling, ne WebFetch: vrací syrový markdown, takže se dá citovat doslova, a hlásí
-URL po přesměrování. Dvě pasti stály za zmínku. Fluent 2 vrací na neexistující cestu HTTP 200
+URL po přesměrování. Tři poznatky stály za zmínku. Fluent 2 vrací na neexistující cestu HTTP 200
 se soft 404, takže se URL nesmí hádat, správná cesta obsahuje segment `/core/` a dala se vyčíst
 z navigačního JSONu v hydratačních propsech té 404 stránky. Apple HIG je bez JavaScriptu prázdná,
 ale její obsah leží ve statickém JSONu na `developer.apple.com/tutorials/data/...`, takže prohlížeč
-nebyl potřeba.
+nebyl potřeba. A **archiv se na SPA weby nedá použít**: všech dvacet stažených snímků atlassian.design
+obsahuje jen navigaci, protože obsah se dotahoval z `page-data.json`, který se do archivu nedostal.
+U webů tohohle typu je archiv slepá ulička, ne záložní plán.
 
 ## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 
