@@ -360,7 +360,12 @@ z navigačního JSONu v hydratačních propsech té 404 stránky. Apple HIG je b
 ale její obsah leží ve statickém JSONu na `developer.apple.com/tutorials/data/...`, takže prohlížeč
 nebyl potřeba. A **archiv se na SPA weby nedá použít**: všech dvacet stažených snímků atlassian.design
 obsahuje jen navigaci, protože obsah se dotahoval z `page-data.json`, který se do archivu nedostal.
-U webů tohohle typu je archiv slepá ulička, ne záložní plán.
+U webů tohohle typu je archiv slepá ulička, ne záložní plán. K tomu procesní chyba, kterou stojí za
+to si přiznat: **stačil jeden snímek, aby to bylo vidět.** První stažený soubor měl 928 znaků textu
+a byl to čistý seznam komponent, což je hotová diagnóza. Devatenáct dalších už jen potvrdilo totéž.
+Správné pořadí je jedna sonda, kontrola, že v ní vůbec je tělo stránky, a teprve pak rozstřel do
+šířky. Je to stejné pravidlo jako u sond do konzole v sekci 0: ověř sondu, než uvěříš jejímu
+prázdnému výsledku.
 
 ## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 
