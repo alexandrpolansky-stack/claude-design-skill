@@ -188,7 +188,7 @@ nesoucí prvky výjimka nenalezena v žádném prozkoumaném zdroji.
 **PRAVIDLO:** Stav (chyba, varování, úspěch, info) komunikuj vždy kombinací barva + text
 nebo ikona, nikdy barvou samotnou (speciální případ předchozího pravidla). A obráceně:
 sémantické barvy vyhraď stavům. Červená a oranžová nikdy na běžné CTA (oranžové "Uložit"
-je chyba, Atlassian to má jako pojmenovaný anti-pattern). Destruktivní akce = danger barva
+je chyba, u Atlassianu to plyne z definice barevných rolí). Destruktivní akce = danger barva
 + explicitní sloveso ("Smazat projekt", ne "OK") + potvrzovací krok.
 
 **KDY PLATÍ:** Formuláře, alerty, notifikace, tlačítka, stavové odznaky. Shoda napříč
@@ -205,8 +205,13 @@ used very sparingly. Most services should not need one.").
 
 **ZDROJ:** GOV.UK Design System, button, https://design-system.service.gov.uk/components/button/
 · NHS service manual, buttons, https://service-manual.nhs.uk/design-system/components/buttons
-· Atlassian Design System (color): "Don't use warning or danger for CTAs that aren't
-warning or danger" · IBM Carbon Design System, button.
+· Atlassian Design System, foundations/color, https://atlassian.design/foundations/color
+(ověřeno 28. 8. 2026): "warning Use for UI that communicates caution to prevent a mistake or error
+from occurring.", "danger Use for UI that communicates danger or serious error states." Zákaz
+sémantické barvy na nesémantickém CTA z těch definic plyne, Atlassian ho ale nikde neformuluje
+jako zákaz. Věta "Don't use warning or danger for CTAs that aren't warning or danger", kterou sem
+přinesl podklad fáze 1, u Atlassianu neexistuje, **necitovat ji**, detail v
+[tlacitka.md](tlacitka.md). · IBM Carbon Design System, button.
 
 **KDY NEPLATÍ:** Výjimka nenalezena. Nejslabší místo pravidla je volba konkrétních odstínů:
 červená = chyba je kulturní konvence západního softwaru, ne percepční zákon, takže se

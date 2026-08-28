@@ -170,8 +170,12 @@ button".
 **TŘÍDA:** B.
 **ZDROJ:** GOV.UK Design System (warning button), USWDS (demografie barvosleposti, princip
 "start in black and white"), Carbon (destruktivní akce jako primární krok = primary danger, jako
-jedna z voleb = tertiary/ghost danger), Atlassian anti-pattern: "Don't use warning or danger for
-CTAs that aren't warning or danger."
+jedna z voleb = tertiary/ghost danger), Atlassian (foundations/color,
+https://atlassian.design/foundations/color, ověřeno 28. 8. 2026): sémantické role warning a danger
+jsou definované významem, takže sémantická barva na nesémantickém CTA je mimo definici. Věta
+"Don't use warning or danger for CTAs that aren't warning or danger", kterou sem přinesl podklad
+fáze 1, u Atlassianu neexistuje, **necitovat ji**, detail v
+[tlacitka.md](../pravidla/tlacitka.md).
 **KDY NEPLATÍ:** Odebrání jedné položky z košíku je vratné, tam stačí undo a potvrzovací dialog je
 jen frikce. Potvrzení si rezervuj pro to, co se vrátit nedá.
 

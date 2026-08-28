@@ -207,8 +207,9 @@ Oranžové „Save" je chyba, ne odlišení.
 „ulož", uživatel se ten slovník nenaučí a v momentě, kdy má varování zabrat, nezabere.
 **TŘÍDA:** B (Atlassian Design System), ale citaci bylo nutné přeformulovat. Věta „Don't use warning
 or danger for CTAs that aren't warning or danger", kterou podklad fáze 1 uvádí jako Atlassianovu,
-**neexistuje**. Není na `components/button` ani na `components/button/usage`, není ve dvaceti
-archivních snímcích těch stránek z let 2020 až 2026 a doslovnou shodu nenajde ani hledání na webu.
+**neexistuje**. Není na `components/button` ani na `components/button/usage` a doslovnou shodu
+nenajde ani hledání na webu. Webový archiv třetí cestou být nemohl, jeho snímky té stránky
+neobsahují tělo, viz `STATUS.md` sekce 0e.
 **Tuhle větu necitovat.** Pravidlo samo Atlassian publikuje, jen na jiné stránce a jinými slovy:
 sémantické barevné role vymezuje významem, takže zákaz z té definice vyplývá.
 **ZDROJ:** `atlassian.design/foundations/color` (ověřeno 28. 8. 2026), tabulka barevných rolí:
@@ -443,8 +444,8 @@ Vypsané schválně, aby se to příště nedomýšlelo.
   podklad k němu nemá vzorek ani čísla. Neopírej o to volbu barvy a rozhodně z toho nedělej „zelená
   konvertuje".
 - **Citace anti-patternu o varovné barvě je vymyšlená, pravidlo ne.** Věta, kterou podklad fáze 1
-  připisuje Atlassianu, neexistuje nikde: ověřeno 28. 8. 2026 na obou stránkách k tlačítku, ve
-  dvaceti archivních snímcích a hledáním doslovné shody na webu. Pravidlo samo Atlassian publikuje
+  připisuje Atlassianu, neexistuje nikde: ověřeno 28. 8. 2026 na obou živých stránkách k tlačítku
+  a hledáním doslovné shody na webu. Archiv se použít nedal, jeho snímky neobsahují tělo stránky. Pravidlo samo Atlassian publikuje
   na `foundations/color` jako definici barevných rolí, takže zůstává třída B, jen s jiným zdrojem
   a jiným zněním. Je to druhý případ v téhle notě, kdy citace bez URL po dohledání neobstála, první
   jsou NHS a zakulacené rohy.

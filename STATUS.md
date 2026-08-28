@@ -325,10 +325,12 @@ ověřené přímo v jejich dokumentaci, s URL a doslovným anglickým zněním.
 | Base Web | „These are to be used sparingly as the sole action of a view.", tedy per view, ne per section |
 
 **Co se nepotvrdilo, a jak to dopadlo.** Anti-pattern „Don't use warning or danger for CTAs that
-aren't warning or danger", který podklad fáze 1 připisuje Atlassianu, neexistuje. Ověřeno třemi
-nezávislými cestami: na `components/button` i `/usage` se slova „warning" a „danger" v sekcích
-s doporučeními nevyskytují ani jednou, dvacet archivních snímků těch stránek z let 2020 až 2026
-tu větu nemá, a doslovnou shodu nenajde ani hledání na webu.
+aren't warning or danger", který podklad fáze 1 připisuje Atlassianu, neexistuje. Ověřeno **dvěma**
+nezávislými cestami: na živých stránkách `components/button` ani `components/button/usage` ta věta
+není, a doslovnou shodu nenajde ani hledání na webu. Přesně: na `/usage` se slovo „warning" ani
+„danger" nevyskytuje vůbec, na `components/button` obě jsou, ale v popisu variant, ne jako zákaz
+pro CTA. Neexistuje ta věta, ne ta slova. Třetí pokus, webový archiv, neuspěl ani jako důkaz, ani
+jako vyvrácení, viz metodologie níž.
 
 Zajímavější je druhá půlka. **Pravidlo samo Atlassian publikuje, jen na jiné stránce a jinými
 slovy.** `foundations/color` definuje sémantické role významem („`warning` Use for UI that
@@ -360,8 +362,11 @@ z navigačního JSONu v hydratačních propsech té 404 stránky. Apple HIG je b
 ale její obsah leží ve statickém JSONu na `developer.apple.com/tutorials/data/...`, takže prohlížeč
 nebyl potřeba. A **archiv se na SPA weby nedá použít**: všech dvacet stažených snímků atlassian.design
 obsahuje jen navigaci, protože obsah se dotahoval z `page-data.json`, který se do archivu nedostal.
-U webů tohohle typu je archiv slepá ulička, ne záložní plán. K tomu procesní chyba, kterou stojí za
-to si přiznat: **stačil jeden snímek, aby to bylo vidět.** První stažený soubor měl 928 znaků textu
+U webů tohohle typu je archiv slepá ulička, ne záložní plán, a **nesmí se počítat jako důkazní
+cesta**: soubor bez těla stránky nemůže dokládat, že v těle stránky něco není. Druhá vada téhož
+setu: jen deset z dvaceti snímků je stránka Button, zbytek jsou Button group, Split button
+a ikonové varianty, a stránka `/usage`, kde by ta věta nejspíš byla, v archivu není vůbec.
+K tomu procesní chyba, kterou stojí za to si přiznat: **stačil jeden snímek, aby to bylo vidět.** První stažený soubor měl 928 znaků textu
 a byl to čistý seznam komponent, což je hotová diagnóza. Devatenáct dalších už jen potvrdilo totéž.
 Správné pořadí je jedna sonda, kontrola, že v ní vůbec je tělo stránky, a teprve pak rozstřel do
 šířky. Je to stejné pravidlo jako u sond do konzole v sekci 0: ověř sondu, než uvěříš jejímu
@@ -405,8 +410,11 @@ KDY NEPLATÍ, přesně podle formátu v [CLAUDE.md](CLAUDE.md).
   konstantní napříč úrovněmi. Ani jedno není měření, `hloubka-a-stiny.md` to nechává jako volbu.
 
 **Zdroje bez URL, ověřit před externím použitím:** design-systémová data pro Carbon, Base Web,
-Fluent 2, Apple HIG a Atlassian byla v podkladu fáze 1 citovaná bez URL. `tlacitka.md` to
-zdůvodňuje, ale kdo z toho staví klientský artefakt, ať si formulaci ověří přímo u zdroje.
+Fluent 2, Apple HIG a Atlassian byla v podkladu fáze 1 citovaná bez URL. **Pro
+[`ux-design/pravidla/tlacitka.md`](ux-design/pravidla/tlacitka.md) to od 28. 8. 2026 neplatí**
+(a pro Carbon v `enterprise-ui/` od 30. 7. 2026), tam jsou URL i doslovné znění dohledané, viz
+sekce 0e. Jinde v repu pokyn platí dál, konkrétně v
+[`ux-design/kontext/e-commerce.md`](ux-design/kontext/e-commerce.md).
 
 **Formátová oprava napříč celým repem:** organizační pravidlo zakazuje em-dash bez výjimky.
 Devět souborů (včetně `_index.md`, `README.md`, částí `sheets/`) ho obsahovalo z dřívějška,
@@ -552,10 +560,14 @@ a co z ní zbývá:
   nedělit.** Přes 50 příchozích odkazů, mnohé adresují konkrétní sekce jménem. Sekce `##` fungují
   jako kotvy a „Rychlý průchod" nahoře notu drží pohromadě. Riziko přesměrování převyšuje užitek
   z dodržení zásady „jedna nota = jedno téma".
-- ~~**Design-systémové citace bez URL.**~~ **Vyřešeno 28. 8. 2026.** Fáze 1 citovala Carbon, Base
+- **Design-systémové citace bez URL, částečně vyřešeno 28. 8. 2026.** Fáze 1 citovala Carbon, Base
   Web, Fluent 2, Apple HIG a Atlassian bez odkazu na zdrojovou stránku. Carbon se doplnil 30. 7. 2026
   v `enterprise-ui/`, zbylé čtyři 28. 8. 2026 v [`ux-design/pravidla/tlacitka.md`](ux-design/pravidla/tlacitka.md),
-  viz sekce 0e. Jedna citace se přitom rozpadla, detail tamtéž.
+  viz sekce 0e. Jedna citace se přitom rozpadla jako vymyšlená a je opravená na všech třech místech,
+  kde v repu žila (`tlacitka.md`, `pravidla/kontrast-a-barva.md`, `kontext/e-commerce.md`).
+  **Zbývá:** [`ux-design/kontext/e-commerce.md`](ux-design/kontext/e-commerce.md) cituje Apple HIG,
+  Fluent 2, Base Web a Ant Design pořád bez URL, přestože ta URL už dohledaná jsou. Dokud se
+  nepropíšou, dvě noty o týchž systémech tvrdí různou míru ověřenosti.
 - **Dvě noty o tlačítkách ve dvou sekcích.** `ux-design/pravidla/tlacitka.md` (tvrdá pravidla,
   třídy A) a `enterprise-ui/komponenty/tlacitka-varianty.md` (taxonomie variant a skupin, třída B).
   Dělení je záměrné a obě noty na sebe odkazují s explicitním určením, kdo v konfliktu vyhrává,
