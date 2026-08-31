@@ -47,8 +47,10 @@ Drž se jich, jinak z knihovny bude sklad.
    izolovaná zapadne.
 5. **Hloubka do knihovny, imperativy do skillu.** Když do `SKILL.md` přiteče teorie, přestane se
    vyplácet ho načítat. Do skillu jde jen rozhodovací postup a tvrdá pravidla.
-6. **Zdroj uveď.** U výzkumu, čísla nebo pravidla napiš, odkud je (kniha, studie, URL). Bez zdroje
-   se za rok nedá poznat, co je ověřené a co dojem.
+6. **Zdroj uveď, a doslova.** U výzkumu, čísla nebo pravidla napiš, odkud je (kniha, studie, URL).
+   Bez zdroje se za rok nedá poznat, co je ověřené a co dojem. **Cituj doslovné znění, ne parafrázi**,
+   protože doslovný řetězec umí ověřit skript (viz Ověření před pushem), zatímco parafrázi neověří
+   nikdo. Citaci nikdy neopisuj ze shrnutí vyhledávače, vždycky stáhni zdrojovou stránku.
 7. **Konkrétně, ne obecně.** „Kontrast min. 4.5:1 pro tělo textu" je použitelné. „Dbej na dobrý
    kontrast" není.
 
@@ -119,6 +121,9 @@ for p in pathlib.Path('.').rglob('*.md'):
             bad.append(f'{p}: {m.group(1)}')
 print('\n'.join(bad) if bad else 'odkazy OK')
 EOF
+
+# doslovné citace pořád stojí na uvedené URL (síť, běží déle)
+grep -rl "ZDROJ" --include="*.md" . | sort | xargs python3 scripts/verify-citations.py
 
 # zbylé Obsidian wikilinky (CLAUDE.md a CONTRIBUTING.md je zmiňují v textu, to je OK)
 grep -rn "\[\[" --include="*.md" . | grep -vE "^\./(CLAUDE|CONTRIBUTING)\.md"
