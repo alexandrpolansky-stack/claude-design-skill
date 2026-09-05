@@ -80,10 +80,16 @@ volba):
 **XL výšku doporučuj jen tehdy, když se očekávají dvě řádky obsahu v jednom řádku.**
 **KDY PLATÍ:** Vždy.
 **TŘÍDA:** B
-**ZDROJ:** Carbon, Data table usage, Sizing, verbatim: „The column header row should always match the
-row size of the table. Extra large row heights are only recommended if your data is expected to have
-2 lines of content in a single row."
-https://carbondesignsystem.com/components/data-table/usage/
+**ZDROJ:** Carbon, Data table, Style, Rows, dvě věty, verbatim: „The column header row should
+always match the row size of the table." a „Extra large row heights are only recommended if your
+data is expected to have two lines of content in a single row."
+https://carbondesignsystem.com/components/data-table/style/
+
+Citace se opravovala 5. 9. 2026, protože ji `scripts/verify-citations.py` nenašel. Tvrzení
+se nezměnilo, přestěhovalo se ze stránky `usage` na `style`, „2 lines" se přepsalo na „two lines"
+a **mezi ty dvě věty přibyla třetí**, o centrování textu v řádku. Proto jsou tady dva oddělené
+citáty a ne jeden souvislý: slepit dvě věty, mezi kterými na stránce stojí třetí, je citace,
+která nikdy nebyla. Ověřeno proti živé stránce z téhož dne, ne z paměti.
 
 **Párování toolbaru s výškou řádku** (Carbon má jen dvě výšky toolbaru na pět výšek řádku):
 
@@ -97,8 +103,11 @@ https://carbondesignsystem.com/components/data-table/usage/
 Zdroj: https://carbondesignsystem.com/components/pagination/usage/
 
 **Sloupce:** šířka se může lišit podle obsahu, vyžaduje se jen minimální mezera mezi sloupci.
-**Tabulka vyžaduje tři nebo víc sloupců.**
-Zdroj: https://carbondesignsystem.com/components/data-table/style/
+**Tabulka vyžaduje tři nebo víc sloupců.** Carbon tedy sám žádné konkrétní šířky nepředepisuje,
+předepisuje jen ten odstup.
+**ZDROJ:** Carbon, Data table, Style, Structure, verbatim: „Column widths can vary by content and
+only require a minimum spacing between columns. Tables require three or more columns."
+https://carbondesignsystem.com/components/data-table/style/
 
 **Pozor, tohle platí o jednom vykreslení.** Když se sada řádků mění za běhu (filtr, přepínač
 rozsahu, stránkování), znamená „šířka podle obsahu" jinou mřížku pro každou sadu, takže uživatel

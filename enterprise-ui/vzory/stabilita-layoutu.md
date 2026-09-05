@@ -63,10 +63,78 @@ Rozhodnutí, které se dělá jednou a pak se s ním žije:
 |---|---|---|
 | Procenta se součtem 100 % | Tabulka se vždy vejde, nikdy nescrolluje vodorovně | V úzkém okně dostane každý sloupec málo, takže se **zkracuje i to, co se zkracovat nemá** (identifikátor, datum) |
 | Pixely plus `min-width` na tabulce | Sloupec má vždy dost místa na svou nejdelší reálnou hodnotu | Pod tou šířkou tabulka **scrolluje vodorovně** |
+| Procenta **plus** `min-width` ze součtu podlah | Nad podlahou rostou všechny sloupce ve stejném poměru, na podlaze má každý přesně na svou nejdelší hodnotu | Podlahu je nutné **změřit**, ne odhadnout, a přeměřit po každé změně typografie |
 
-Volba závisí na tom, jestli tabulka obsahuje atomické hodnoty, které nesmí být rozlomené ani
-zkrácené. Když ano, vyhrávají pixely: vodorovný scroll je poctivá odpověď, rozpůlené číslo není.
-Viz [Přetečení a zkracování](preteceni-a-truncation.md).
+Volba mezi prvními dvěma závisí na tom, jestli tabulka obsahuje atomické hodnoty, které nesmí být
+rozlomené ani zkrácené. Když ano, vyhrávají pixely: vodorovný scroll je poctivá odpověď, rozpůlené
+číslo není. Viz [Přetečení a zkracování](preteceni-a-truncation.md).
+
+**Třetí řádek tu volbu ruší** a je popsaný v sekci níž. Stojí za pozornost, že cena, kterou platí,
+není vizuální, ale procesní: přesune se z rozhodování do měření.
+
+## Procenta s podlahou: když má tabulka růst i nezkracovat
+
+**PRAVIDLO:** Dej každému sloupci procento se součtem 100 % a tabulce `min-width` rovnou součtu
+změřených podlah. Procento sloupce **je** jeho podlaha dělená tím součtem, ne odhad. Pod podlahou
+scrolluje obal tabulky, nad ní se přebytek dělí v poměru podlah.
+**KDY PLATÍ:** Fixní layout, pět a víc sloupců, většina s tvarem, a požadavek, aby se tabulka
+roztáhla do šířky monitoru.
+**PROČ:** Procenta zkracují v úzkém okně jen proto, že se šířka sloupce může dostat pod jeho
+nejdelší hodnotu. `min-width` je přesně to místo, kde se to zakáže, takže cena prvního řádku
+tabulky výš zmizí. Cena druhého řádku zmizí taky: nechat jediný sloupec bez šířky znamená, že
+spolkne celý přebytek sám, protože to specifikace fixního layoutu takhle předepisuje. S procenty
+roste každý sloupec.
+**TŘÍDA:** **A** pro mechanismus (specifikace), **C** pro tu kombinaci: ověřeno měřením na jedné
+produktové aplikaci (tři tabulky, 5. 9. 2026), ne studií.
+**ZDROJ:** W3C, CSS 2.2, 17.5.2.1 Fixed table layout, verbatim: „Any remaining columns equally
+divide the remaining horizontal table space (minus borders or cell spacing)." a „If the table is
+wider than the columns, the extra space should be distributed over the columns."
+https://www.w3.org/TR/CSS22/tables.html
+
+## Stejné podíly: když se všechny podlahy nevejdou
+
+**PRAVIDLO:** Dej každému sloupci `100 / n` procent a hodnotu, která se do svého podílu nevejde,
+nech zkrátit výpustkou s celou hodnotou v `title`. Žádné ruční dolaďování po sloupcích.
+**KDY PLATÍ:** Když součet změřených podlah přesahuje šířku, kterou tabulka reálně dostane, nebo
+když je pravidelná mřížka sloupců cennější než to, aby každá hodnota byla vidět celá.
+**PROČ:** Je to aritmetika, ne vkus. `n` stejných sloupců, které uživí nejširší podlahu,
+potřebuje `n × podlaha_max`. Když je to víc než nabízená šířka, **stejné sloupce a nezkrácené
+hodnoty nejde mít obojí**. Naměřený případ: osm sloupců, nejširší podlaha 162px, potřeba
+8 × 162 = 1296px, a karta na 1440px monitoru dostala 1126. Předchozí pravidlo (procenta z podlah)
+v té situaci nezkracuje nic, ale sloupce jsou pak 85 až 202px široké a mezera za popiskem
+hlavičky, což je šířka sloupce minus délka popisku, kolísá mezi 57 a 140px. To si přesně
+všimne designér a přečte to jako rozbitý spacing.
+**CENA A JAK JI UNÉST:** Zkrácená hodnota musí nést celou hodnotu v tooltipu, jinak je to ztráta
+dat a ne zkrácení, viz [Přetečení a zkracování](preteceni-a-truncation.md). Zkrácený
+**identifikátor** je zvlášť drahý: dvě různá čísla pak vypadají stejně. Než na to přistoupíš,
+zkontroluj, jestli se ten identifikátor nedá zkrátit u zdroje (konstantní prefix na každém řádku
+nenese žádnou informaci).
+**A CO NEDĚLAT:** Neřeš to délkou popisku. Prodloužit „ID" na „Request ID", aby se mezera zaplnila,
+je stejný výsledek z opačného konce a rozpadne se to při prvním dalším sloupci. Popisek se mění
+tehdy, když je nepřesný, ne když je krátký.
+**TŘÍDA:** **A** pro mechanismus (procento sloupce je relativní k šířce tabulky, specifikace),
+**C** pro to rozhodnutí: ověřeno měřením na jedné produktové aplikaci (tři tabulky, 6. 9. 2026).
+**ZDROJ:** W3C, CSS 2.2, 17.5.2.1 Fixed table layout, verbatim: „A percentage value for a column
+width is relative to the table width." https://www.w3.org/TR/CSS22/tables.html
+
+## Podlahu změř, nespočítej z počtu znaků
+
+**PRAVIDLO:** Podlahu sloupce zjisti tak, že jeho **nejdelší reálnou hodnotu vykreslíš do živé
+buňky té tabulky** a přečteš její box. Přičti žlaby. Za obsah počítej i **hlavičku**, protože
+v úzkých sloupcích bývá širší než data.
+**KDY PLATÍ:** Vždy, když deklaruješ šířku sloupce nebo jeho podlahu.
+**PROČ:** Šířka řetězce v proporcionálním písmu není funkce počtu znaků. Odhad selhal opakovaně
+v jednom směru: sedmnáctiznakový identifikátor odhadnutý na 124px renderoval 139 a s `nowrap`
+přetekl do sousedního sloupce. Měření té samé hodnoty v té samé buňce je jediná odpověď, která
+přežije změnu velikosti písma, prostrkání nebo řezu.
+**TŘÍDA:** C (řemeslná praxe, ověřená měřením)
+
+**Past, na kterou nic neupozorní:** hlavička může být širší než nejdelší hodnota ve sloupci.
+Verzálkový `Environment` se sortovacím tlačítkem renderuje 98px, zatímco nejdelší hodnota pod ním
+je 52px. Když je sloupec deklarovaný podle dat, text hlavičky vyteče ven a **položí se na sousední
+hlavičku**. Nic to nenahlásí: viditelně přetečená hlavička nescrolluje a neořízne se, takže
+kontrola na scroll ani na `scrollWidth` ji nechytí. Chytne ji jen porovnání šířky textu hlavičky
+proti šířce sloupce, nebo oko.
 
 ## Číslo se mění a bere s sebou šířku
 
@@ -120,6 +188,17 @@ tak, že mine tlačítko.
 3. Projdi všechny varianty textu, který se mění s volbou. Zalomí některá o řádek víc?
 4. Nech obrazovku obnovit se stejnými daty. Hnulo se cokoliv? Nemělo.
 5. Zúžit okno na nejmenší podporovanou šířku a zopakovat body 1 a 2.
+6. U každého sloupce porovnat šířku textu hlavičky se šířkou sloupce. Vyteklá hlavička se
+   nenahlásí sama.
+7. Po jakékoli změně typografie řádku podlahy **přeměřit**. Velikost, řez i prostrkání mění
+   šířku řetězce, takže stará podlaha je od té chvíle číslo o něčem jiném.
+8. Změřit mezery mezi popisky hlavičky, ne jen šířky sloupců. Mezera je šířka sloupce minus
+   délka popisku, takže kolísá i v tabulce, kde je každý sloupec sám o sobě správně, a je to
+   ta nepravidelnost, které si člověk všimne první.
+9. Porovnat, kde začíná první sloupec a kde titulek karty nad ním. Vnější okraj patří kartě,
+   vnitřní žlab tabulce; když se ty dvě hodnoty liší o 8px, čte se to jako posunutá tabulka.
+10. Zkontrolovat, že hlavička je zarovnaná stejně jako hodnoty pod ní. Sloupec zarovnaný
+    doprava mezi dvěma doleva rozdělí prázdno velmi nerovnoměrně; peníze patří na konec řádku.
 
 ## Co tahle nota neřeší
 
@@ -132,7 +211,9 @@ tak, že mine tlačítko.
 
 ## Zdroj
 
-Vlastní syntéza z produktové praxe, **třída C**. Carbon tenhle problém nepojmenovává; jeho věta
-o šířkách sloupců (`Data table, Style`) popisuje jedno vykreslení, ne dvě po sobě. Souvislost
+Vlastní syntéza z produktové praxe, **třída C**, s jednou výjimkou: mechanismus fixního layoutu
+tabulky je citovaný ze specifikace (**A**), viz sekci o procentech s podlahou. Carbon tenhle
+problém nepojmenovává; jeho věta o šířkách sloupců (`Data table, Style`) popisuje jedno
+vykreslení, ne dvě po sobě. Souvislost
 s Cumulative Layout Shift je z Web Vitals, kde je posun obsahu, který uživatel nevyvolal, přímo
 měřenou metrikou: https://web.dev/articles/cls

@@ -372,6 +372,53 @@ Správné pořadí je jedna sonda, kontrola, že v ní vůbec je tělo stránky,
 šířky. Je to stejné pravidlo jako u sond do konzole v sekci 0: ověř sondu, než uvěříš jejímu
 prázdnému výsledku.
 
+## 0f. Fixní layout tabulky ze specifikace, a jedna citace, která se přestěhovala (5. 9. 2026)
+
+Doplněno při skutečné stavbě, ne při rešerši: tři tabulky produktové aplikace se předělávaly z
+pevných pixelových šířek na plynulé sloupce, a knihovna k tomu měla jen volbu buď, anebo.
+
+**Co přibylo do [`enterprise-ui/vzory/stabilita-layoutu.md`](enterprise-ui/vzory/stabilita-layoutu.md):**
+
+- **Třetí možnost k pixelům a procentům:** procenta se součtem 100 % plus `min-width` ve výši
+  součtu změřených podlah. Ruší cenu obou předchozích řádků tabulky, protože podlaha zakáže
+  zkrácení a procenta rozdělí přebytek mezi všechny sloupce. Mechanismus je citovaný ze
+  **specifikace, tedy třída A**, což je v téhle notě jediné místo, které není třída C: W3C CSS 2.2,
+  17.5.2.1, „Any remaining columns equally divide the remaining horizontal table space" a „If the
+  table is wider than the columns, the extra space should be distributed over the columns."
+- **Podlahu změř, nespočítej z počtu znaků**, včetně toho, že za obsah sloupce se počítá i
+  hlavička.
+- **Past, kterou nic nenahlásí:** hlavička širší než nejdelší hodnota ve sloupci vyteče na
+  sousední hlavičku, a protože viditelné přetečení nescrolluje a neořízne se, nechytí ji ani
+  kontrola na `scrollWidth`. Změřeno na `Environment` (98px hlavička nad 52px daty).
+- Dva body do kontrolního seznamu, mimo jiné povinné přeměření podlah po každé změně typografie.
+
+**A jedna oprava, kterou našel skript.** `scripts/verify-citations.py` nahlásil CITACE PRYC
+u pravidla o výšce hlavičkového řádku v [`enterprise-ui/komponenty/datove-tabulky.md`](enterprise-ui/komponenty/datove-tabulky.md).
+Tvrzení platí dál, ale přestěhovalo se z `data-table/usage/` na `data-table/style/`, „2 lines" se
+přepsalo na „two lines" a **mezi ty dvě věty přibyla třetí**. Citace je proto rozdělená na dva
+oddělené citáty: slepit dvě věty, mezi kterými na stránce stojí třetí, by byla citace, která nikdy
+neexistovala. Při té příležitosti dostalo doslovné znění i Carbonovo tvrzení o šířkách sloupců
+(„Column widths can vary by content and only require a minimum spacing between columns."), které
+tam dosud bylo jen v české parafrázi.
+
+Obojí ověřeno proti živým stránkám z 5. 9. 2026, `verify-citations.py` na obou notách hlásí
+11 citací a nula problémů.
+
+**Dopsáno 6. 9. 2026, protože ta samá stavba pokračovala a došla k jinému závěru.** Procenta
+z podlah v té aplikaci nakonec neobstála, a ne kvůli chybě: podlahy sedí, nic se nezkracuje, ale
+sloupce jsou pak 85 až 202px a mezera mezi popisky hlavičky, což je šířka sloupce minus délka
+popisku, kolísá mezi 57 a 140px. Designér to přečte jako rozbitý spacing, i když je každý sloupec
+sám o sobě správně. Nota má proto **čtvrtou možnost, stejné podíly `100 / n` plus výpustka**, i s
+tou aritmetikou, která říká, kdy se nedá mít obojí: `n` stejných sloupců, které uživí nejširší
+podlahu, potřebuje `n × podlaha_max`, a když je to víc než nabízená šířka, jde buď o pravidelnou
+mřížku, nebo o nezkrácené hodnoty. Naměřeno 8 × 162 = 1296px proti 1126px, které karta dostala.
+
+Zapsaná je i cesta, kterou jsme zkusili a která je špatně: **zaplnit mezeru prodloužením
+popisku**. Je to stejný výsledek z opačného konce a rozpadne se to při prvním dalším sloupci.
+Popisek se mění, když je nepřesný, ne když je krátký. Do kontrolního seznamu přibyly tři body:
+měřit mezery mezi popisky a ne jen šířky sloupců, porovnat začátek prvního sloupce s titulkem
+karty nad ním, a zkontrolovat, že hlavička je zarovnaná stejně jako hodnoty pod ní.
+
 ## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 
 Osm paralelních agentů (mix Opus/Fable podle náročnosti rozhodování) napsalo `ux-design/pravidla/`
