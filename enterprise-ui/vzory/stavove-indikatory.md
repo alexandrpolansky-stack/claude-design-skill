@@ -154,6 +154,11 @@ konsolidovaný indikátor je **červený**.
 **ZDROJ:** Carbon, Status indicator pattern, Consolidated statuses.
 https://carbondesignsystem.com/patterns/status-indicator-pattern/
 
+**Pozor na obrácenou chybu:** konsolidovaný stav se bere z podřízených stavů, ne dopočítává
+z agregovaných ČÍSEL. Stav spočítaný ze součtu vyjde zeleně i tehdy, když je jeden člen červený,
+protože přebytek ostatních ho v součtu vyrovná. Proč to platí i o samotných číslech v souhrnu,
+je v [Souhrnech a agregacích](souhrny-a-agregace.md).
+
 ## Úrovně závažnosti
 
 Carbon definuje tři úrovně a nechává na produktovém týmu, aby je obsadil podle svých potřeb, s ohledem

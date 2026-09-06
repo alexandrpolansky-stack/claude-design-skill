@@ -419,6 +419,58 @@ Popisek se mění, když je nepřesný, ne když je krátký. Do kontrolního se
 měřit mezery mezi popisky a ne jen šířky sloupců, porovnat začátek prvního sloupce s titulkem
 karty nad ním, a zkontrolovat, že hlavička je zarovnaná stejně jako hodnoty pod ní.
 
+## 0g. Souhrny a agregace, a ověřovač, který uměl jen HTML (7. 9. 2026)
+
+Nová nota [`enterprise-ui/vzory/souhrny-a-agregace.md`](enterprise-ui/vzory/souhrny-a-agregace.md).
+Vznikla z konkrétního případu: pruh dlaždic nad tabulkou rozpočtů hlásil „81 % vyčerpáno" a
+působil klidně, zatímco jeden z pěti týmů byl na 119 %. V součtu ten přečerpaný tým zmizel,
+protože se vyrovnal proti nedotčené alokaci jiného. Součet byl aritmeticky správně a provozně
+zavádějící, což knihovna do té doby neuměla pojmenovat: `stavove-indikatory.md` řešily jen
+konsolidovaný STAV, ne agregovaná čísla, a k souhrnům samotným nebylo nic.
+
+**Dva zdroje mimo Carbon, a je to první nota v `enterprise-ui/`, která stojí převážně na nich.**
+Stephen Few, *Common Pitfalls in Dashboard Design* (2005), dal definici dashboardu jako funkční
+požadavek („monitored at a glance", „know when action is required"), pasti o chybějícím kontextu
+u čísla, o prominenci a o nadbytečné přesnosti. Google SRE Book, *Monitoring Distributed Systems*,
+dal to podstatné: průměr přes nerovnoměrně vytížené jednotky přestane o těch jednotkách
+vypovídat, jmenovitě „the mean fullness of your databases". Ta analogie je z jiné domény, ale
+struktura je táž.
+
+**Rozlišovací pravidlo, které z toho vzniklo** a v žádném z obou zdrojů takhle napsané není:
+rozhoduje, jestli přebytek jedné jednotky může pokrýt schodek druhé. Když může (jeden fond,
+ze kterého všichni čerpají), součet na otázku o zásahu odpovídá. Když nemůže (rozpočet na tým,
+kvóta na účet), neodpovídá, ať je jakkoliv správný.
+
+**Prošlo se všech třináct Fewových pastí a porovnalo s bází, ne jen ty, co se hodily k původní
+otázce.** Devět z nich báze pokrývá stejně dobře nebo líp: past #5, #7 a #8 (typ grafu, 3D,
+zkreslená osa) má `sheets/notebooklm-destilat.md` doložené Cleveland-McGillem a FT Visual
+Vocabulary, past #12 (barva) má `pravidla/kontrast-a-barva.md` přes WCAG, což je třída A proti
+Fewově „10 % mužů je barvoslepých", past #11 a #13 řeší `anti-slop.md` a `vizualni-craft.md`.
+Do noty se z toho srovnání přidaly **tři pasti, které v bázi opravdu nebyly**: #1 (přehled
+rozřezaný na výběry, jako doplněk k Carbonovu pravidlu o tabech), **#4 (vyjádři odchylku přímo
+a u různě velkých jednotek v procentech, protože malé oddělení přes rozpočet o 5 000 může být
+horší než velké o 50 000)** a #6 (nestřídat typ zobrazení pro rozmanitost). Nota má devět
+pravidel a šestnáct ověřených citací.
+
+**Otevřený strukturální dluh, který to srovnání odhalilo.** Obecná pravidla o vizualizaci dat
+(Tufte data-ink, Cleveland-McGill, FT Visual Vocabulary, koláč jen do 5-6 výsečí, flat 2D vždy
+před 3D) v knihovně **jsou**, ale jen v `sheets/notebooklm-destilat.md`. Ta sekce podle `_index.md`
+stojí vedle škály jako domácí pravidla pro Sheets, takže `design-advisor` do ní u produktové
+aplikace nesáhne a znalost o grafech je pro dashboard v Reactu neviditelná, přestože je zčásti
+třídy A. Správná oprava je vytáhnout obecnou část do vlastní noty o vizualizaci dat; Few je k ní
+slabší podpůrný zdroj, ne náhrada. **Nezahájeno, je to rozhodnutí o struktuře.**
+
+**Sponzorská příloha whitepaperu se nepoužila a je ověřeno, že v ní nic není:** za závěrem jsou
+už jen „About the author" a „ProClarity Addendum" se čtyřmi kapitolami o tom, jak jejich produkt
+řeší pasti #1, #4, #5 a #8, s 51 zmínkami ProClarity na 400 řádcích.
+
+**Vedlejší nález v tooling.** `scripts/verify-citations.py` uměl jen HTML: na PDF vracel přes
+scrapling binární obsah, takže se každá citace z PDF hlásila jako NEDOSTUPNE a neověřila se
+vůbec. Doplněná větev protahuje URL končící `.pdf` přes `pdftotext` (poppler). Když `pdftotext`
+na stroji není, chová se skript jako dřív. Deset citací nové noty je tím ověřených, nula
+problémů. **Poučení:** dokud ověřovač na nějaký typ zdroje neuměl, tvářilo se to jako
+nedostupná stránka, ne jako neověřená citace. To je rozdíl, který nebyl vidět.
+
 ## 1. Fáze 2: evidence-based pravidla a sektorový kontext (29. 7. 2026)
 
 Osm paralelních agentů (mix Opus/Fable podle náročnosti rozhodování) napsalo `ux-design/pravidla/`

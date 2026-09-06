@@ -20,6 +20,7 @@ a tiché přesměrování. Co to nedokáže: poznat, že citace nikdy neexistova
 jen poctivé první ověření u zdroje.
 """
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -88,6 +89,31 @@ def clean_url(raw: str) -> str:
 THIN = 3000  # pod tolik znaků to na dokumentační stránce vypadá na nevykreslené SPA
 
 
+def _pdf_text(url: str) -> str:
+    """Stáhne PDF a vrátí jeho text, nebo prázdný řetězec.
+
+    Scrapling na PDF vrací binární obsah, ve kterém žádná citace nikdy nesedne, takže bez
+    tohohle kroku se každý PDF zdroj hlásí jako NEDOSTUPNE a citace z něj se neověří vůbec.
+    Vyžaduje `pdftotext` z balíku poppler; když chybí, chová se to jako dřív.
+    """
+    if not shutil.which('pdftotext'):
+        return ''
+    with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as fh:
+        raw = fh.name
+    try:
+        got = subprocess.run(['curl', '-sSL', '--max-time', '120', '-o', raw, url],
+                             capture_output=True, timeout=180)
+        if got.returncode != 0 or Path(raw).stat().st_size == 0:
+            return ''
+        proc = subprocess.run(['pdftotext', '-layout', raw, '-'],
+                              capture_output=True, text=True, timeout=120)
+        return proc.stdout or ''
+    except (OSError, subprocess.SubprocessError):
+        return ''
+    finally:
+        Path(raw).unlink(missing_ok=True)
+
+
 def _run(url: str, browser: bool) -> tuple[str, str]:
     with tempfile.NamedTemporaryFile(suffix='.md', delete=False) as fh:
         out = fh.name
@@ -113,6 +139,10 @@ def fetch(url: str, browser: bool = False) -> tuple[str, str]:
     key = (url, browser)
     if key in _cache:
         return _cache[key]
+    if url.lower().split('?')[0].endswith('.pdf'):
+        text = _pdf_text(url)
+        _cache[key] = (text, url)
+        return text, url
     text, final = _run(url, browser)
     if not browser and len(text) < THIN:
         text2, final2 = _run(url, True)
