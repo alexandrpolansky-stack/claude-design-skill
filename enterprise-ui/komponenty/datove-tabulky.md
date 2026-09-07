@@ -114,6 +114,61 @@ rozsahu, stránkování), znamená „šířka podle obsahu" jinou mřížku pro
 přepne filtr a dostane k tomu posun všech sloupců. Co s tím:
 [Stabilita layoutu při změně dat](../vzory/stabilita-layoutu.md).
 
+### Šířka sloupců se odvozuje z obsahu, ne z jejich počtu
+
+**PRAVIDLO:** Šířku sloupce určuje to, co v něm stojí. Sloupec s krátkým obsahem je úzký, sloupec
+s prózou široký. **Nedělej všechny sloupce stejně široké.**
+**KDY PLATÍ:** Vždy. Nejtvrději u tabulek, které míchají krátké tvary (chip, stav, datum, částka)
+s prózou (jméno, které psal člověk).
+**PROČ:** Rovný podíl dá úzkému obsahu víc místa, než potřebuje, a širokému míň, takže se ořezává
+právě ten sloupec, který nese nejvíc informace. Zároveň to od sebe hodnoty vzdálí a řádek se hůř
+čte vcelku.
+**TŘÍDA:** B
+**ZDROJ:** GitLab Pajamas, Table, Content, Columns, verbatim: „Size columns according to the data
+they contain rather than making them all an even width. For example, columns of small content
+should be narrow, while columns of paragraphs should be relatively wide. Allow the browser to lay
+out the tables according to the viewport size." https://design.gitlab.com/components/table/
+
+**PRAVIDLO:** Když se rozchází čitelnost uvnitř jedné tabulky a shoda s tabulkou na jiné obrazovce,
+vyhrává ta jedna tabulka.
+**KDY PLATÍ:** Při sjednocování víc seznamů v jednom produktu.
+**PROČ:** Sjednocení je prostředek, ne cíl. Sloupec zúžený kvůli tomu, aby seděl na jinou stránku,
+platí za shodu ořezanou hodnotou, kterou čte uživatel právě tady.
+**TŘÍDA:** B
+**ZDROJ:** GitLab Pajamas, Table, Appearance, verbatim: „As general rule, consider that alignment
+within a table is more important than consistency from table to table."
+https://design.gitlab.com/components/table/
+
+**Rozpor mezi dvěma zdroji třídy B, a je vědomý.** GitLab v téže větě říká „allow the browser to
+lay out the tables according to the viewport size", tedy auto layout. To jde proti
+[stabilitě layoutu](../vzory/stabilita-layoutu.md), která u tabulky s měnící se sadou řádků žádá
+deklarované šířky. Rozhoduje účel: GitLab míří na to, ODKUD se šířka bere (z obsahu), stabilita na
+to, KDY se přepočítává (nikdy za běhu). Splnit jde obojí, viz metoda níž.
+
+**Odvozená metoda: procenta s podlahou.** Třída **C**, tohle už není citace, je to způsob, jak ta
+dvě pravidla splnit naráz.
+
+1. Změř nejdelší **skutečnou** hodnotu každého sloupce, ne reprezentativní. Hlavičku počítej jako
+   obsah, když je širší než hodnoty pod ní. Přičti mezeru mezi sloupci.
+2. Ta čísla jsou podlahy. Podíl sloupce je jeho podlaha dělená součtem podlah té tabulky,
+   `min-width` tabulky je ten součet.
+3. Nad `min-width` rostou všechny sloupce společně a poměr drží. Pod ním se nic nesmršťuje, obal
+   scrolluje vodorovně.
+4. Prózový sloupec je jediný, který se smí ořezat, takže dostane zbytek a jeho podlaha je volba,
+   ne měření.
+
+**Co to řeší:** šířka je z obsahu (GitLab), je deklarovaná, takže filtr nepřekreslí mřížku
+(stabilita), a nic kromě prózy se neořezává, protože každý sloupec je při `min-width` přesně tak
+široký jako jeho nejdelší hodnota.
+
+**Sjednocení mezi obrazovkami z toho vypadne samo, když jsou podlahy sdílené podle TYPU obsahu**
+(identifikátor, chip, stav, počet, datum, částka), ne měřené zvlášť v každé tabulce. Datum je pak
+stejně široké všude, protože je to totéž datum. Není to zvláštní pravidlo navíc, je to důsledek
+prvního.
+
+**Kdy tuhle metodu nepoužívat:** tabulka o třech čtyřech sloupcích, jejíž sada řádků se za běhu
+nemění. Tam stačí to, co říká Carbon, tedy nechat šířky na prohlížeči a hlídat jen odstup.
+
 ## Umístění
 
 **PRAVIDLO:** Tabulku dej do hlavní obsahové oblasti stránky a dej jí **dost prostoru, aby zobrazila

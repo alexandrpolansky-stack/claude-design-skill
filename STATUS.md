@@ -15,7 +15,7 @@ kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i t
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
 | Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~148 v 13 notách |
 | Sektorových pravidel (`ux-design/kontext/`) | ~87 v 9 notách |
-| Pravidel s třídou důkazu (`enterprise-ui/`) | ~168 v 30 notách, ~365 blocích ZDROJ |
+| Pravidel s třídou důkazu (`enterprise-ui/`) | ~170 v 30 notách, ~367 blocích ZDROJ |
 | Obrázků v repu | 32 |
 | Odkazů na obrázky, které ve zdroji nejsou | 24, všechny v notách označených **[archiv]** (bylo 99) |
 | Not pod 120 slov (kostra) | 5, z toho 3 označené **[archiv]** a 2 **[stub]** |
@@ -34,6 +34,15 @@ presence". Odůvodnění je napsané přímo v [`enterprise-ui/zaklady/vrstvy-a-
 kdo zkopíruje tokeny, postaví produkt, který vypadá jako IBM, a to není cíl. Každý blok ZDROJ
 nese verbatim anglický citát z Carbonu plus URL, aby se za rok dalo poznat, co je Carbonovo
 tvrzení a co moje syntéza (ta je označená třídou **C**).
+
+**Druhý zdroj v téhle sekci, 7. 9. 2026.** [`komponenty/datove-tabulky.md`](enterprise-ui/komponenty/datove-tabulky.md)
+nově cituje i **GitLab Pajamas** (Table), a to na téma, ke kterému Carbon vysloveně nic
+nepředepisuje: šířka sloupců. Carbon říká jen „column widths can vary by content" a odstup 16px,
+Pajamas z toho dělá pravidlo („size columns according to the data they contain rather than making
+them all an even width"). Dvě nezávisle publikované konvence na jedno tvrzení, takže třída **B**
+stojí pevněji než u zbytku sekce, kde je zdroj jeden. Ve stejné notě je zapsaný i rozpor mezi
+Pajamas (nechat rozvržení na prohlížeči) a [`vzory/stabilita-layoutu.md`](enterprise-ui/vzory/stabilita-layoutu.md)
+(deklarované šířky), i s tím, jak se dá splnit obojí.
 
 **Doložené rozpory s knihovnou, ponechané jako rozpory** (stejný princip jako gridlines fix,
 sekce 5). V každém případě vyhrává knihovna, protože má tvrdší zdroje, a nota to říká v místě:
