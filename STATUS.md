@@ -15,7 +15,7 @@ kde je znalost tenká, a nemuselo se to hádat. Když něco doplníš, uprav i t
 | `sheets/` | 3 (znalostní báze, výzkumný destilát, Apps Script vrstva) |
 | Pravidel s třídou důkazu (`ux-design/pravidla/`) | ~148 v 13 notách |
 | Sektorových pravidel (`ux-design/kontext/`) | ~87 v 9 notách |
-| Pravidel s třídou důkazu (`enterprise-ui/`) | ~170 v 30 notách, ~367 blocích ZDROJ |
+| Pravidel s třídou důkazu (`enterprise-ui/`) | ~172 v 30 notách, ~367 blocích ZDROJ |
 | Obrázků v repu | 32 |
 | Odkazů na obrázky, které ve zdroji nejsou | 24, všechny v notách označených **[archiv]** (bylo 99) |
 | Not pod 120 slov (kostra) | 5, z toho 3 označené **[archiv]** a 2 **[stub]** |

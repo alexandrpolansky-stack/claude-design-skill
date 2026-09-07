@@ -166,6 +166,35 @@ dvě pravidla splnit naráz.
 stejně široké všude, protože je to totéž datum. Není to zvláštní pravidlo navíc, je to důsledek
 prvního.
 
+**Jak ta čísla naměřit, když do běžící aplikace nevidíš.** Třída **C**, je to postup, ne pravidlo.
+Postav měřicí lavici: statická stránka, která načte stylesheety a font produktu, vloží do skutečné
+tabulky skutečné markup buňky a nechá ji na `width: max-content`. Šířka obsahu je box buňky mínus
+její vlastní padding. Nepotřebuje běžící aplikaci, přihlášení ani data.
+
+Dvě podmínky, jinak lavice lže:
+
+1. **Nejdřív ji zkalibruj** proti hodnotám, které někdo naměřil přímo v aplikaci. Dokud lavice
+   nereprodukuje známá čísla, neměříš totéž prostředí. Šest hodnot do 0,8 px je dost.
+2. **Měř markup komponenty, ne holý řetězec.** Tentýž text v `<span class="svc-tag">` vyšel o 9,5 px
+   šířeji než v holé buňce, datum v buňce s tabulkovými číslicemi o 6,8 px, datum s časem o 12,4 px.
+   Kdo měří řetězec, dostane podlahu systematicky nízkou, a ořezání se pak objeví až u uživatele.
+
+**PRAVIDLO:** Šířku věš na jméno sloupce, ne na jeho pozici.
+**KDY PLATÍ:** Vždy, když se šířky deklarují.
+**PROČ:** `col:nth-child(3)` je šířka pozice, ne sloupce. Sloupec vložený kamkoliv jinam než na konec
+ji tiše přesune na cizího souseda: nic se nenahlásí, nic nespadne, a projeví se to jako useknutá
+hodnota, kterou nikdo nespojí s tím vložením. Pojmenovaná třída na `<col>` cestuje se sloupcem.
+Vedlejší zisk: v markupu je pak vidět, co ten sloupec je, i bez otevření stylu.
+**TŘÍDA:** C, oporu jsem nenašel, je to řemeslo.
+
+**PRAVIDLO:** Podměřený sloupec se pozná podle výšky řádku, ne podle ořezání.
+**KDY PLATÍ:** U sloupců, jejichž obsah smí zalomit, tedy u textu s mezerami.
+**PROČ:** Hodnota bez mezer se ořízne nebo přeteče a je to vidět na první pohled. Hodnota s mezerou
+se místo toho zalomí, řádek povyroste a tabulka vypadá nepravidelně prořádkovaná. Hlásí se to jako
+„nekonzistentní vzhled" a hledá se to v paddingu a v line-heightu, kde to není. Naměřeno: sloupec
+o 30 px užší, než jeho nejdelší hodnota potřebovala, udělal ze 54px řádku 69px, obě v jedné tabulce.
+**TŘÍDA:** C
+
 **Kdy tuhle metodu nepoužívat:** tabulka o třech čtyřech sloupcích, jejíž sada řádků se za běhu
 nemění. Tam stačí to, co říká Carbon, tedy nechat šířky na prohlížeči a hlídat jen odstup.
 
