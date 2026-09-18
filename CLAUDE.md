@@ -123,7 +123,7 @@ print('\n'.join(bad) if bad else 'odkazy OK')
 EOF
 
 # doslovné citace pořád stojí na uvedené URL (síť, běží déle)
-grep -rl "ZDROJ" --include="*.md" . | sort | xargs python3 scripts/verify-citations.py
+python3 scripts/verify-citations.py $(git ls-files '*.md')
 
 # zbylé Obsidian wikilinky (CLAUDE.md a CONTRIBUTING.md je zmiňují v textu, to je OK)
 grep -rn "\[\[" --include="*.md" . | grep -vE "^\./(CLAUDE|CONTRIBUTING)\.md"
